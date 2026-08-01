@@ -31,6 +31,14 @@ jobs:
       - name: Swift Run Preparing
         run: swift run -c release
         working-directory: ./Modules/Preparing
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prepared-databases
+          path: |
+            Modules/CoreIME/Sources/CoreIME/Resources/ime.sqlite3
+            Modules/AppDataSource/Sources/AppDataSource/Resources/app.sqlite3
+          if-no-files-found: error
+          retention-days: 1
   build_about_kit:
     name: Build AboutKit
     runs-on: macos-26
@@ -53,6 +61,10 @@ jobs:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v4
+        with:
+          name: prepared-databases
+          path: Modules
       - name: Swift Build AppDataSource
         run: swift build
         working-directory: ./Modules/AppDataSource
@@ -62,6 +74,10 @@ jobs:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v4
+        with:
+          name: prepared-databases
+          path: Modules
       - name: Swift Build CoreIME
         run: swift build
         working-directory: ./Modules/CoreIME
@@ -71,6 +87,10 @@ jobs:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v4
+        with:
+          name: prepared-databases
+          path: Modules
       - name: CoreIME SwiftTest
         run: swift test --enable-code-coverage
         working-directory: ./Modules/CoreIME
@@ -80,6 +100,10 @@ jobs:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v4
+        with:
+          name: prepared-databases
+          path: Modules
       - name: Run CoreIME Benchmarks
         run: swift run -c release CoreIMEBenchmarks
         working-directory: ./Modules/CoreIME
@@ -89,6 +113,10 @@ jobs:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v4
+        with:
+          name: prepared-databases
+          path: Modules
       - name: Build InputMethod Scheme
         run: set -o pipefail && xcodebuild clean build -project Jyutping.xcodeproj -scheme InputMethod -configuration Debug -destination "platform=macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
   build_mac_app:
@@ -97,6 +125,10 @@ jobs:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v4
+        with:
+          name: prepared-databases
+          path: Modules
       - name: Build macOS App Scheme
         run: set -o pipefail && xcodebuild clean build -project Jyutping.xcodeproj -scheme Jyutping -configuration Debug -destination "platform=macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
   build_ios_app:
@@ -105,6 +137,10 @@ jobs:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v4
+        with:
+          name: prepared-databases
+          path: Modules
       - name: Build iOS App Scheme
         run: set -o pipefail && xcodebuild clean build -project Jyutping.xcodeproj -scheme Jyutping -configuration Debug -destination "generic/platform=iOS Simulator" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
   build_ios_keyboard:
@@ -113,5 +149,9 @@ jobs:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v4
+        with:
+          name: prepared-databases
+          path: Modules
       - name: Build Keyboard Scheme
         run: set -o pipefail && xcodebuild clean build -project Jyutping.xcodeproj -scheme Keyboard -configuration Debug -destination "generic/platform=iOS Simulator" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
