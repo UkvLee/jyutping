@@ -131,6 +131,40 @@ struct CoreIMETests {
                 #expect(schemes.contains(where: { $0.syllableText == "ngo ng" }))
         }
 
+        @Test("Segmenter orders schemes by length then syllable count")
+        func segmenterOrdersSchemesByLengthThenSyllableCount() {
+                let schemes = Segmenter.segment([
+                        .letterN,
+                        .letterG,
+                        .letterO,
+                        .letterN,
+                        .letterG
+                ])
+
+                #expect(schemes.isEmpty == false)
+                let isOrdered = zip(schemes, schemes.dropFirst()).allSatisfy({ lhs, rhs in
+                        lhs.length > rhs.length || (lhs.length == rhs.length && lhs.count <= rhs.count)
+                })
+                #expect(isOrdered)
+        }
+
+        @Test("Nine-key segmenter orders schemes by length then syllable count")
+        func nineKeySegmenterOrdersSchemesByLengthThenSyllableCount() {
+                let schemes = NineKeySegmenter.segment([
+                        .MNO,
+                        .GHI,
+                        .MNO,
+                        .MNO,
+                        .GHI
+                ])
+
+                #expect(schemes.isEmpty == false)
+                let isOrdered = zip(schemes, schemes.dropFirst()).allSatisfy({ lhs, rhs in
+                        lhs.length > rhs.length || (lhs.length == rhs.length && lhs.count <= rhs.count)
+                })
+                #expect(isOrdered)
+        }
+
         @Test("Segmenter finds best segmented keys from ambiguous input")
         func segmenterFindsBestSegmentedKeysFromAmbiguousInput() {
                 let items = Segmenter.bestSegmentedKeys(from: [

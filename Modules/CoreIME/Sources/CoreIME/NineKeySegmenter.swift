@@ -136,7 +136,6 @@ public struct NineKeySegmenter {
                 let syllable: NineKeySyllable
                 let previousIndex: Int?
                 let length: Int
-                let count: Int
         }
         private static func splitEdges(for combos: [Combo]) -> [[SplitEdge]] {
                 let inputLength = combos.count
@@ -154,7 +153,7 @@ public struct NineKeySegmenter {
         }
         private static func scheme(at nodeIndex: Int, in nodes: [SplitNode]) -> NineKeyScheme {
                 var syllables: NineKeyScheme = []
-                syllables.reserveCapacity(nodes[nodeIndex].count)
+                syllables.reserveCapacity(nodes[nodeIndex].length)
                 var currentIndex: Int? = nodeIndex
                 while let index = currentIndex {
                         let node = nodes[index]
@@ -170,37 +169,36 @@ public struct NineKeySegmenter {
                 let edges = splitEdges(for: combos)
                 guard (edges.first?.isNotEmpty ?? false) else { return [] }
                 var nodes: [SplitNode] = []
-                var frontier: [Int] = []
+                var nodeIndicesByLength = Array(repeating: Array<Int>(), count: inputLength + 1)
                 for edge in edges[0] {
-                        let node = SplitNode(syllable: edge.syllable, previousIndex: nil, length: edge.endIndex, count: 1)
+                        let node = SplitNode(syllable: edge.syllable, previousIndex: nil, length: edge.endIndex)
                         nodes.append(node)
-                        frontier.append(nodes.endIndex - 1)
+                        nodeIndicesByLength[node.length].append(nodes.endIndex - 1)
                 }
-                while frontier.isNotEmpty {
-                        var nextFrontier: [Int] = []
-                        for nodeIndex in frontier {
+                var levelStartIndex: Int = 0
+                var levelEndIndex: Int = nodes.count
+                while levelStartIndex < levelEndIndex {
+                        let nextLevelStartIndex = levelEndIndex
+                        for nodeIndex in levelStartIndex..<levelEndIndex {
                                 let node = nodes[nodeIndex]
                                 guard node.length < inputLength else { continue }
                                 for edge in edges[node.length] {
-                                        let nextNode = SplitNode(syllable: edge.syllable, previousIndex: nodeIndex, length: edge.endIndex, count: node.count + 1)
+                                        let nextNode = SplitNode(syllable: edge.syllable, previousIndex: nodeIndex, length: edge.endIndex)
                                         nodes.append(nextNode)
-                                        nextFrontier.append(nodes.endIndex - 1)
+                                        nodeIndicesByLength[nextNode.length].append(nodes.endIndex - 1)
                                 }
                         }
-                        frontier = nextFrontier
+                        levelStartIndex = nextLevelStartIndex
+                        levelEndIndex = nodes.count
                 }
-                return nodes.indices.compactMap({ nodeIndex -> (scheme: NineKeyScheme, length: Int, count: Int)? in
-                        let node = nodes[nodeIndex]
-                        let scheme = scheme(at: nodeIndex, in: nodes)
-                        // guard scheme.isValid else { return nil }
-                        return (scheme, node.length, node.count)
-                }).sorted(by: {
-                        if $0.length == $1.length {
-                                return $0.count < $1.count
-                        } else {
-                                return $0.length > $1.length
+                var schemes: NineKeySegmentation = []
+                schemes.reserveCapacity(nodes.count)
+                for length in (1...inputLength).reversed() {
+                        for nodeIndex in nodeIndicesByLength[length] {
+                                schemes.append(scheme(at: nodeIndex, in: nodes))
                         }
-                }).map(\.scheme)
+                }
+                return schemes
         }
 
         /// Returns possible syllable schemes ordered by consumed input length, then syllable count.

@@ -147,13 +147,11 @@ public struct Segmenter {
                 let syllable: Syllable
                 let previousIndex: Int?
                 let length: Int
-                let count: Int
         }
         private struct AmbiguousSplitNode {
                 let edge: AmbiguousSplitEdge
                 let previousIndex: Int?
                 let length: Int
-                let count: Int
         }
         private static func splitEdges(for keys: [VirtualInputKey]) -> [[SplitEdge]] {
                 let inputLength = keys.count
@@ -209,7 +207,7 @@ public struct Segmenter {
         }
         private static func scheme(at nodeIndex: Int, in nodes: [SplitNode]) -> Scheme {
                 var syllables: Scheme = []
-                syllables.reserveCapacity(nodes[nodeIndex].count)
+                syllables.reserveCapacity(nodes[nodeIndex].length)
                 var currentIndex: Int? = nodeIndex
                 while let index = currentIndex {
                         let node = nodes[index]
@@ -219,22 +217,10 @@ public struct Segmenter {
                 syllables.reverse()
                 return syllables
         }
-        private static func scheme(at nodeIndex: Int, in nodes: [AmbiguousSplitNode]) -> Scheme {
-                var syllables: Scheme = []
-                syllables.reserveCapacity(nodes[nodeIndex].count)
-                var currentIndex: Int? = nodeIndex
-                while let index = currentIndex {
-                        let node = nodes[index]
-                        syllables.append(node.edge.syllable)
-                        currentIndex = node.previousIndex
-                }
-                syllables.reverse()
-                return syllables
-        }
         private static func keys(at nodeIndex: Int, in nodes: [AmbiguousSplitNode], keySets: [Set<VirtualInputKey>]) -> [[VirtualInputKey]] {
                 var currentIndex: Int? = nodeIndex
                 var edges: [AmbiguousSplitEdge] = []
-                edges.reserveCapacity(nodes[nodeIndex].count)
+                edges.reserveCapacity(nodes[nodeIndex].length)
                 while let index = currentIndex {
                         let node = nodes[index]
                         edges.append(node.edge)
@@ -284,36 +270,36 @@ public struct Segmenter {
                 let edges = splitEdges(for: keys)
                 guard (edges.first?.isNotEmpty ?? false) else { return [] }
                 var nodes: [SplitNode] = []
-                var frontier: [Int] = []
+                var nodeIndicesByLength = Array(repeating: Array<Int>(), count: inputLength + 1)
                 for edge in edges[0] {
-                        let node = SplitNode(syllable: edge.syllable, previousIndex: nil, length: edge.endIndex, count: 1)
+                        let node = SplitNode(syllable: edge.syllable, previousIndex: nil, length: edge.endIndex)
                         nodes.append(node)
-                        frontier.append(nodes.endIndex - 1)
+                        nodeIndicesByLength[node.length].append(nodes.endIndex - 1)
                 }
-                while frontier.isNotEmpty {
-                        var nextFrontier: [Int] = []
-                        for nodeIndex in frontier {
+                var levelStartIndex: Int = 0
+                var levelEndIndex: Int = nodes.count
+                while levelStartIndex < levelEndIndex {
+                        let nextLevelStartIndex = levelEndIndex
+                        for nodeIndex in levelStartIndex..<levelEndIndex {
                                 let node = nodes[nodeIndex]
                                 guard node.length < inputLength else { continue }
                                 for edge in edges[node.length] {
-                                        let nextNode = SplitNode(syllable: edge.syllable, previousIndex: nodeIndex, length: edge.endIndex, count: node.count + 1)
+                                        let nextNode = SplitNode(syllable: edge.syllable, previousIndex: nodeIndex, length: edge.endIndex)
                                         nodes.append(nextNode)
-                                        nextFrontier.append(nodes.endIndex - 1)
+                                        nodeIndicesByLength[nextNode.length].append(nodes.endIndex - 1)
                                 }
                         }
-                        frontier = nextFrontier
+                        levelStartIndex = nextLevelStartIndex
+                        levelEndIndex = nodes.count
                 }
-                return nodes.indices.compactMap({ nodeIndex -> (scheme: Scheme, length: Int, count: Int)? in
-                        let node = nodes[nodeIndex]
-                        let scheme = scheme(at: nodeIndex, in: nodes)
-                        return (scheme, node.length, node.count)
-                }).sorted(by: {
-                        if $0.length == $1.length {
-                                return $0.count < $1.count
-                        } else {
-                                return $0.length > $1.length
+                var schemes: Segmentation = []
+                schemes.reserveCapacity(nodes.count)
+                for length in (1...inputLength).reversed() {
+                        for nodeIndex in nodeIndicesByLength[length] {
+                                schemes.append(scheme(at: nodeIndex, in: nodes))
                         }
-                }).map(\.scheme)
+                }
+                return schemes
         }
 
         private static func ambiguousSplit(_ keySets: [Set<VirtualInputKey>]) -> (nodes: [AmbiguousSplitNode], nodeIndices: [Int]) {
@@ -322,39 +308,37 @@ public struct Segmenter {
                 let edges = ambiguousSplitEdges(for: keySets)
                 guard (edges.first?.isNotEmpty ?? false) else { return ([], []) }
                 var nodes: [AmbiguousSplitNode] = []
-                var frontier: [Int] = []
-                for edge in edges[0] {
-                        let node = AmbiguousSplitNode(edge: edge, previousIndex: nil, length: edge.syllable.alias.count, count: 1)
-                        nodes.append(node)
-                        frontier.append(nodes.endIndex - 1)
+                var bestLength: Int = 0
+                var bestNodeIndices: [Int] = []
+                func updateBestNode(with node: AmbiguousSplitNode) {
+                        guard node.length >= bestLength else { return }
+                        if node.length > bestLength {
+                                bestLength = node.length
+                                bestNodeIndices.removeAll(keepingCapacity: true)
+                        }
+                        bestNodeIndices.append(nodes.endIndex - 1)
                 }
-                while frontier.isNotEmpty {
-                        var nextFrontier: [Int] = []
-                        for nodeIndex in frontier {
+                for edge in edges[0] {
+                        let node = AmbiguousSplitNode(edge: edge, previousIndex: nil, length: edge.syllable.alias.count)
+                        nodes.append(node)
+                        updateBestNode(with: node)
+                }
+                var levelStartIndex: Int = 0
+                var levelEndIndex: Int = nodes.count
+                while levelStartIndex < levelEndIndex {
+                        let nextLevelStartIndex = levelEndIndex
+                        for nodeIndex in levelStartIndex..<levelEndIndex {
                                 let node = nodes[nodeIndex]
                                 guard node.edge.endIndex < inputLength else { continue }
                                 for edge in edges[node.edge.endIndex] {
-                                        let nextNode = AmbiguousSplitNode(edge: edge, previousIndex: nodeIndex, length: node.length + edge.syllable.alias.count, count: node.count + 1)
+                                        let nextNode = AmbiguousSplitNode(edge: edge, previousIndex: nodeIndex, length: node.length + edge.syllable.alias.count)
                                         nodes.append(nextNode)
-                                        nextFrontier.append(nodes.endIndex - 1)
+                                        updateBestNode(with: nextNode)
                                 }
                         }
-                        frontier = nextFrontier
+                        levelStartIndex = nextLevelStartIndex
+                        levelEndIndex = nodes.count
                 }
-                let validNodeIndices: [(index: Int, length: Int, count: Int)] = nodes.indices.compactMap({ nodeIndex -> (index: Int, length: Int, count: Int)? in
-                        let node = nodes[nodeIndex]
-                        // let scheme = scheme(at: nodeIndex, in: nodes)
-                        // guard scheme.isValid else { return nil }
-                        return (nodeIndex, node.length, node.count)
-                })
-                let bestLength = validNodeIndices.map(\.length).max() ?? 0
-                let bestNodeIndices = validNodeIndices.filter({ $0.length == bestLength }).sorted(by: {
-                        if $0.count == $1.count {
-                                return $0.index < $1.index
-                        } else {
-                                return $0.count < $1.count
-                        }
-                }).map(\.index)
                 return (nodes, bestNodeIndices)
         }
 
