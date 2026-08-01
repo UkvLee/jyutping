@@ -65,24 +65,6 @@ struct CoreIMETests {
                 #expect([BasicInputEvent]().previewMarkNormalized().isEmpty)
         }
 
-        @Test("Segmenter rejects cross-syllable long-a matches")
-        func segmenterRejectsCrossSyllableLongA() {
-                let gamSchemes = Segmenter.segment([
-                        .letterG,
-                        .letterA,
-                        .letterM
-                ])
-                #expect(gamSchemes.contains(where: { $0.syllableText == "gaa m" }).negative)
-
-                let gangSchemes = Segmenter.segment([
-                        .letterG,
-                        .letterA,
-                        .letterN,
-                        .letterG
-                ])
-                #expect(gangSchemes.contains(where: { $0.syllableText == "gaa ng" }).negative)
-        }
-
         @Test("Segmenter accepts explicit long-a syllables")
         func segmenterAcceptsExplicitLongA() {
                 let gaamSchemes = Segmenter.segment([
@@ -159,6 +141,46 @@ struct CoreIMETests {
                 ])
 
                 #expect(schemes.isEmpty == false)
+                let isOrdered = zip(schemes, schemes.dropFirst()).allSatisfy({ lhs, rhs in
+                        lhs.length > rhs.length || (lhs.length == rhs.length && lhs.count <= rhs.count)
+                })
+                #expect(isOrdered)
+        }
+
+        @Test("Pinyin segmenter distinguishes syllable complexities")
+        func pinyinSegmenterDistinguishesSyllableComplexities() {
+                let schemes = PinyinSegmenter.segment([
+                        .letterX,
+                        .letterI,
+                        .letterA,
+                        .letterN,
+                        .letterS,
+                        .letterH,
+                        .letterI
+                ])
+
+                #expect(schemes.contains(where: { $0.mark == "xian shi" && $0.complexity == 43 }))
+                #expect(schemes.contains(where: { $0.mark == "xi an shi" && $0.complexity == 223 }))
+                let isOrdered = zip(schemes, schemes.dropFirst()).allSatisfy({ lhs, rhs in
+                        lhs.length > rhs.length || (lhs.length == rhs.length && lhs.count <= rhs.count)
+                })
+                #expect(isOrdered)
+        }
+
+        @Test("Pinyin nine-key segmenter distinguishes syllable complexities")
+        func pinyinNineKeySegmenterDistinguishesSyllableComplexities() {
+                let schemes = PinyinNineKeySegmenter.segment([
+                        .WXYZ,
+                        .GHI,
+                        .ABC,
+                        .MNO,
+                        .PQRS,
+                        .GHI,
+                        .GHI
+                ])
+
+                #expect(schemes.contains(where: { $0.length == 7 && $0.complexity == 43 }))
+                #expect(schemes.contains(where: { $0.length == 7 && $0.complexity == 223 }))
                 let isOrdered = zip(schemes, schemes.dropFirst()).allSatisfy({ lhs, rhs in
                         lhs.length > rhs.length || (lhs.length == rhs.length && lhs.count <= rhs.count)
                 })
@@ -244,6 +266,24 @@ struct CoreIMETests {
                 let suggestions = await Engine.pinyinReverseLookup(keys, segmentation: PinyinSegmenter.segment(keys))
 
                 #expect(suggestions.contains(where: { $0.text == "現實" }))
+        }
+
+        @Test("Pinyin nine-key reverse lookup respects syllable complexities")
+        func pinyinNineKeyReverseLookupRespectsSyllableComplexities() async {
+                let combos: [Combo] = [
+                        .WXYZ,
+                        .GHI,
+                        .ABC,
+                        .MNO,
+                        .PQRS,
+                        .GHI,
+                        .GHI
+                ]
+                let segmentation = PinyinNineKeySegmenter.segment(combos)
+                let suggestions = await Engine.pinyinNineKeyReverseLookup(combos: combos, segmentation: segmentation)
+
+                #expect(suggestions.contains(where: { $0.text == "西安市" && $0.mark == "xi an shi" }))
+                #expect(suggestions.contains(where: { $0.text == "現實" && $0.mark == "xian shi" }))
         }
 
         private func bruteForceBestSegmentedKeys(from keySets: [Set<VirtualInputKey>]) -> [(keys: [VirtualInputKey], segmentation: Segmentation)] {

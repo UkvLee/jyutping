@@ -730,7 +730,8 @@ final class KeyboardViewController: UIInputViewController, ObservableObject {
                 }()
                 suggestionTask = Task.detached(priority: .high) { [weak self] in
                         guard let self else { return }
-                        let suggestions = await Engine.pinyinNineKeyReverseLookup(combos: keys).transformed(commentForm: commentForm, charset: characterStandard)
+                        let segmentation = PinyinNineKeySegmenter.segment(keys)
+                        let suggestions = await Engine.pinyinNineKeyReverseLookup(combos: keys, segmentation: segmentation).transformed(commentForm: commentForm, charset: characterStandard)
                         if Task.isCancelled.negative {
                                 await MainActor.run { [weak self] in
                                         guard let self else { return }

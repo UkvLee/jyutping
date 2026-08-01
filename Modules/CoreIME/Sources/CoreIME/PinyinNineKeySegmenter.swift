@@ -3,109 +3,106 @@ import SQLite3
 import CommonExtensions
 import os.log
 
-public struct PinyinSyllable: Hashable, Comparable, Sendable {
-
-        let code: Int
-        let keys: Array<VirtualInputKey>
-        let text: String
-
-        init(code: Int, text: String) {
-                self.code = code
-                self.keys = code.matchedInputKeys
-                self.text = text
-        }
-
-        public static func ==(lhs: PinyinSyllable, rhs: PinyinSyllable) -> Bool {
-                return lhs.code == rhs.code
-        }
-        public func hash(into hasher: inout Hasher) {
-                hasher.combine(code)
-        }
-        public static func <(lhs: PinyinSyllable, rhs: PinyinSyllable) -> Bool {
-                return (lhs.code / rhs.code) > 0
+private extension Int {
+        var pinyinMatchedCombos: [Combo] {
+                var number = self
+                var combos: [Combo] = []
+                while number > 0 {
+                        if let combo = Combo(rawValue: number % 10) {
+                                combos.append(combo)
+                        }
+                        number /= 10
+                }
+                return combos.reversed()
         }
 }
 
-public typealias PinyinScheme = Array<PinyinSyllable>
-public typealias PinyinSegmentation = Array<PinyinScheme>
+public struct PinyinNineKeySyllable: Hashable, Sendable {
 
-extension RandomAccessCollection where Element == PinyinSyllable {
-        /// Count of all input keys.
+        init(code: Int) {
+                self.code = code
+                self.combos = code.pinyinMatchedCombos
+        }
+
+        let code: Int
+        let combos: Array<Combo>
+}
+
+public typealias PinyinNineKeyScheme = Array<PinyinNineKeySyllable>
+public typealias PinyinNineKeySegmentation = Array<PinyinNineKeyScheme>
+
+extension RandomAccessCollection where Element == PinyinNineKeySyllable {
+
+        /// Count of all input combos.
         public var length: Int {
-                return map(\.keys.count).summation
+                return map(\.combos.count).summation
         }
 
         /// Conjoined digit of syllable lengths.
         ///
         /// For example: lengths of syllables “xi an shi” are `[2, 2, 3]`, which makes the `complexity` become `223`.
         public var complexity: Int {
-                return map(\.keys.count).decimalOverflowed()
+                return map(\.combos.count).decimalOverflowed()
         }
 
-        /// Input keys conjoined as a sequence.
-        public var keys: [VirtualInputKey] {
-                return flatMap(\.keys)
-        }
-
-        /// Syllable texts separated by spaces.
-        public var mark: String {
-                return map(\.text).joined(separator: String.space)
+        /// Input combos conjoined as a sequence.
+        public var combos: [Combo] {
+                return flatMap(\.combos)
         }
 }
 
-public struct PinyinSegmenter {
+public struct PinyinNineKeySegmenter {
 
-        private static let logger = Logger(subsystem: "org.jyutping.Jyutping.CoreIME", category: "PinyinSegmenter")
+        private static let logger = Logger(subsystem: "org.jyutping.Jyutping.CoreIME", category: "PinyinNineKeySegmenter")
         static func prepare() {
-                if pinyinSyllableMap.isEmpty {
-                        logger.warning("PinyinSyllable Dictionary is Empty")
+                if syllableCodeMap.isEmpty {
+                        logger.warning("PinyinNineKeySyllable Dictionary is Empty")
                 }
         }
-        private static let pinyinSyllableMap: Dictionary<Int, PinyinSyllable> = {
-                let command: String = "SELECT code, syllable FROM syllable_pinyin_table;"
+        private static let syllableCodeMap: Dictionary<Int, PinyinNineKeySyllable> = {
+                let command: String = "SELECT DISTINCT code_9key FROM syllable_pinyin_table ORDER BY code_9key;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(Engine.database, command, -1, &statement, nil) == SQLITE_OK else { return [:] }
-                var dict: [Int: PinyinSyllable] = [:]
+                var dict: [Int: PinyinNineKeySyllable] = [:]
                 dict.reserveCapacity(500)
                 while sqlite3_step(statement) == SQLITE_ROW {
                         let code = Int(sqlite3_column_int64(statement, 0))
-                        guard let syllable = sqlite3_column_text(statement, 1) else { continue }
-                        dict[code] = PinyinSyllable(code: code, text: String(cString: syllable))
+                        dict[code] = PinyinNineKeySyllable(code: code)
                 }
                 return dict
         }()
-        private static func lookup(by code: Int) -> PinyinSyllable? {
-                return pinyinSyllableMap[code]
+        private static func lookup(by code: Int) -> PinyinNineKeySyllable? {
+                return syllableCodeMap[code]
         }
 
-        private static let maxSyllableKeyCount: Int = 6
+        private static let maxSyllableComboCount: Int = 6
 
         private struct SplitEdge {
-                let syllable: PinyinSyllable
+                let syllable: PinyinNineKeySyllable
                 let endIndex: Int
         }
         private struct SplitNode {
-                let syllable: PinyinSyllable
+                let syllable: PinyinNineKeySyllable
                 let previousIndex: Int?
                 let length: Int
         }
-        private static func splitEdges(for keys: [VirtualInputKey]) -> [[SplitEdge]] {
-                let inputLength = keys.count
+        private static func splitEdges(for combos: [Combo]) -> [[SplitEdge]] {
+                let inputLength = combos.count
                 var edges = Array(repeating: Array<SplitEdge>(), count: inputLength)
                 for startIndex in 0..<inputLength {
                         var code: Int = 0
-                        let endIndexLimit = min(inputLength, startIndex + maxSyllableKeyCount)
+                        let endIndexLimit = min(inputLength, startIndex + maxSyllableComboCount)
                         for endIndex in startIndex..<endIndexLimit {
-                                code = code * 100 + keys[endIndex].code
+                                code = code * 10 + combos[endIndex].digit
                                 guard let syllable = lookup(by: code) else { continue }
                                 edges[startIndex].append(SplitEdge(syllable: syllable, endIndex: endIndex + 1))
                         }
                 }
                 return edges
         }
-        private static func scheme(at nodeIndex: Int, in nodes: [SplitNode]) -> PinyinScheme {
-                var syllables: PinyinScheme = []
+        private static func scheme(at nodeIndex: Int, in nodes: [SplitNode]) -> PinyinNineKeyScheme {
+                var syllables: PinyinNineKeyScheme = []
                 syllables.reserveCapacity(nodes[nodeIndex].length)
                 var currentIndex: Int? = nodeIndex
                 while let index = currentIndex {
@@ -116,10 +113,10 @@ public struct PinyinSegmenter {
                 syllables.reverse()
                 return syllables
         }
-        private static func split(_ keys: [VirtualInputKey]) -> PinyinSegmentation {
-                let inputLength = keys.count
+        private static func split(_ combos: [Combo]) -> PinyinNineKeySegmentation {
+                let inputLength = combos.count
                 guard inputLength > 0 else { return [] }
-                let edges = splitEdges(for: keys)
+                let edges = splitEdges(for: combos)
                 guard (edges.first?.isNotEmpty ?? false) else { return [] }
                 var nodes: [SplitNode] = []
                 var nodeIndicesByLength = Array(repeating: Array<Int>(), count: inputLength + 1)
@@ -144,7 +141,7 @@ public struct PinyinSegmenter {
                         levelStartIndex = nextLevelStartIndex
                         levelEndIndex = nodes.count
                 }
-                var schemes: PinyinSegmentation = []
+                var schemes: PinyinNineKeySegmentation = []
                 schemes.reserveCapacity(nodes.count)
                 for length in (1...inputLength).reversed() {
                         for nodeIndex in nodeIndicesByLength[length] {
@@ -153,7 +150,8 @@ public struct PinyinSegmenter {
                 }
                 return schemes
         }
-        public static func segment<T: RandomAccessCollection<VirtualInputKey>>(_ keys: T) -> PinyinSegmentation {
-                return split(keys.filter(\.isLetter))
+
+        public static func segment<T: RandomAccessCollection<Combo>>(_ combos: T) -> PinyinNineKeySegmentation {
+                return split(Array(combos))
         }
 }

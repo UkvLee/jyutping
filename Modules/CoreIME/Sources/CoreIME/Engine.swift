@@ -14,6 +14,7 @@ public struct Engine {
                         Segmenter.prepare()
                         NineKeySegmenter.prepare()
                         PinyinSegmenter.prepare()
+                        PinyinNineKeySegmenter.prepare()
                 }
                 let statement = prepareAnchorsStatement()
                 defer { sqlite3_finalize(statement) }
