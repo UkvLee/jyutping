@@ -62,22 +62,23 @@ extension Engine {
         }
 
         private static func search<T: RandomAccessCollection<VirtualInputKey>>(keys: T, segmentation: Segmentation) -> [Lexicon] {
-                let command: String = "SELECT word, romanization FROM structure_table WHERE spell = ? AND complex = ? ORDER BY rowid LIMIT ?;"
+                let command: String = "SELECT word, romanization FROM structure_table WHERE spell = ? AND complexity = ? ORDER BY rowid LIMIT ?;"
                 var statement: OpaquePointer?
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return [] }
                 defer { sqlite3_finalize(statement) }
-                let matched = match(keys: keys, statement: statement)
                 let inputLength = keys.count
-                let queried = segmentation.filter({ $0.length == inputLength }).flatMap({ match(keys: $0.flatMap(\.origin), statement: statement) })
-                return matched + queried
+                let input = keys.map(\.text).joined()
+                return segmentation.filter({ $0.length == inputLength })
+                        .flatMap({ match(keys: $0.originKeys, complexity: $0.complexity, input: input, statement: statement) })
+                        .distinct()
         }
-        private static func match<T: RandomAccessCollection<VirtualInputKey>>(keys: T, input: String? = nil, limit: Int64? = nil, statement: OpaquePointer?) -> [Lexicon] {
+        private static func match<T: RandomAccessCollection<VirtualInputKey>>(keys: T, complexity: Int, input: String? = nil, limit: Int64? = nil, statement: OpaquePointer?) -> [Lexicon] {
                 sqlite3_reset(statement)
                 let spell: Int64 = keys.conjoinedCode.toInt64()
-                let complex: Int64 = keys.count.toInt64()
+                let complexity: Int64 = complexity.toInt64()
                 let limit: Int64 = limit ?? -1
                 sqlite3_bind_int64(statement, 1, spell)
-                sqlite3_bind_int64(statement, 2, complex)
+                sqlite3_bind_int64(statement, 2, complexity)
                 sqlite3_bind_int64(statement, 3, limit)
                 let input: String = input ?? keys.map(\.text).joined()
                 var items: [Lexicon] = []

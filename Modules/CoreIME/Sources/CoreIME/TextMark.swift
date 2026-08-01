@@ -5,13 +5,13 @@ import CommonExtensions
 extension Engine {
         public static func searchTextMarks<T: RandomAccessCollection<VirtualInputKey>>(for keys: T) -> [Lexicon] {
                 let spell = keys.conjoinedCode.toInt64()
-                let complex = keys.count.toInt64()
-                let command: String = "SELECT mark FROM mark_table WHERE spell = ? AND complex = ? ORDER BY rowid;"
+                let letterCount = keys.count.toInt64()
+                let command: String = "SELECT mark FROM mark_table WHERE spell = ? AND letter_count = ? ORDER BY rowid;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return [] }
                 guard sqlite3_bind_int64(statement, 1, spell) == SQLITE_OK else { return [] }
-                guard sqlite3_bind_int64(statement, 2, complex) == SQLITE_OK else { return [] }
+                guard sqlite3_bind_int64(statement, 2, letterCount) == SQLITE_OK else { return [] }
                 var marks: [String] = []
                 while sqlite3_step(statement) == SQLITE_ROW {
                         guard let mark = sqlite3_column_text(statement, 0) else { continue }
@@ -23,13 +23,13 @@ extension Engine {
         }
         public static func queryTextMarks<T: RandomAccessCollection<Combo>>(for combos: T) -> [Lexicon] {
                 let code = combos.map(\.digit).decimalOverflowed().toInt64()
-                let complex = combos.count.toInt64()
-                let command: String = "SELECT input, mark FROM mark_table WHERE nine_key_code = ? AND complex = ? ORDER BY rowid;"
+                let letterCount = combos.count.toInt64()
+                let command: String = "SELECT input, mark FROM mark_table WHERE spell_9key = ? AND letter_count = ? ORDER BY rowid;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return [] }
                 guard sqlite3_bind_int64(statement, 1, code) == SQLITE_OK else { return [] }
-                guard sqlite3_bind_int64(statement, 2, complex) == SQLITE_OK else { return [] }
+                guard sqlite3_bind_int64(statement, 2, letterCount) == SQLITE_OK else { return [] }
                 var items: [Lexicon] = []
                 while sqlite3_step(statement) == SQLITE_ROW {
                         guard let input = sqlite3_column_text(statement, 0) else { continue }

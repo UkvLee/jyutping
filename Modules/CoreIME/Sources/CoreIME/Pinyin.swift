@@ -208,13 +208,13 @@ extension Engine {
 }
 
 extension Engine {
-        private static let pinyinNineKeyAnchorsQuery: String = "SELECT rowid, word, romanization FROM pinyin_lexicon WHERE nine_key_anchors = ? AND char_count = ? ORDER BY rowid LIMIT ?;"
+        private static let pinyinNineKeyAnchorsQuery: String = "SELECT rowid, word, romanization FROM pinyin_lexicon WHERE anchors_9key = ? AND char_count = ? ORDER BY rowid LIMIT ?;"
         private static func preparePinyinNineKeyAnchorsStatement() -> OpaquePointer? {
                 var statement: OpaquePointer?
                 guard sqlite3_prepare_v2(database, pinyinNineKeyAnchorsQuery, -1, &statement, nil) == SQLITE_OK else { return nil }
                 return statement
         }
-        private static let pinyinNineKeyCodeQuery: String = "SELECT rowid, word, romanization FROM pinyin_lexicon WHERE nine_key_code = ? AND complex = ? ORDER BY rowid LIMIT ?;"
+        private static let pinyinNineKeyCodeQuery: String = "SELECT rowid, word, romanization FROM pinyin_lexicon WHERE spell_9key = ? AND complex = ? ORDER BY rowid LIMIT ?;"
         private static func preparePinyinNineKeyCodeStatement() -> OpaquePointer? {
                 var statement: OpaquePointer?
                 guard sqlite3_prepare_v2(database, pinyinNineKeyCodeQuery, -1, &statement, nil) == SQLITE_OK else { return nil }

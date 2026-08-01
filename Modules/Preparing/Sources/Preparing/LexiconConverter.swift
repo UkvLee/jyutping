@@ -42,20 +42,21 @@ struct LexiconConverter {
 
         private static func convert(_ text: String) -> LexiconEntry {
                 let errorMessage: String = "LexiconConverter : BadLineFormat : " + text
-                let text = text.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .controlCharacters)
-                let parts = text.split(separator: "\t").map({ $0.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .controlCharacters) })
+                let trimmedText = text.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .controlCharacters)
+                let parts = trimmedText.split(separator: "\t").map({ $0.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .controlCharacters) })
                 guard parts.count == 2 else { fatalError(errorMessage) }
                 let word: String = parts[0]
                 let romanization: String = parts[1]
-                let anchors = romanization.split(separator: Character.space).compactMap(\.first)
-                guard anchors.isNotEmpty else { fatalError(errorMessage) }
-                let syllableText = romanization.filter(\.isLowercaseBasicLatinLetter)
-                let complex = syllableText.count
-                guard complex > 0 else { fatalError(errorMessage) }
-                let anchorCode: Int = anchors.serialCode
-                let spellCode = syllableText.serialCode
-                let nineKeyAnchorsCode: Int = anchors.keypadCode
-                let nineKeyCode: Int = syllableText.keypadCode
-                return LexiconEntry(word: word, romanization: romanization, complex: complex, anchors: anchorCode, spell: spellCode, nineKeyAnchors: nineKeyAnchorsCode, nineKeyCode: nineKeyCode)
+                let phones = romanization.filter(\.isBasicDigit.negative).split(separator: Character.space)
+                let complexity: Int = phones.map(\.count).decimalOverflowed()
+                let anchorText = phones.compactMap(\.first)
+                let letters = romanization.filter(\.isLowercaseBasicLatinLetter)
+                let letterCount = letters.count
+                guard letterCount > 0 else { fatalError(errorMessage) }
+                let anchors: Int = anchorText.serialCode
+                let spell: Int = letters.serialCode
+                let nineKeyAnchors: Int = anchorText.keypadCode
+                let nineKeySpell: Int = letters.keypadCode
+                return LexiconEntry(word: word, romanization: romanization, letterCount: letterCount, complexity: complexity, anchors: anchors, spell: spell, nineKeyAnchors: nineKeyAnchors, nineKeySpell: nineKeySpell)
         }
 }

@@ -11,8 +11,13 @@ struct LexiconEntry: Hashable {
         /// Element/character count of the `word`
         let charCount: Int
 
-        /// Complexity. Letter count (length) of the letter-only romanization (no tones & no spaces)
-        let complex: Int
+        /// Length of the letter-only romanization (no tones & no spaces)
+        let letterCount: Int
+
+        /// Conjoined digit of letter-only-syllable (phone) lengths.
+        ///
+        /// For example: phone lengths of romanization “gwong2 dung1 dou6” are `[5, 4, 3]`, which makes the `complexity` become `543`
+        let complexity: Int
 
         /// Conjoined code of initials/anchors
         let anchors: Int
@@ -24,26 +29,28 @@ struct LexiconEntry: Hashable {
         let nineKeyAnchors: Int
 
         /// Conjoined keypad code of the letter-only romanization (no tones & no spaces)
-        let nineKeyCode: Int
+        let nineKeySpell: Int
 
         /// Create a lexicon entry
         /// - Parameters:
         ///   - word: Chinese text
         ///   - romanization: Jyutping, Pinyin, etc.
-        ///   - complex: Complexity. Letter count (length) of the letter-only romanization (no tones & no spaces)
+        ///   - letterCount: Length of the letter-only romanization (no tones & no spaces)
+        ///   - complexity: Conjoined digit of letter-only-syllable (phone) lengths.
         ///   - anchors: Conjoined code of initials/anchors
         ///   - spell: Conjoined code of the letter-only romanization (no tones & no spaces)
         ///   - nineKeyAnchors: Conjoined keypad code of initials/anchors
-        ///   - nineKeyCode: Conjoined keypad code of the letter-only romanization (no tones & no spaces)
-        init(word: String, romanization: String, complex: Int? = nil, anchors: Int, spell: Int, nineKeyAnchors: Int, nineKeyCode: Int) {
+        ///   - nineKeySpell: Conjoined keypad code of the letter-only romanization (no tones & no spaces)
+        init(word: String, romanization: String, letterCount: Int, complexity: Int, anchors: Int, spell: Int, nineKeyAnchors: Int, nineKeySpell: Int) {
                 self.word = word
                 self.romanization = romanization
                 self.charCount = word.count
-                self.complex = complex ?? romanization.count(where: \.isLowercaseBasicLatinLetter)
+                self.letterCount = letterCount
+                self.complexity = complexity
                 self.anchors = anchors
                 self.spell = spell
                 self.nineKeyAnchors = nineKeyAnchors
-                self.nineKeyCode = nineKeyCode
+                self.nineKeySpell = nineKeySpell
         }
 
         // Equatable

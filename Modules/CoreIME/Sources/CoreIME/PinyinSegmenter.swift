@@ -47,7 +47,7 @@ public struct PinyinSegmenter {
                 }
         }
         private static let pinyinSyllableMap: Dictionary<Int, PinyinSyllable> = {
-                let command: String = "SELECT code, syllable FROM pinyin_syllable_table;"
+                let command: String = "SELECT code, syllable FROM syllable_pinyin_table;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(Engine.database, command, -1, &statement, nil) == SQLITE_OK else { return [:] }

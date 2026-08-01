@@ -694,8 +694,9 @@ final class KeyboardViewController: UIInputViewController, ObservableObject {
                         async let memory: [Lexicon] = isInputMemoryOn ? InputMemory.nineKeySearch(combos: combos) : []
                         async let defined: [Lexicon] = queryDefinedCandidates(for: combos)
                         async let textMarks: [Lexicon] = isEnglishSuggestionsOn ? Engine.queryTextMarks(for: combos) : []
-                        async let symbols: [Lexicon] = isEmojiSuggestionsOn ? Engine.nineKeySearchSymbols(combos: combos) : []
-                        async let queried: [Lexicon] = Engine.nineKeySuggest(combos: combos)
+                        let segmentation = NineKeySegmenter.segment(combos)
+                        async let symbols: [Lexicon] = isEmojiSuggestionsOn ? Engine.nineKeySearchSymbols(combos: combos, segmentation: segmentation) : []
+                        async let queried: [Lexicon] = NineKeyEngine.suggest(combos: combos, segmentation: segmentation)
                         let suggestions: [Candidate] = await Converter.dispatch(memory: memory, defined: defined, marks: textMarks, symbols: symbols, queried: queried, commentForm: commentForm, charset: characterStandard)
                         if Task.isCancelled.negative {
                                 await MainActor.run { [weak self] in

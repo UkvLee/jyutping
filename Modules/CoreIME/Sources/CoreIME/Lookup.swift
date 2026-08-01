@@ -52,7 +52,7 @@ extension Engine {
                 return (matched, matchedLength)
         }
         private static func match(for text: String) -> [String] {
-                let command: String = "SELECT romanization FROM core_lexicon WHERE word = ? ORDER BY rowid;"
+                let command: String = "SELECT romanization FROM lexicon_core WHERE word = ? ORDER BY rowid;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return [] }

@@ -75,7 +75,7 @@ extension Emoji {
 extension Engine {
 
         public static func fetchEmojiSequence(category: Emoji.Category? = nil) -> [Emoji] {
-                let command: String = "SELECT rowid, category, unicode_version, code_point, cantonese, romanization FROM symbol_table WHERE category > 0 AND category < 9;"
+                let command: String = "SELECT rowid, category, unicode_version, code_point, cantonese, romanization FROM symbol_table WHERE category > 0 AND category < 9 ORDER BY rowid;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(Engine.database, command, -1, &statement, nil) == SQLITE_OK else { return [] }
@@ -96,7 +96,7 @@ extension Engine {
                 return emojis
         }
         public static func fetchDefaultFrequentEmojis() -> [Emoji] {
-                let command: String = "SELECT rowid, unicode_version, code_point, cantonese, romanization FROM symbol_table WHERE category = 0;"
+                let command: String = "SELECT rowid, unicode_version, code_point, cantonese, romanization FROM symbol_table WHERE category = 0 ORDER BY rowid;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(Engine.database, command, -1, &statement, nil) == SQLITE_OK else { return [] }
@@ -116,29 +116,20 @@ extension Engine {
         }
 
         public static func searchSymbols<T: RandomAccessCollection<VirtualInputKey>>(for keys: T, segmentation: Segmentation) -> [Lexicon] {
-                let command: String = "SELECT category, unicode_version, code_point, cantonese, romanization FROM symbol_table WHERE spell = ? AND complex = ?;"
+                let command: String = "SELECT category, unicode_version, code_point, cantonese, romanization FROM symbol_table WHERE spell = ? AND complexity = ? ORDER BY rowid;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(Engine.database, command, -1, &statement, nil) == SQLITE_OK else { return [] }
-                let syllableKeys = keys.filter(\.isSyllableLetter)
-                let spell = syllableKeys.conjoinedCode
-                let complex = syllableKeys.count
-                let input: String = keys.map(\.text).joined()
-                let regular: [Lexicon] = match(spell: spell, complex: complex, input: input, statement: statement)
-                let idealSchemes = segmentation.filter({ $0.length == complex })
-                guard idealSchemes.isNotEmpty else { return regular.distinct() }
-                let matches = idealSchemes.flatMap({ scheme -> [Lexicon] in
-                        let keySequence = scheme.flatMap(\.origin)
-                        let spell = keySequence.conjoinedCode
-                        let complex = keySequence.count
-                        return match(spell: spell, complex: complex, input: input, statement: statement)
-                })
-                return (regular + matches).distinct()
+                let inputLength = keys.count(where: \.isSyllableLetter)
+                let input = keys.map(\.text).joined()
+                return segmentation.filter({ $0.length == inputLength })
+                        .flatMap({ match(spell: $0.originKeys.conjoinedCode, complexity: $0.complexity, input: input, statement: statement) })
+                        .distinct()
         }
-        private static func match<T: BinaryInteger> (spell: T, complex: T, input: String, statement: OpaquePointer?) -> [Lexicon] {
+        private static func match<T: BinaryInteger> (spell: T, complexity: T, input: String, statement: OpaquePointer?) -> [Lexicon] {
                 sqlite3_reset(statement)
                 guard sqlite3_bind_int64(statement, 1, spell.toInt64()) == SQLITE_OK else { return [] }
-                guard sqlite3_bind_int64(statement, 2, complex.toInt64()) == SQLITE_OK else { return [] }
+                guard sqlite3_bind_int64(statement, 2, complexity.toInt64()) == SQLITE_OK else { return [] }
                 var emojis: [Emoji] = []
                 while sqlite3_step(statement) == SQLITE_ROW {
                         let categoryCode = sqlite3_column_int64(statement, 0)
@@ -150,6 +141,7 @@ extension Engine {
                         let instance = Emoji(category: category, uniqueNumber: Int(categoryCode), unicodeVersion: Int(unicodeVersion), text: String(cString: codePoint), cantonese: String(cString: cantonese), romanization: String(cString: romanization))
                         emojis.append(instance)
                 }
+                guard emojis.isNotEmpty else { return [] }
                 let skinToneStatement: OpaquePointer? = {
                         let skinToneQuery: String = "SELECT target FROM emoji_skin_map WHERE source = ?;"
                         var pointer: OpaquePointer? = nil
@@ -173,15 +165,21 @@ extension Engine {
                 return String(cString: target)
         }
 
-        public static func nineKeySearchSymbols<T: RandomAccessCollection<Combo>>(combos: T) -> [Lexicon] {
-                let code = combos.decimalCombinedCode.toInt64()
-                let complex = combos.count.toInt64()
-                let command: String = "SELECT category, unicode_version, code_point, cantonese, romanization FROM symbol_table WHERE nine_key_code = ? AND complex = ?;"
+        public static func nineKeySearchSymbols<T: RandomAccessCollection<Combo>>(combos: T, segmentation: NineKeySegmentation) -> [Lexicon] {
+                let command: String = "SELECT category, unicode_version, code_point, cantonese, romanization FROM symbol_table WHERE spell_9key = ? AND complexity = ?;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(Engine.database, command, -1, &statement, nil) == SQLITE_OK else { return [] }
+                let inputLength = combos.count
+                return segmentation.filter({ $0.length == inputLength })
+                        .flatMap({ nineKeyMatch(combos: $0.originCombos, complexity: $0.complexity, statement: statement) })
+                        .distinct()
+        }
+        private static func nineKeyMatch<T: RandomAccessCollection<Combo>>(combos: T, complexity: Int, statement: OpaquePointer?) -> [Lexicon] {
+                let code = combos.decimalCombinedCode.toInt64()
+                let complexity = complexity.toInt64()
                 guard sqlite3_bind_int64(statement, 1, code) == SQLITE_OK else { return [] }
-                guard sqlite3_bind_int64(statement, 2, complex) == SQLITE_OK else { return [] }
+                guard sqlite3_bind_int64(statement, 2, complexity) == SQLITE_OK else { return [] }
                 var emojis: [Emoji] = []
                 while sqlite3_step(statement) == SQLITE_ROW {
                         let categoryCode = sqlite3_column_int64(statement, 0)
@@ -193,6 +191,7 @@ extension Engine {
                         let instance = Emoji(category: category, uniqueNumber: Int(categoryCode), unicodeVersion: Int(unicodeVersion), text: String(cString: codePoint), cantonese: String(cString: cantonese), romanization: String(cString: romanization))
                         emojis.append(instance)
                 }
+                guard emojis.isNotEmpty else { return [] }
                 let skinToneStatement: OpaquePointer? = {
                         let skinToneQuery: String = "SELECT target FROM emoji_skin_map WHERE source = ?;"
                         var pointer: OpaquePointer? = nil

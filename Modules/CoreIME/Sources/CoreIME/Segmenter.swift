@@ -30,13 +30,6 @@ public struct Syllable: Hashable, Comparable, Sendable {
                 let originQuotient = lhs.originCode / rhs.originCode
                 return originQuotient > 0
         }
-
-        var aliasText: String {
-                return alias.map(\.text).joined()
-        }
-        var originText: String {
-                return origin.map(\.text).joined()
-        }
 }
 
 public typealias Scheme = Array<Syllable>
@@ -47,6 +40,13 @@ extension RandomAccessCollection where Element == Syllable {
         /// Count of all alias input keys
         public var length: Int {
                 return map(\.alias.count).summation
+        }
+
+        /// Conjoined digit of syllable origin lengths.
+        ///
+        /// For example: lengths of syllables “gwong dung dou” are `[5, 4, 3]`, which makes the `complexity` become `543`
+        public var complexity: Int {
+                return map(\.origin.count).decimalOverflowed()
         }
 
         /// Origin keys conjoined as sequence
@@ -86,65 +86,12 @@ extension RandomAccessCollection where Element == Syllable {
 
         /// Alias texts as syllables
         public var mark: String {
-                return map(\.aliasText).joined(separator: String.space)
+                return map({ $0.alias.map(\.text).joined() }).joined(separator: String.space)
         }
 
         /// Origin texts as syllables
         public var syllableText: String {
-                return map(\.originText).joined(separator: String.space)
-        }
-}
-
-private extension Scheme {
-        @available(*, unavailable, renamed: "isValid", message: "Use isValid instead. This old one just for documentation reference.")
-        private var isValid_OLD: Bool {
-                guard self.count > 1 else { return true }
-                guard self.dropLast().contains(where: { $0.origin.last == VirtualInputKey.letterA }) else { return true }
-                let originNumber = self.flatMap(\.origin).map(\.text).joined().occurrenceCount(pattern: "aa(m|ng)")
-                guard originNumber > 0 else { return true }
-                let aliasNumber = self.flatMap(\.alias).map(\.text).joined().occurrenceCount(pattern: "aa(m|ng)")
-                guard aliasNumber > 0 else { return false }
-                return originNumber == aliasNumber
-        }
-
-        // REASON: *am => [*aa, m] => *aam
-        var isValid: Bool {
-                guard self.count > 1 else { return true }
-                guard self.dropLast().contains(where: { $0.origin.last == VirtualInputKey.letterA }) else { return true }
-                let originCount = longAEndingCount(in: \.originCode)
-                guard originCount > 0 else { return true }
-                return originCount == longAEndingCount(in: \.aliasCode)
-        }
-        private func longAEndingCount(in keyPath: KeyPath<Syllable, Int>) -> Int {
-                let letterACode = VirtualInputKey.letterA.code
-                let letterGCode = VirtualInputKey.letterG.code
-                let letterMCode = VirtualInputKey.letterM.code
-                let letterNCode = VirtualInputKey.letterN.code
-                var count: Int = 0
-                var thirdLastCode: Int = 0
-                var secondLastCode: Int = 0
-                var lastCode: Int = 0
-                for syllable in self {
-                        var syllableCode = syllable[keyPath: keyPath]
-                        var divisor: Int = 1
-                        while (syllableCode / divisor) >= 100 {
-                                divisor *= 100
-                        }
-                        while divisor > 0 {
-                                let keyCode = syllableCode / divisor
-                                if secondLastCode == letterACode && lastCode == letterACode && keyCode == letterMCode {
-                                        count += 1
-                                } else if thirdLastCode == letterACode && secondLastCode == letterACode && lastCode == letterNCode && keyCode == letterGCode {
-                                        count += 1
-                                }
-                                syllableCode %= divisor
-                                divisor /= 100
-                                thirdLastCode = secondLastCode
-                                secondLastCode = lastCode
-                                lastCode = keyCode
-                        }
-                }
-                return count
+                return map({ $0.origin.map(\.text).joined() }).joined(separator: String.space)
         }
 }
 
@@ -157,7 +104,7 @@ public struct Segmenter {
                 }
         }
         private static let syllableCodeMap: Dictionary<Int, Syllable> = {
-                let command: String = "SELECT alias_code, origin_code FROM core_syllable_table;"
+                let command: String = "SELECT alias_code, origin_code FROM syllable_core_table;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(Engine.database, command, -1, &statement, nil) == SQLITE_OK else { return [:] }
@@ -359,7 +306,6 @@ public struct Segmenter {
                 return nodes.indices.compactMap({ nodeIndex -> (scheme: Scheme, length: Int, count: Int)? in
                         let node = nodes[nodeIndex]
                         let scheme = scheme(at: nodeIndex, in: nodes)
-                        guard scheme.isValid else { return nil }
                         return (scheme, node.length, node.count)
                 }).sorted(by: {
                         if $0.length == $1.length {
@@ -397,8 +343,8 @@ public struct Segmenter {
                 }
                 let validNodeIndices: [(index: Int, length: Int, count: Int)] = nodes.indices.compactMap({ nodeIndex -> (index: Int, length: Int, count: Int)? in
                         let node = nodes[nodeIndex]
-                        let scheme = scheme(at: nodeIndex, in: nodes)
-                        guard scheme.isValid else { return nil }
+                        // let scheme = scheme(at: nodeIndex, in: nodes)
+                        // guard scheme.isValid else { return nil }
                         return (nodeIndex, node.length, node.count)
                 })
                 let bestLength = validNodeIndices.map(\.length).max() ?? 0
@@ -421,13 +367,6 @@ public struct Segmenter {
                         case .letterO: return letterO
                         case .letterM: return letterM
                         default: return []
-                        }
-                case 4:
-                        switch keys.conjoinedCode {
-                        case 32203220: return mama
-                        case 32203228: return mami
-                        default:
-                                return split(keys.filter(\.isSyllableLetter))
                         }
                 default:
                         return split(keys.filter(\.isSyllableLetter))
@@ -472,12 +411,6 @@ public struct Segmenter {
                         let keyItems = keys(at: nodeIndex, in: splitResult.nodes, keySets: keySets)
                         keyItems.forEach({ appendItem(keys: $0) })
                 }
-                if keySets.count == 4 {
-                        let mamiKeys: [VirtualInputKey] = [.letterM, .letterA, .letterM, .letterI]
-                        if zip(keySets, mamiKeys).allSatisfy({ keySet, key in keySet.contains(key) }) {
-                                appendItem(keys: mamiKeys)
-                        }
-                }
                 guard items.isNotEmpty else {
                         appendEveryCombination()
                         return items
@@ -491,17 +424,9 @@ public struct Segmenter {
         private static let letterA: Segmentation = [[Syllable(aliasCode: 20, originCode: 2020)]]
         private static let letterO: Segmentation = [[Syllable(aliasCode: 34, originCode: 34)]]
         private static let letterM: Segmentation = [[Syllable(aliasCode: 32, originCode: 32)]]
-        private static let mama: Segmentation = [[
-                Syllable(aliasCode: 3220, originCode: 322020),
-                Syllable(aliasCode: 3220, originCode: 322020)
-        ]]
-        private static let mami: Segmentation = [[
-                Syllable(aliasCode: 3220, originCode: 322020),
-                Syllable(aliasCode: 3228, originCode: 3228)
-        ]]
 
         public static func syllableText<T: RandomAccessCollection<VirtualInputKey>>(of keys: T) -> String? {
                 guard keys.count <= 6 else { return nil }
-                return lookup(by: keys.conjoinedCode)?.originText
+                return lookup(by: keys.conjoinedCode)?.origin.map(\.text).joined()
         }
 }

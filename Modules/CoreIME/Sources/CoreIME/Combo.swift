@@ -1,5 +1,5 @@
 /// 9-key / T9 keypad element
-public enum Combo: Int, Sendable {
+public enum Combo: Int, CaseIterable, Sendable {
 
         case special = 1
         case ABC  = 2
