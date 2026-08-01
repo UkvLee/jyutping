@@ -9,6 +9,10 @@ let package = Package(
                 .library(
                         name: "CoreIME",
                         targets: ["CoreIME"]
+                ),
+                .executable(
+                        name: "CoreIMEBenchmarks",
+                        targets: ["CoreIMEBenchmarks"]
                 )
         ],
         dependencies: [
@@ -24,6 +28,10 @@ let package = Package(
                 ),
                 .testTarget(
                         name: "CoreIMETests",
+                        dependencies: ["CoreIME"]
+                ),
+                .executableTarget(
+                        name: "CoreIMEBenchmarks",
                         dependencies: ["CoreIME"]
                 )
         ],

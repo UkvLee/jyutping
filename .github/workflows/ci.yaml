@@ -65,6 +65,24 @@ jobs:
       - name: Swift Build CoreIME
         run: swift build
         working-directory: ./Modules/CoreIME
+  test_core_ime:
+    name: CoreIME Tests
+    needs: [build_core_ime]
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v7
+      - name: CoreIME SwiftTest
+        run: swift test --enable-code-coverage
+        working-directory: ./Modules/CoreIME
+  benchmark_core_ime:
+    name: CoreIME Benchmarks
+    needs: [build_core_ime]
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v7
+      - name: Run CoreIME Benchmarks
+        run: swift run -c release CoreIMEBenchmarks
+        working-directory: ./Modules/CoreIME
   build_input_method:
     name: Build InputMethod
     needs: [build_core_ime]
