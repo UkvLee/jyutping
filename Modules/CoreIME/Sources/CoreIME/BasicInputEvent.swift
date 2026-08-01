@@ -20,7 +20,7 @@ public struct BasicInputEvent: Hashable, Sendable {
 }
 
 extension Array where Element == BasicInputEvent {
-        public func previewMarkNormalized() -> String {
+        public func normalizedPreviewMark() -> String {
                 let inputLength = count
                 var result = String()
                 result.reserveCapacity(inputLength * 2)

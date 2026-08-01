@@ -322,14 +322,12 @@ extension Engine {
         private static func search<T: RandomAccessCollection<VirtualInputKey>>(_ keys: T, segmentation: Segmentation, limit: Int64? = nil, deepSearch: Bool, anchorsStatement: OpaquePointer?, spellStatement: OpaquePointer?) -> [Lexicon] {
                 let inputLength: Int = keys.count
                 let text: String = keys.map(\.text).joined()
-                // let spellMatched: [Lexicon] = [] // spellMatch(keys: keys, input: text, limit: limit, statement: spellStatement)
                 let anchorsMatched = anchorsMatch(keys: keys, input: text, limit: limit, statement: anchorsStatement)
                 let queried = query(inputLength: inputLength, segmentation: segmentation, limit: limit, statement: spellStatement)
                 let shouldMatchPrefixes: Bool = {
                         guard deepSearch else { return false }
                         guard (inputLength > 2 && inputLength < 25) else { return false }
                         guard (keys.last != .letterM) && (keys.first != .letterM) else { return true }
-                        // guard spellMatched.isEmpty else { return false }
                         guard queried.contains(where: { $0.inputCount == inputLength }).negative else { return false }
                         return segmentation.contains(where: { $0.length == inputLength }).negative
                 }()
@@ -383,7 +381,6 @@ extension Engine {
                         let idealQueried = queried.filter({ $0.inputCount == inputLength }).sorted(by: { $0.number < $1.number }).distinct()
                         let notIdealQueried = queried.filter({ $0.inputCount < inputLength }).sorted().distinct()
                         let fullInput = (idealQueried + anchorsMatched + prefixMatched + gainedMatched).distinct()
-                        // let fullInput = (spellMatched + idealQueried + anchorsMatched + prefixMatched + gainedMatched).distinct()
                         let primary = fullInput.prefix(10)
                         let secondary = fullInput.sorted().prefix(10)
                         let tertiary = notIdealQueried.prefix(10)
@@ -444,20 +441,6 @@ private extension Engine {
                 guard sqlite3_prepare_v2(database, spellQuery, -1, &statement, nil) == SQLITE_OK else { return nil }
                 return statement
         }
-
-        private static let nineKeyAnchorsQuery: String = "SELECT rowid, word, romanization FROM lexicon_core WHERE anchors_9key = ? AND char_count = ? ORDER BY rowid LIMIT ?;"
-        static func prepareNineKeyAnchorsStatement() -> OpaquePointer? {
-                var statement: OpaquePointer?
-                guard sqlite3_prepare_v2(database, nineKeyAnchorsQuery, -1, &statement, nil) == SQLITE_OK else { return nil }
-                return statement
-        }
-
-        private static let nineKeySpellQuery: String = "SELECT rowid, word, romanization FROM lexicon_core WHERE spell_9key = ? AND letter_count = ? ORDER BY rowid LIMIT ?;"
-        static func prepareNineKeySpellStatement() -> OpaquePointer? {
-                var statement: OpaquePointer?
-                guard sqlite3_prepare_v2(database, nineKeySpellQuery, -1, &statement, nil) == SQLITE_OK else { return nil }
-                return statement
-        }
 }
 
 
@@ -499,84 +482,6 @@ private extension Engine {
                         let romanization: String = String(cString: sqlite3_column_text(statement, 2))
                         let mark: String = mark ?? romanization.strippedTones()
                         let instance = Lexicon(text: word, romanization: romanization, input: input, mark: mark, number: number)
-                        items.append(instance)
-                }
-                return items
-        }
-}
-
-
-// MARK: - NineKey Suggestions
-
-extension Engine {
-        public static func nineKeySuggest<T: RandomAccessCollection<Combo>>(combos: T) async -> [Lexicon] {
-                lazy var anchorsStatement = prepareNineKeyAnchorsStatement()
-                lazy var spellStatement = prepareNineKeySpellStatement()
-                defer {
-                        sqlite3_finalize(anchorsStatement)
-                        sqlite3_finalize(spellStatement)
-                }
-                return nineKeySearch(combos: combos, anchorsStatement: anchorsStatement, spellStatement: spellStatement)
-        }
-        private static func nineKeySearch<T: RandomAccessCollection<Combo>>(combos: T, limit: Int64? = nil, anchorsStatement: OpaquePointer?, spellStatement: OpaquePointer?) -> [Lexicon] {
-                let inputLength: Int = combos.count
-                let fullCode: Int = combos.decimalCombinedCode
-                guard inputLength > 1 else {
-                        return nineKeySpellMatch(code: fullCode, complex: inputLength, limit: limit, statement: spellStatement) + nineKeyAnchorsMatch(code: fullCode, charCount: inputLength, limit: 100, statement: anchorsStatement)
-                }
-                let fullMatched = nineKeySpellMatch(code: fullCode, complex: inputLength, limit: limit, statement: spellStatement)
-                let idealAnchorsMatched = nineKeyAnchorsMatch(code: fullCode, charCount: inputLength, limit: 4, statement: anchorsStatement)
-                let spellMatched: [Lexicon] = (1..<inputLength)
-                        .flatMap({ number -> [Lexicon] in
-                                let code = combos.dropLast(number).decimalCombinedCode
-                                let complex = (inputLength - number)
-                                return nineKeySpellMatch(code: code, complex: complex, limit: limit, statement: spellStatement)
-                        })
-                let anchorsMatched: [Lexicon] = (0..<inputLength)
-                        .flatMap({ number -> [Lexicon] in
-                                let code = combos.dropLast(number).decimalCombinedCode
-                                let charCount = (inputLength - number)
-                                return nineKeyAnchorsMatch(code: code, charCount: charCount, limit: limit, statement: anchorsStatement)
-                        })
-                let queried = (fullMatched + idealAnchorsMatched + spellMatched + anchorsMatched)
-                guard let firstInputCount = queried.first?.inputCount else { return [] }
-                guard firstInputCount < inputLength else { return queried }
-                let tailLength = (inputLength - firstInputCount)
-                let tailCode = combos.dropFirst(firstInputCount).decimalCombinedCode
-                let tailLexicons = nineKeySpellMatch(code: tailCode, complex: tailLength, limit: 20, statement: spellStatement) + nineKeyAnchorsMatch(code: tailCode, charCount: tailLength, limit: 20, statement: anchorsStatement)
-                guard tailLexicons.isNotEmpty, let head = queried.first else { return queried }
-                let concatenated = tailLexicons.compactMap({ head + $0 }).sorted().prefix(1)
-                return concatenated + queried
-        }
-        private static func nineKeyAnchorsMatch<T: BinaryInteger>(code: T, charCount: T, limit: Int64? = nil, statement: OpaquePointer?) -> [Lexicon] {
-                sqlite3_reset(statement)
-                sqlite3_bind_int64(statement, 1, code.toInt64())
-                sqlite3_bind_int64(statement, 2, charCount.toInt64())
-                sqlite3_bind_int64(statement, 3, (limit ?? 30))
-                var items: [Lexicon] = []
-                while sqlite3_step(statement) == SQLITE_ROW {
-                        let rowID: Int = Int(sqlite3_column_int64(statement, 0))
-                        let word: String = String(cString: sqlite3_column_text(statement, 1))
-                        let romanization: String = String(cString: sqlite3_column_text(statement, 2))
-                        let anchors = romanization.split(separator: Character.space).compactMap(\.first)
-                        let anchorText = String(anchors)
-                        let instance = Lexicon(text: word, romanization: romanization, input: anchorText, mark: anchorText, number: rowID)
-                        items.append(instance)
-                }
-                return items
-        }
-        private static func nineKeySpellMatch<T: BinaryInteger>(code: T, complex: T, limit: Int64? = nil, statement: OpaquePointer?) -> [Lexicon] {
-                sqlite3_reset(statement)
-                sqlite3_bind_int64(statement, 1, code.toInt64())
-                sqlite3_bind_int64(statement, 2, complex.toInt64())
-                sqlite3_bind_int64(statement, 3, (limit ?? -1))
-                var items: [Lexicon] = []
-                while sqlite3_step(statement) == SQLITE_ROW {
-                        let rowID: Int = Int(sqlite3_column_int64(statement, 0))
-                        let word: String = String(cString: sqlite3_column_text(statement, 1))
-                        let romanization: String = String(cString: sqlite3_column_text(statement, 2))
-                        let mark: String = romanization.strippedTones()
-                        let instance = Lexicon(text: word, romanization: romanization, input: mark.strippedSpaces(), mark: mark, number: rowID)
                         items.append(instance)
                 }
                 return items

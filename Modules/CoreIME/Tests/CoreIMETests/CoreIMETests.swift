@@ -46,7 +46,7 @@ struct CoreIMETests {
                         .init(key: .letterQ, case: .lowercased)
                 ]
 
-                #expect(events.previewMarkNormalized() == "gwong1 2 3 4 5 6")
+                #expect(events.normalizedPreviewMark() == "gwong1 2 3 4 5 6")
         }
 
         @Test("Preview mark normalization preserves letters and spaces non-letters")
@@ -61,8 +61,8 @@ struct CoreIMETests {
                         .init(key: .number3, case: .lowercased)
                 ]
 
-                #expect(events.previewMarkNormalized() == "Ng5 ' aa3")
-                #expect([BasicInputEvent]().previewMarkNormalized().isEmpty)
+                #expect(events.normalizedPreviewMark() == "Ng5 ' aa3")
+                #expect([BasicInputEvent]().normalizedPreviewMark().isEmpty)
         }
 
         @Test("Segmenter accepts explicit long-a syllables")

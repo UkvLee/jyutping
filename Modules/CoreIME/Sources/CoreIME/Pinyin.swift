@@ -61,11 +61,9 @@ extension Engine {
         private static func pinyinSearch<T: RandomAccessCollection<VirtualInputKey>>(_ keys: T, segmentation: PinyinSegmentation, limit: Int64? = nil, anchorsStatement: OpaquePointer?, spellStatement: OpaquePointer?) -> [PinyinLexicon] {
                 let inputLength: Int = keys.count
                 let text: String = keys.map(\.text).joined()
-                let spellMatched = pinyinSpellMatch(keys: keys, complexity: inputLength, input: text, limit: limit, statement: spellStatement)
                 let anchorsMatched = pinyinAnchorsMatch(keys: keys, input: text, limit: limit, statement: anchorsStatement)
                 let queried = pinyinQuery(inputLength: inputLength, segmentation: segmentation, limit: limit, statement: spellStatement)
                 let shouldMatchPrefixes: Bool = {
-                        guard spellMatched.isEmpty else { return false }
                         guard queried.contains(where: { $0.inputCount == inputLength }).negative else { return false }
                         return segmentation.contains(where: { $0.length == inputLength }).negative
                 }()
@@ -109,7 +107,7 @@ extension Engine {
                 let fetched: [PinyinLexicon] = {
                         let idealQueried = queried.filter({ $0.inputCount == inputLength }).sorted(by: { $0.number < $1.number }).distinct()
                         let notIdealQueried = queried.filter({ $0.inputCount < inputLength }).sorted().distinct()
-                        let fullInput = (spellMatched + idealQueried + anchorsMatched + prefixMatched + gainedMatched).distinct()
+                        let fullInput = (idealQueried + anchorsMatched + prefixMatched + gainedMatched).distinct()
                         let primary = fullInput.prefix(10)
                         let secondary = fullInput.sorted().prefix(10)
                         let tertiary = notIdealQueried.prefix(10)

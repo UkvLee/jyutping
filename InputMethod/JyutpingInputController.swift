@@ -486,7 +486,7 @@ final class JyutpingInputController: IMKInputController, Sendable {
                                         let text2mark: String = {
                                                 guard (suggestions.first?.isCantonese ?? false) else { return joinedBufferTexts() }
                                                 let isPeculiar: Bool = bufferEvents.contains(where: { $0.isCapitalized || $0.key.isSyllableLetter.negative })
-                                                guard isPeculiar.negative else { return bufferEvents.previewMarkNormalized() }
+                                                guard isPeculiar.negative else { return bufferEvents.normalizedPreviewMark() }
                                                 guard let firstCandidate = suggestions.first else { return joinedBufferTexts() }
                                                 guard firstCandidate.lexicon.inputCount != keys.count else { return firstCandidate.lexicon.mark }
                                                 guard let bestScheme = segmentation.first else { return joinedBufferTexts() }
