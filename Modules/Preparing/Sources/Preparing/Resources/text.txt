@@ -1,6 +1,5 @@
 abc	ABC
 abcd	ABCD
-ac	AC
 acer	Acer
 activitykit	ActivityKit
 adobe	Adobe
@@ -14,8 +13,8 @@ airpods	AirPods
 airpodsmax	AirPods Max
 airpodspro	AirPods Pro
 airtag	AirTag
-am	am
 am	a.m.
+am	am
 amazon	Amazon
 amd	AMD
 amoled	AMOLED
@@ -28,7 +27,6 @@ anyappleos	anyAppleOS
 api	API
 apk	APK
 appkit	AppKit
-appl	Apple
 apple	Apple
 appletv	Apple TV
 appstore	App Store
@@ -36,7 +34,6 @@ arkts	ArkTS
 arkui	ArkUI
 ascii	ASCII
 asus	ASUS
-audi	Audi
 audioos	audioOS
 authenticator	Authenticator
 avif	AVIF
@@ -71,8 +68,6 @@ casio	Casio
 cdma	CDMA
 cdn	CDN
 chat	chat
-chatg	ChatGPT
-chatgp	ChatGPT
 chatgpt	ChatGPT
 chatgpt	chatgpt.com
 chevrolet	Chevrolet
@@ -104,7 +99,6 @@ cuda	CUDA
 curl	cURL
 curl	curl
 dart	Dart
-dc	DC
 ddr	DDR
 debian	Debian
 deepl	DeepL
@@ -161,8 +155,6 @@ fsr	FSR
 fujifilm	Fujifilm
 gboard	Gboard
 gdp	GDP
-gemi	Gemini
-gemin	Gemini
 gemini	Gemini
 git	Git
 githu	GitHub
@@ -175,8 +167,6 @@ gnu	GNU
 gnupg	GnuPG
 goldengate	Golden Gate
 goodnotes	Goodnotes
-goog	Google
-googl	Google
 google	Google
 google	google.com
 googledrive	Google Drive
@@ -212,7 +202,6 @@ homekit	HomeKit
 homepod	HomePod
 homepodmini	HomePod mini
 honda	Honda
-hp	HP
 html	HTML
 huawei	Huawei
 huggingface	Hugging Face
@@ -229,9 +218,6 @@ imacpro	iMac Pro
 imax	IMAX
 imessage	iMessage
 inputmethodkit	InputMethodKit
-instag	Instagram
-instagr	Instagram
-instagra	Instagram
 instagram	Instagram
 intel	Intel
 inter	Inter
@@ -276,7 +262,6 @@ lamborghini	Lamborghini
 latex	LaTeX
 lcd	LCD
 lenovo	Lenovo
-lg	LG
 lineageos	LineageOS
 linkedin	LinkedIn
 linux	Linux
@@ -327,8 +312,6 @@ microsof	Microsoft
 microsoft	Microsoft
 miniled	miniLED
 misans	MiSans
-miui	MIUI
-mlb	MLB
 monterey	Monterey
 musickit	MusicKit
 myos	MyOS
@@ -338,7 +321,6 @@ nba	NBA
 netbsd	NetBSD
 netflix	Netflix
 nfc	NFC
-nfl	NFL
 nikon	Nikon
 nissan	Nissan
 nokia	Nokia
@@ -397,8 +379,8 @@ pinterest	Pinterest
 pixelos	PixelOS
 pkg	pkg
 playstore	Play Store
-pm	pm
 pm	p.m.
+pm	pm
 png	PNG
 porsche	Porsche
 postgresql	PostgreSQL
@@ -473,15 +455,10 @@ studio	Studio
 surface	Surface
 surfacepro	Surface Pro
 svg	SVG
-swif	Swift
 swift	Swift
-swiftu	SwiftUI
 swiftui	SwiftUI
 tahoe	Tahoe
 taiwan	Taiwan
-teleg	Telegram
-telegr	Telegram
-telegra	Telegram
 telegram	Telegram
 tesla	Tesla
 testflight	TestFlight
@@ -587,7 +564,7 @@ july	July
 august	August
 september	September
 october	October
-movember	November
+november	November
 december	December
 dimsum	Dim Sum
 yumcha	Yum Cha
@@ -621,6 +598,7 @@ shadowrocket	Shadowrocket
 xray	Xray
 clash	Clash
 clashx	ClashX
+adhd	ADHD
 agent	agent
 agents	agents
 auth	auth
@@ -640,6 +618,7 @@ mamba	mamba
 momo	momo
 ootd	ootd
 pinkman	Pinkman
+ptsd	PTSD
 qwerty	qwerty
 refactor	refactor
 saul	Saul
@@ -877,6 +856,7 @@ arkansas	Arkansas
 california	California
 colorado	Colorado
 connecticut	Connecticut
+dc	DC
 delaware	Delaware
 florida	Florida
 hawaii	Hawaii
@@ -970,6 +950,8 @@ and	and
 and	&
 atm	ATM
 atm	🏧
+back	back
+back	🔙
 cool	cool
 cool	🆒
 dna	DNA
@@ -984,10 +966,10 @@ new	🆕
 ok	OK
 ok	👌
 ok	🆗
+soon	soon
+soon	🔜
 sos	SOS
 sos	🆘
-up	up
-up	🆙
 wlan	WLAN
 wifi	🛜
 wlan	🛜
@@ -1440,6 +1422,7 @@ time	time
 they	they
 site	site
 he	he
+up	up
 what	what
 which	which
 their	their
@@ -1480,7 +1463,6 @@ service	service
 than	than
 find	find
 date	date
-back	back
 top	top
 people	people
 had	had
@@ -1806,7 +1788,6 @@ gallery	gallery
 table	table
 register	register
 however	however
-november	november
 market	market
 library	library
 really	really
@@ -1836,7 +1817,6 @@ medical	medical
 test	test
 friend	friend
 come	come
-dec	dec
 server	server
 pc	PC
 study	study
@@ -1844,7 +1824,6 @@ application	application
 cart	cart
 staff	staff
 articles	articles
-san	san
 feedback	feedback
 again	again
 play	play
@@ -2333,7 +2312,6 @@ build	build
 screen	screen
 exchange	exchange
 types	types
-soon	soon
 sponsored	sponsored
 lines	lines
 electronic	electronic
@@ -4497,6 +4475,7 @@ guard	guard
 properly	properly
 orleans	orleans
 saving	saving
+nfl	nfl
 remaining	remaining
 empire	empire
 resume	resume
@@ -6441,7 +6420,6 @@ paintings	paintings
 walked	walked
 arising	arising
 bracelet	bracelet
-ins	ins
 eggs	eggs
 juvenile	juvenile
 injection	injection
@@ -6493,6 +6471,7 @@ contests	contests
 flu	flu
 translate	translate
 announces	announces
+mlb	mlb
 costume	costume
 tagged	tagged
 berkeley	berkeley
@@ -7645,6 +7624,7 @@ inline	inline
 executives	executives
 enquiries	enquiries
 washing	washing
+audi	audi
 staffing	staffing
 cognitive	cognitive
 exploring	exploring
@@ -8257,7 +8237,6 @@ reconstruction	reconstruction
 subsidiary	subsidiary
 strengths	strengths
 clarity	clarity
-rugs	rugs
 encouraging	encouraging
 furnished	furnished
 settled	settled
@@ -8554,7 +8533,6 @@ adapted	adapted
 barely	barely
 wherever	wherever
 estates	estates
-rug	rug
 democrat	democrat
 borough	borough
 maintains	maintains
@@ -15043,7 +15021,6 @@ policemen	policemen
 prominence	prominence
 prophets	prophets
 prosecute	prosecute
-ptsd	ptsd
 quartet	quartet
 radically	radically
 raping	raping

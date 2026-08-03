@@ -59,9 +59,9 @@ struct ConverterTests {
                 let ideal = Lexicon(text: "您好", romanization: "nei5 hou2", input: "neihou", number: -1)
                 let notIdeal = Lexicon(text: "你好呀", romanization: "nei5 hou2 aa3", input: "neihouaa", number: -2)
                 let defined = Lexicon(input: "neihou", text: "Hello")
-                let mark = Lexicon(input: "neihou", text: "NEI HOU")
+                let text = Lexicon(input: "neihou", text: "NEI HOU")
                 let symbol = Lexicon(symbol: "👋", cantonese: "你", romanization: "nei5", input: "nei", isEmoji: true)
-                let candidates = Converter.dispatch(memory: [ideal, notIdeal], defined: [defined], marks: [mark], symbols: [symbol], queried: queried, commentForm: .full, charset: .preset)
+                let candidates = Converter.dispatch(memory: [ideal, notIdeal], defined: [defined], texts: [text], symbols: [symbol], queried: queried, commentForm: .full, charset: .preset)
 
                 #expect(candidates.first?.text == "您好")
                 #expect(candidates.contains(where: { $0.text == "你好" }) == false)
@@ -74,7 +74,7 @@ struct ConverterTests {
                 let longer = Lexicon(text: "長詞", romanization: "coeng4 ci4", input: "long", number: 2)
                 let shorter = Lexicon(text: "短", romanization: "dyun2", input: "s", number: 1)
                 let symbol = Lexicon(symbol: "💭", cantonese: "記憶", romanization: "gei3 jik1", input: "g", isEmoji: true)
-                let candidates = Converter.ambiguouslyDispatch(memory: [memory], defined: [], marks: [], symbols: [symbol], queried: [shorter, longer], commentForm: .nothing, charset: .preset)
+                let candidates = Converter.ambiguouslyDispatch(memory: [memory], defined: [], texts: [], symbols: [symbol], queried: [shorter, longer], commentForm: .nothing, charset: .preset)
 
                 #expect(candidates.first?.text == "記憶")
                 #expect(candidates.firstIndex(where: { $0.text == "💭" }) == 1)

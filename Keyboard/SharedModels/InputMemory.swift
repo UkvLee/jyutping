@@ -379,20 +379,24 @@ struct InputMemory {
                 }
                 let inputLength = keys.count
                 let idealSchemes = segmentation.filter({ $0.length == inputLength })
-                let queried = query(inputLength: inputLength, segmentation: segmentation, idealSchemes: idealSchemes, statement: spellStatement)
+                let queried = query(inputLength: inputLength, segmentation: segmentation, idealSchemes: idealSchemes, deepSearch: deepSearch, statement: spellStatement)
+                let anchorsMatched = anchorsMatch(keys: keys, limit: (queried.isEmpty ? 20 : 5), statement: anchorsStatement)
+                        .regularSorted(isOrdered: true)
+                        .map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -1) })
+                guard deepSearch else {
+                        let fullMatched = queried.regularSorted().map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -1) })
+                        return fullMatched + anchorsMatched
+                }
                 let idealQueried = queried.filter({ $0.inputCount >= inputLength })
                         .regularSorted()
                         .map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -1) })
                 let notIdealQueried = queried.filter({ $0.inputCount < inputLength })
                         .peculiarSorted()
                         .map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -2) })
-                let anchorsMatched = anchorsMatch(keys: keys, limit: (queried.isEmpty ? 20 : 5), statement: anchorsStatement)
-                        .regularSorted(isOrdered: true)
-                        .map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -1) })
                 guard idealQueried.isEmpty && anchorsMatched.isEmpty else {
                         return idealQueried + anchorsMatched + notIdealQueried
                 }
-                guard deepSearch && (inputLength > 2 && inputLength < 25) else { return notIdealQueried }
+                guard inputLength > 2 && inputLength < 25 else { return notIdealQueried }
                 let shouldPartiallyMatch: Bool = idealSchemes.isEmpty || (keys.last == VirtualInputKey.letterM) || (keys.first == VirtualInputKey.letterM)
                 guard shouldPartiallyMatch else { return notIdealQueried }
                 let text = keys.map(\.text).joined()
@@ -447,7 +451,11 @@ struct InputMemory {
                         .map({ Lexicon(text: $0.word, romanization: $0.romanization, input: text, mark: $0.mark, number: -1) })
                 return partialMatched + notIdealQueried
         }
-        private static func query(inputLength: Int,segmentation: Segmentation, idealSchemes: [Scheme], statement: OpaquePointer?) -> [InternalLexicon] {
+        private static func query(inputLength: Int,segmentation: Segmentation, idealSchemes: [Scheme], deepSearch: Bool, statement: OpaquePointer?) -> [InternalLexicon] {
+                guard deepSearch else {
+                        guard idealSchemes.isNotEmpty else { return [] }
+                        return idealSchemes.flatMap({ perform(scheme: $0, limit: 10, statement: statement) })
+                }
                 if idealSchemes.isEmpty {
                         return segmentation.flatMap({ perform(scheme: $0, statement: statement) })
                 } else {

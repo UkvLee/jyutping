@@ -102,7 +102,7 @@ The main dispatch API is:
 let candidates = Converter.dispatch(
         memory: learnedLexicons,
         defined: userDefinedLexicons,
-        marks: textMarks,
+        texts: plainTexts,
         symbols: symbols,
         queried: engineLexicons,
         commentForm: .full,
@@ -138,7 +138,7 @@ The reverse-lookup results are ordinary `Lexicon` values and can be transformed 
 
 The database-backed supplementary APIs include:
 
-- `Engine.searchTextMarks(for:)` and `Engine.queryTextMarks(for:)`
+- `Engine.searchPlainTexts(for:)` and `Engine.queryPlainTexts(for:)`
 - `Engine.searchSymbols(for:segmentation:)` and `Engine.nineKeySearchSymbols(combos:segmentation:)`
 - `Engine.fetchEmojiSequence(category:)`
 - `Engine.fetchDefaultFrequentEmojis()`

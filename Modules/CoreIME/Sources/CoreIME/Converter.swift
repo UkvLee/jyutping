@@ -7,14 +7,14 @@ extension Converter {
         /// Merge and normalize multiple candidate sources into a single list.
         /// - Parameters:
         ///   - memory: Candidates from InputMemory — all Cantonese.
-        ///   - defined: User-defined candidates from System Text Replacements — all plain text.
-        ///   - marks: TextMark candidates suggested by the Engine — all plain text.
+        ///   - defined: User-defined plain text candidates from System Text Replacements.
+        ///   - texts: Plain text candidates suggested by the Engine.
         ///   - symbols: Emoji / symbol candidates suggested by the Engine.
         ///   - queried: Candidates suggested by the Engine — all Cantonese.
         ///   - commentForm: Romanization Form. Full, tone-free, or none.
         ///   - charset: The Chinese character set to use (e.g., Traditional or Simplified).
         /// - Returns: A merged array of unique, converted candidates.
-        public static func dispatch(memory: [Lexicon], defined: [Lexicon], marks: [Lexicon], symbols: [Lexicon], queried: [Lexicon], commentForm: RomanizationForm, charset: CharacterStandard) -> [Candidate] {
+        public static func dispatch(memory: [Lexicon], defined: [Lexicon], texts: [Lexicon], symbols: [Lexicon], queried: [Lexicon], commentForm: RomanizationForm, charset: CharacterStandard) -> [Candidate] {
                 let idealMemory = memory.filter(\.isIdealInputMemory)
                 let notIdealMemory = memory.filter(\.isNotIdealInputMemory)
                 var chained: [Lexicon] = idealMemory.isEmpty ? queried : queried.filter(\.isCompound.negative)
@@ -25,7 +25,7 @@ extension Converter {
                                 chained.append(entry)
                         }
                 }
-                chained = Array(idealMemory.prefix(3)) + defined + marks + idealMemory + chained
+                chained = Array(idealMemory.prefix(3)) + defined + texts + idealMemory + chained
                 for symbol in symbols.reversed() {
                         if let index = chained.firstIndex(where: { $0.isCantonese && $0.text == symbol.attached && $0.romanization == symbol.romanization }) {
                                 chained.insert(symbol, at: index + 1)
@@ -33,8 +33,8 @@ extension Converter {
                 }
                 return chained.transformed(commentForm: commentForm, charset: charset).distinct()
         }
-        public static func ambiguouslyDispatch(memory: [Lexicon], defined: [Lexicon], marks: [Lexicon], symbols: [Lexicon], queried: [Lexicon], commentForm: RomanizationForm, charset: CharacterStandard) -> [Candidate] {
-                var chained: [Lexicon] = Array(memory.prefix(2)) + defined + memory + marks + queried.sorted()
+        public static func ambiguouslyDispatch(memory: [Lexicon], defined: [Lexicon], texts: [Lexicon], symbols: [Lexicon], queried: [Lexicon], commentForm: RomanizationForm, charset: CharacterStandard) -> [Candidate] {
+                var chained: [Lexicon] = Array(memory.prefix(3)) + defined + texts + memory + queried.sorted()
                 for symbol in symbols.reversed() {
                         if let index = chained.firstIndex(where: { $0.isCantonese && $0.text == symbol.attached && $0.romanization == symbol.romanization }) {
                                 chained.insert(symbol, at: index + 1)

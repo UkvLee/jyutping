@@ -79,7 +79,7 @@ private extension AppDataPreparer {
 }
 private extension AppDataPreparer {
         static func createJyutpingTable() async {
-                let createTable: String = "CREATE TABLE jyutping_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, UNIQUE (word, romanization));"
+                let createTable: String = "CREATE TABLE jyutping_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL);"
                 var createStatement: OpaquePointer? = nil
                 guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
                 guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
