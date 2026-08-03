@@ -90,11 +90,9 @@ public struct NineKeyEngine {
                 if containsIrregular {
                         let serialStatement = prepareSerialStatement()
                         defer { sqlite3_finalize(serialStatement) }
-                        let keys = scheme.flatMap(\.serialOrigin)
-                        return serialMatch(keys: keys, complexity: scheme.complexity, limit: limit, statement: serialStatement)
+                        return serialMatch(keys: scheme.serialOriginKeys, complexity: scheme.complexity, limit: limit, statement: serialStatement)
                 } else {
-                        let combos = scheme.flatMap(\.origin)
-                        return spellMatch(combos: combos, complexity: scheme.complexity, limit: limit, statement: statement)
+                        return spellMatch(combos: scheme.originCombos, complexity: scheme.complexity, limit: limit, statement: statement)
                 }
         }
 }

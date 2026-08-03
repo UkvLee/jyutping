@@ -19,8 +19,13 @@ struct MemoryLexicon: Hashable {
         /// Element/character count of the `word`
         let charCount: Int
 
-        /// Complexity. Letter count (length) of the letter-only romanization (no tones & no spaces)
-        let complex: Int
+        /// Length of the letter-only romanization (no tones & no spaces)
+        let letterCount: Int
+
+        /// Conjoined digit of letter-only-syllable (phone) lengths.
+        ///
+        /// For example: phone lengths of romanization “gwong2 dung1 dou6” are `[5, 4, 3]`, which makes the `complexity` become `543`
+        let complexity: Int
 
         /// Conjoined code of initials/anchors
         let anchors: Int
@@ -29,16 +34,19 @@ struct MemoryLexicon: Hashable {
         let spell: Int
 
         init(word: String, romanization: String, frequency: Int64 = 1, latest: Int64? = nil) {
-                let anchorText = romanization.split(separator: Character.space).compactMap(\.first)
-                let letterText = romanization.filter(\.isLowercaseBasicLatinLetter)
+                let phones = romanization.filter(\.isBasicDigit.negative).split(separator: Character.space)
+                let complexity = phones.map(\.count).decimalOverflowed()
+                let anchorText = phones.compactMap(\.first)
+                let letters = romanization.filter(\.isLowercaseBasicLatinLetter)
                 self.word = word
                 self.romanization = romanization
                 self.frequency = frequency
                 self.latest = latest ?? Int64(Date.now.timeIntervalSince1970 * 1000)
                 self.charCount = word.count
-                self.complex = letterText.count
+                self.letterCount = letters.count
+                self.complexity = complexity
                 self.anchors = anchorText.serialCode
-                self.spell = letterText.serialCode
+                self.spell = letters.serialCode
         }
 
         // Equatable

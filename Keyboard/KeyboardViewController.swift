@@ -691,10 +691,10 @@ final class KeyboardViewController: UIInputViewController, ObservableObject {
                 }()
                 suggestionTask = Task.detached(priority: .high) { [weak self] in
                         guard let self else { return }
-                        async let memory: [Lexicon] = isInputMemoryOn ? InputMemory.nineKeySearch(combos: combos) : []
                         async let defined: [Lexicon] = queryDefinedCandidates(for: combos)
                         async let textMarks: [Lexicon] = isEnglishSuggestionsOn ? Engine.queryTextMarks(for: combos) : []
                         let segmentation = NineKeySegmenter.segment(combos)
+                        async let memory: [Lexicon] = isInputMemoryOn ? InputMemory.nineKeySearch(combos: combos, segmentation: segmentation) : []
                         async let symbols: [Lexicon] = isEmojiSuggestionsOn ? Engine.nineKeySearchSymbols(combos: combos, segmentation: segmentation) : []
                         async let queried: [Lexicon] = NineKeyEngine.suggest(combos: combos, segmentation: segmentation)
                         let suggestions: [Candidate] = await Converter.dispatch(memory: memory, defined: defined, marks: textMarks, symbols: symbols, queried: queried, commentForm: commentForm, charset: characterStandard)

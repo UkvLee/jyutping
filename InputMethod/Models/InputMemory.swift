@@ -49,7 +49,7 @@ struct InputMemory {
         private static func migrate(table: String, lower: Int, upper: Int) {
                 let fetchedEntries = fetchLegacyEntries(table: table, lower: lower, upper: upper)
                 guard fetchedEntries.isNotEmpty else { return }
-                let command: String = "INSERT OR IGNORE INTO table2608 (word, romanization, frequency, latest, char_count, complex, anchors, spell) VALUES (?, ?, ?, ?, ?, ?, ?, ?);"
+                let command: String = "INSERT OR IGNORE INTO memory2608 (word, romanization, frequency, latest, char_count, letter_count, complexity, anchors, spell) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return }
@@ -61,9 +61,10 @@ struct InputMemory {
                         sqlite3_bind_int64(statement, 3, entry.frequency)
                         sqlite3_bind_int64(statement, 4, entry.latest)
                         sqlite3_bind_int64(statement, 5, entry.charCount.toInt64())
-                        sqlite3_bind_int64(statement, 6, entry.complex.toInt64())
-                        sqlite3_bind_int64(statement, 7, entry.anchors.toInt64())
-                        sqlite3_bind_int64(statement, 8, entry.spell.toInt64())
+                        sqlite3_bind_int64(statement, 6, entry.letterCount.toInt64())
+                        sqlite3_bind_int64(statement, 7, entry.complexity.toInt64())
+                        sqlite3_bind_int64(statement, 8, entry.anchors.toInt64())
+                        sqlite3_bind_int64(statement, 9, entry.spell.toInt64())
                         sqlite3_step(statement)
                 })
                 sqlite3_exec(database, "COMMIT;", nil, nil, nil)
@@ -96,7 +97,7 @@ struct InputMemory {
         }
 
         private static let definedMigrationValue: Int = 2608
-        private static let kMigrationKey: String = "InputMemoryMigration2608"
+        private static let kMigrationKey: String = "Migration2608"
         private static var savedInputMemoryMigration: Int {
                 return UserDefaults.standard.integer(forKey: kMigrationKey)
         }
@@ -140,7 +141,7 @@ struct InputMemory {
                 }
         }
         private static func ensureTable() {
-                let command: String = "CREATE TABLE IF NOT EXISTS table2608 (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, frequency INTEGER NOT NULL, latest INTEGER NOT NULL, char_count INTEGER NOT NULL, complex INTEGER NOT NULL, anchors INTEGER NOT NULL, spell INTEGER NOT NULL, UNIQUE (word, romanization));"
+                let command: String = "CREATE TABLE IF NOT EXISTS memory2608 (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, frequency INTEGER NOT NULL, latest INTEGER NOT NULL, char_count INTEGER NOT NULL, letter_count INTEGER NOT NULL, complexity INTEGER NOT NULL, anchors INTEGER NOT NULL, spell INTEGER NOT NULL, UNIQUE (word, romanization));"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return }
@@ -155,9 +156,9 @@ struct InputMemory {
                 }
         }
         private static let indexCommands: [String] = [
-                "CREATE INDEX IF NOT EXISTS ix_frequency ON table2608 (frequency);",
-                "CREATE INDEX IF NOT EXISTS ix_anchors ON table2608 (anchors, char_count, frequency DESC);",
-                "CREATE INDEX IF NOT EXISTS ix_spell ON table2608 (spell, complex, frequency DESC);",
+                "CREATE INDEX IF NOT EXISTS ix2608_frequency ON memory2608 (frequency);",
+                "CREATE INDEX IF NOT EXISTS ix2608_anchors ON memory2608 (anchors, char_count, frequency DESC);",
+                "CREATE INDEX IF NOT EXISTS ix2608_spell ON memory2608 (spell, letter_count, complexity, frequency DESC);",
         ]
 
 
@@ -174,7 +175,7 @@ struct InputMemory {
                 }
         }
         private static func find(word: String, romanization: String) -> (id: Int64, frequency: Int64)? {
-                let command: String = "SELECT id, frequency FROM table2608 WHERE word = ? AND romanization = ? LIMIT 1;"
+                let command: String = "SELECT id, frequency FROM memory2608 WHERE word = ? AND romanization = ? LIMIT 1;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return nil }
@@ -187,7 +188,7 @@ struct InputMemory {
         }
         private static func update(id: Int64, frequency: Int64) {
                 let latest: Int64 = Int64(Date.now.timeIntervalSince1970 * 1000)
-                let command: String = "UPDATE table2608 SET frequency = ?, latest = ? WHERE id = ?;"
+                let command: String = "UPDATE memory2608 SET frequency = ?, latest = ? WHERE id = ?;"
                 var statement: OpaquePointer?
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return }
@@ -197,7 +198,7 @@ struct InputMemory {
                 guard sqlite3_step(statement) == SQLITE_DONE else { return }
         }
         private static func insert(entry: MemoryLexicon) {
-                let command: String = "INSERT INTO table2608 (word, romanization, frequency, latest, char_count, complex, anchors, spell) VALUES (?, ?, ?, ?, ?, ?, ?, ?);"
+                let command: String = "INSERT INTO memory2608 (word, romanization, frequency, latest, char_count, letter_count, complexity, anchors, spell) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return }
@@ -206,9 +207,10 @@ struct InputMemory {
                 sqlite3_bind_int64(statement, 3, entry.frequency)
                 sqlite3_bind_int64(statement, 4, entry.latest)
                 sqlite3_bind_int64(statement, 5, entry.charCount.toInt64())
-                sqlite3_bind_int64(statement, 6, entry.complex.toInt64())
-                sqlite3_bind_int64(statement, 7, entry.anchors.toInt64())
-                sqlite3_bind_int64(statement, 8, entry.spell.toInt64())
+                sqlite3_bind_int64(statement, 6, entry.letterCount.toInt64())
+                sqlite3_bind_int64(statement, 7, entry.complexity.toInt64())
+                sqlite3_bind_int64(statement, 8, entry.anchors.toInt64())
+                sqlite3_bind_int64(statement, 9, entry.spell.toInt64())
                 guard sqlite3_step(statement) == SQLITE_DONE else { return }
         }
 
@@ -216,7 +218,7 @@ struct InputMemory {
         static func forget(_ lexicon: Lexicon) {
                 guard isMigrating.negative else { return }
                 guard lexicon.isCantonese else { return }
-                let command: String = "DELETE FROM table2608 WHERE word = ? AND romanization = ?;"
+                let command: String = "DELETE FROM memory2608 WHERE word = ? AND romanization = ?;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return }
@@ -228,7 +230,7 @@ struct InputMemory {
         /// Clear Input Memory
         static func deleteAll() {
                 guard isMigrating.negative else { return }
-                let command: String = "DELETE FROM table2608;"
+                let command: String = "DELETE FROM memory2608;"
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return }
@@ -351,24 +353,24 @@ struct InputMemory {
                         sqlite3_finalize(spellStatement)
                 }
                 let inputLength = keys.count
-                let text = keys.map(\.text).joined()
-                let fullMatched = spellMatch(keys: keys, input: text, statement: spellStatement)
                 let idealSchemes = segmentation.filter({ $0.length == inputLength })
-                let idealQueried: [InternalLexicon] = idealSchemes.flatMap({ scheme -> [InternalLexicon] in
-                        return spellMatch(keys: scheme.originKeys, input: text, mark: scheme.mark, statement: spellStatement)
-                })
-                let queried = query(segmentation: segmentation, idealSchemes: idealSchemes, statement: spellStatement)
-                guard fullMatched.isEmpty && idealQueried.isEmpty else {
-                        return (fullMatched + idealQueried).regularSorted().map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -1) }) + queried
+                let queried = query(inputLength: inputLength, segmentation: segmentation, idealSchemes: idealSchemes, statement: spellStatement)
+                let idealQueried = queried.filter({ $0.inputCount >= inputLength })
+                        .regularSorted()
+                        .map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -1) })
+                let notIdealQueried = queried.filter({ $0.inputCount < inputLength })
+                        .peculiarSorted()
+                        .map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -2) })
+                let anchorsMatched = anchorsMatch(keys: keys, limit: (queried.isEmpty ? 20 : 5), statement: anchorsStatement)
+                        .regularSorted(isOrdered: true)
+                        .map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -1) })
+                guard idealQueried.isEmpty && anchorsMatched.isEmpty else {
+                        return idealQueried + anchorsMatched + notIdealQueried
                 }
-                let shortcutLimit: Int64 = (segmentation.first?.isEmpty ?? true) ? 100 : 5
-                let shortcuts = anchorsMatch(keys: keys, input: text, limit: shortcutLimit, statement: anchorsStatement)
-                guard shortcuts.isEmpty else {
-                        return shortcuts.regularSorted(isOrdered: true).map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -1) }) + queried
-                }
-                guard (inputLength > 2 && inputLength < 25) else { return queried }
+                guard (inputLength > 2 && inputLength < 25) else { return notIdealQueried }
                 let shouldPartiallyMatch: Bool = idealSchemes.isEmpty || (keys.last == VirtualInputKey.letterM) || (keys.first == VirtualInputKey.letterM)
-                guard shouldPartiallyMatch else { return queried }
+                guard shouldPartiallyMatch else { return notIdealQueried }
+                let text = keys.map(\.text).joined()
                 let prefixMatched: [InternalLexicon] = segmentation.flatMap({ scheme -> [InternalLexicon] in
                         guard scheme.isNotEmpty else { return [] }
                         let tail = keys.dropFirst(scheme.length)
@@ -418,27 +420,19 @@ struct InputMemory {
                         .peculiarSorted()
                         .prefix(5)
                         .map({ Lexicon(text: $0.word, romanization: $0.romanization, input: text, mark: $0.mark, number: -1) })
-                return partialMatched + queried
+                return partialMatched + notIdealQueried
         }
-        private static func query(segmentation: Segmentation, idealSchemes: [Scheme], statement: OpaquePointer?) -> [Lexicon] {
-                guard segmentation.isNotEmpty else { return [] }
+        private static func query(inputLength: Int, segmentation: Segmentation, idealSchemes: [Scheme], statement: OpaquePointer?) -> [InternalLexicon] {
                 if idealSchemes.isEmpty {
                         return segmentation.flatMap({ perform(scheme: $0, statement: statement) })
-                                .peculiarSorted()
-                                .prefix(6)
-                                .map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -2) })
                 } else {
                         return idealSchemes.flatMap({ scheme -> [InternalLexicon] in
-                                guard scheme.count > 1 else { return [] }
-                                return (1..<scheme.count).reversed().map({ scheme.prefix($0) }).flatMap({ perform(scheme: $0, statement: statement) })
+                                return (1...scheme.count).reversed().flatMap({ perform(scheme: scheme.prefix($0), limit: ($0 == scheme.count) ? 20 : 5, statement: statement) })
                         })
-                        .peculiarSorted()
-                        .prefix(6)
-                        .map({ Lexicon(text: $0.word, romanization: $0.romanization, input: $0.input, mark: $0.mark, number: -2) })
                 }
         }
-        private static func perform<T: RandomAccessCollection<Syllable>>(scheme: T, statement: OpaquePointer?) -> [InternalLexicon] {
-                return spellMatch(keys: scheme.originKeys, input: scheme.aliasText, mark: scheme.mark, limit: 5, statement: statement)
+        private static func perform<T: RandomAccessCollection<Syllable>>(scheme: T, limit: Int64 = 5, statement: OpaquePointer?) -> [InternalLexicon] {
+                return spellMatch(keys: scheme.originKeys, complexity: scheme.complexity, input: scheme.aliasText, mark: scheme.mark, limit: limit, statement: statement)
         }
 
         private static func anchorsMatch<T: RandomAccessCollection<VirtualInputKey>>(keys: T, input: String? = nil, limit: Int64? = nil, statement: OpaquePointer?) -> [InternalLexicon] {
@@ -461,14 +455,16 @@ struct InputMemory {
                 }
                 return items
         }
-        private static func spellMatch<T: RandomAccessCollection<VirtualInputKey>>(keys: T, input: String? = nil, mark: String? = nil, limit: Int64? = nil, statement: OpaquePointer?) -> [InternalLexicon] {
+        private static func spellMatch<T: RandomAccessCollection<VirtualInputKey>>(keys: T, complexity: Int, input: String? = nil, mark: String? = nil, limit: Int64? = nil, statement: OpaquePointer?) -> [InternalLexicon] {
                 sqlite3_reset(statement)
                 let spell: Int64 = keys.conjoinedCode.toInt64()
-                let complex: Int64 = keys.count.toInt64()
+                let letterCount: Int64 = keys.count.toInt64()
+                let complexity: Int64 = complexity.toInt64()
                 let limit: Int64 = limit ?? 100
                 sqlite3_bind_int64(statement, 1, spell)
-                sqlite3_bind_int64(statement, 2, complex)
-                sqlite3_bind_int64(statement, 3, limit)
+                sqlite3_bind_int64(statement, 2, letterCount)
+                sqlite3_bind_int64(statement, 3, complexity)
+                sqlite3_bind_int64(statement, 4, limit)
                 let input: String = input ?? keys.map(\.text).joined()
                 var items: [InternalLexicon] = []
                 while sqlite3_step(statement) == SQLITE_ROW {
@@ -484,13 +480,13 @@ struct InputMemory {
                 return items
         }
 
-        private static let anchorsQuery: String = "SELECT word, romanization, frequency, latest FROM table2608 WHERE anchors = ? AND char_count = ? ORDER BY frequency DESC LIMIT ?;"
+        private static let anchorsQuery: String = "SELECT word, romanization, frequency, latest FROM memory2608 WHERE anchors = ? AND char_count = ? ORDER BY frequency DESC LIMIT ?;"
         private static func prepareAnchorsStatement() -> OpaquePointer? {
                 var statement: OpaquePointer?
                 guard sqlite3_prepare_v2(database, anchorsQuery, -1, &statement, nil) == SQLITE_OK else { return nil }
                 return statement
         }
-        private static let spellQuery: String = "SELECT word, romanization, frequency, latest FROM table2608 WHERE spell = ? AND complex = ? ORDER BY frequency DESC LIMIT ?;"
+        private static let spellQuery: String = "SELECT word, romanization, frequency, latest FROM memory2608 WHERE spell = ? AND letter_count = ? AND complexity = ? ORDER BY frequency DESC LIMIT ?;"
         private static func prepareSpellStatement() -> OpaquePointer? {
                 var statement: OpaquePointer?
                 guard sqlite3_prepare_v2(database, spellQuery, -1, &statement, nil) == SQLITE_OK else { return nil }

@@ -44,9 +44,6 @@ public struct NineKeySyllable: Hashable, Comparable, Sendable {
         let serialAlias: Array<VirtualInputKey>
         let serialOrigin: Array<VirtualInputKey>
 
-        var isRegular: Bool { aliasCode == originCode }
-        var isIrregular: Bool { aliasCode != originCode }
-
         public static func ==(lhs: NineKeySyllable, rhs: NineKeySyllable) -> Bool {
                 return lhs.aliasCode == rhs.aliasCode && lhs.originCode == rhs.originCode
         }
@@ -60,6 +57,11 @@ public struct NineKeySyllable: Hashable, Comparable, Sendable {
                 let originQuotient = lhs.originCode / rhs.originCode
                 return originQuotient > 0
         }
+}
+
+extension NineKeySyllable {
+        public var isRegular: Bool { aliasCode == originCode }
+        public var isIrregular: Bool { aliasCode != originCode }
 }
 
 public typealias NineKeyScheme = Array<NineKeySyllable>
@@ -87,6 +89,11 @@ extension RandomAccessCollection where Element == NineKeySyllable {
         /// Origin combos conjoined as a sequence
         public var originCombos: [Combo] {
                 return flatMap(\.origin)
+        }
+
+        /// Serial origin keys conjoined as a sequence
+        public var serialOriginKeys: [VirtualInputKey] {
+                return flatMap(\.serialOrigin)
         }
 }
 
