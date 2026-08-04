@@ -31,11 +31,17 @@ jobs:
       - name: Swift Run Preparing
         run: swift run -c release
         working-directory: ./Modules/Preparing
+      - name: Verify Prepared Databases
+        run: |
+          test -s Modules/CoreIME/Sources/CoreIMEMobileData/Resources/mobile.sqlite3
+          test -s Modules/CoreIME/Sources/CoreIMEDesktopData/Resources/desktop.sqlite3
+          test -s Modules/AppDataSource/Sources/AppDataSource/Resources/app.sqlite3
       - uses: actions/upload-artifact@v4
         with:
           name: prepared-databases
           path: |
-            Modules/CoreIME/Sources/CoreIME/Resources/ime.sqlite3
+            Modules/CoreIME/Sources/CoreIMEMobileData/Resources/mobile.sqlite3
+            Modules/CoreIME/Sources/CoreIMEDesktopData/Resources/desktop.sqlite3
             Modules/AppDataSource/Sources/AppDataSource/Resources/app.sqlite3
           if-no-files-found: error
           retention-days: 1
