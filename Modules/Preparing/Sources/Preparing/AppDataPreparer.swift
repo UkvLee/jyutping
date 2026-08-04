@@ -9,14 +9,14 @@ struct AppDataPreparer {
         }()
         static func prepare() async {
                 await withTaskGroup(of: Void.self) { group in
-                        group.addTask { await createJyutpingTable() }
-                        group.addTask { await createCollocationTable() }
-                        group.addTask { await createDictionaryTable() }
-                        group.addTask { await createYingWaaTable() }
-                        group.addTask { await createChoHokTable() }
-                        group.addTask { await createFanWanTable() }
-                        group.addTask { await createGwongWanTable() }
-                        group.addTask { await createDefinitionTable() }
+                        group.addTask { await prepareJyutpingTable() }
+                        group.addTask { await prepareCollocationTable() }
+                        group.addTask { await prepareDictionaryTable() }
+                        group.addTask { await prepareYingWaaTable() }
+                        group.addTask { await prepareChoHokTable() }
+                        group.addTask { await prepareFanWanTable() }
+                        group.addTask { await prepareGwongWanTable() }
+                        group.addTask { await prepareDefinitionTable() }
                         await group.waitForAll()
                 }
                 createIndexes()
@@ -78,41 +78,41 @@ private extension AppDataPreparer {
         }
 }
 private extension AppDataPreparer {
-        static func createJyutpingTable() async {
-                let createTable: String = "CREATE TABLE jyutping_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        static func prepareJyutpingTable() async {
+                let command: String = "CREATE TABLE jyutping_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "jyutping_table"
+                let columns: String = "(word, romanization)"
                 guard let url = Bundle.module.url(forResource: "jyutping", withExtension: "txt") else { return }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 let sourceLines: [String] = content.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
-                let entries = sourceLines.compactMap { sourceLine -> String? in
+                let valueBlocks = sourceLines.compactMap { sourceLine -> String? in
                         let parts = sourceLine.split(separator: "\t")
                         guard parts.count == 2 else { return nil }
                         let word = parts[0]
                         let romanization = parts[1]
                         return "('\(word)', '\(romanization)')"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insert: String = "INSERT INTO jyutping_table (word, romanization) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
 }
 private extension AppDataPreparer {
-        static func createCollocationTable() async {
-                let createTable: String = "CREATE TABLE collocation_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, collocation TEXT NOT NULL, UNIQUE (word, romanization));"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        static func prepareCollocationTable() async {
+                let command: String = "CREATE TABLE collocation_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, collocation TEXT NOT NULL, UNIQUE (word, romanization));"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "collocation_table"
+                let columns: String = "(word, romanization, collocation)"
                 guard let url = Bundle.module.url(forResource: "collocation", withExtension: "txt") else { return }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 let sourceLines: [String] = content.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
-                let entries = sourceLines.compactMap { sourceLine -> String? in
+                let valueBlocks = sourceLines.compactMap { sourceLine -> String? in
                         let parts = sourceLine.split(separator: "\t")
                         guard parts.count == 3 else { return nil }
                         let word = parts[0]
@@ -120,37 +120,29 @@ private extension AppDataPreparer {
                         let collocation = parts[2]
                         return "('\(word)', '\(romanization)', '\(collocation)')"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insert: String = "INSERT INTO collocation_table (word, romanization, collocation) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
 }
 private extension AppDataPreparer {
-        static func createDictionaryTable() async {
-                let createTable: String = "CREATE TABLE dictionary_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, description TEXT NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        static func prepareDictionaryTable() async {
+                let command: String = "CREATE TABLE dictionary_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, description TEXT NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "dictionary_table"
+                let columns: String = "(word, romanization, description)"
                 guard let url = Bundle.module.url(forResource: "wordshk", withExtension: "txt") else { return }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 let sourceLines: [String] = content.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
-                func insert(values: String) {
-                        let insert: String = "INSERT INTO dictionary_table (word, romanization, description) VALUES \(values);"
-                        var insertStatement: OpaquePointer? = nil
-                        defer { sqlite3_finalize(insertStatement) }
-                        guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                        guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
-                }
-                let range: Range<Int> = 0..<2000
-                let distance: Int = sourceLines.count / 2000
-                for number in range {
-                        let bound: Int = (number == 1999) ? sourceLines.count : ((number + 1) * distance)
-                        let part = sourceLines[(number * distance)..<bound]
-                        let entries = part.compactMap { sourceLine -> String? in
+                let steps: Range<Int> = 0..<2000
+                let stepSize: Int = sourceLines.count / 2000
+                for step in steps {
+                        let lower: Int = step * stepSize
+                        let upper: Int = (step == 1999) ? sourceLines.count : ((step + 1) * stepSize)
+                        let part = sourceLines[lower..<upper]
+                        let valueBlocks = part.compactMap { sourceLine -> String? in
                                 let parts = sourceLine.split(separator: "\t")
                                 guard parts.count == 3 else { return nil }
                                 let word = parts[0]
@@ -158,22 +150,24 @@ private extension AppDataPreparer {
                                 let description = parts[2]
                                 return "('\(word)', '\(romanization)', '\(description)')"
                         }
-                        let values: String = entries.joined(separator: ", ")
-                        insert(values: values)
+                        let values: String = valueBlocks.joined(separator: ", ")
+                        insert(tableName: tableName, columns: columns, values: values)
                 }
         }
 }
 private extension AppDataPreparer {
-        static func createYingWaaTable() async {
-                let createTable: String = "CREATE TABLE yingwaa_table(code INTEGER NOT NULL, word TEXT NOT NULL, romanization TEXT NOT NULL, pronunciation TEXT NOT NULL, note TEXT NOT NULL, interpretation TEXT NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { return }
-                guard let url = Bundle.module.url(forResource: "yingwaa", withExtension: "txt") else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        static func prepareYingWaaTable() async {
+                let command: String = "CREATE TABLE yingwaa_table(code INTEGER NOT NULL, word TEXT NOT NULL, romanization TEXT NOT NULL, pronunciation TEXT NOT NULL, note TEXT NOT NULL, interpretation TEXT NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "yingwaa_table"
+                let columns: String = "(code, word, romanization, pronunciation, note, interpretation)"
+                guard let url = Bundle.module.url(forResource: "yingwaa", withExtension: "txt") else { return }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 let sourceLines: [String] = content.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
-                let entries = sourceLines.compactMap { sourceLine -> String? in
+                let valueBlocks = sourceLines.compactMap { sourceLine -> String? in
                         let parts = sourceLine.split(separator: "\t")
                         guard parts.count == 5 else { return nil }
                         let word = parts[0]
@@ -184,23 +178,21 @@ private extension AppDataPreparer {
                         let interpretation = parts[4]
                         return "(\(code), '\(word)', '\(romanization)', '\(pronunciation)', '\(note)', '\(interpretation)')"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insert: String = "INSERT INTO yingwaa_table (code, word, romanization, pronunciation, note, interpretation) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
-        static func createChoHokTable() async {
-                let createTable: String = "CREATE TABLE chohok_table(code INTEGER NOT NULL, word TEXT NOT NULL, romanization TEXT NOT NULL, phone TEXT NOT NULL, tone TEXT NOT NULL, faancit TEXT NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        static func prepareChoHokTable() async {
+                let command: String = "CREATE TABLE chohok_table(code INTEGER NOT NULL, word TEXT NOT NULL, romanization TEXT NOT NULL, phone TEXT NOT NULL, tone TEXT NOT NULL, faancit TEXT NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "chohok_table"
+                let columns: String = "(code, word, romanization, phone, tone, faancit)"
                 guard let url = Bundle.module.url(forResource: "chohok", withExtension: "txt") else { return }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 let sourceLines: [String] = content.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
-                let entries = sourceLines.compactMap { sourceLine -> String? in
+                let valueBlocks = sourceLines.compactMap { sourceLine -> String? in
                         let parts = sourceLine.split(separator: "\t")
                         guard parts.count == 5 else { return nil }
                         let word = parts[0]
@@ -211,23 +203,21 @@ private extension AppDataPreparer {
                         let faancit = parts[4]
                         return "(\(code), '\(word)', '\(romanization)', '\(phone)', '\(tone)', '\(faancit)')"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insert: String = "INSERT INTO chohok_table (code, word, romanization, phone, tone, faancit) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
-        static func createFanWanTable() async {
-                let createTable: String = "CREATE TABLE fanwan_table(code INTEGER NOT NULL, word TEXT NOT NULL, romanization TEXT NOT NULL, initial TEXT NOT NULL, final TEXT NOT NULL, yamyeung TEXT NOT NULL, tone TEXT NOT NULL, rhyme TEXT NOT NULL, interpretation TEXT NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        static func prepareFanWanTable() async {
+                let command: String = "CREATE TABLE fanwan_table(code INTEGER NOT NULL, word TEXT NOT NULL, romanization TEXT NOT NULL, initial TEXT NOT NULL, final TEXT NOT NULL, yamyeung TEXT NOT NULL, tone TEXT NOT NULL, rhyme TEXT NOT NULL, interpretation TEXT NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "fanwan_table"
+                let columns: String = "(code, word, romanization, initial, final, yamyeung, tone, rhyme, interpretation)"
                 guard let url = Bundle.module.url(forResource: "fanwan", withExtension: "txt") else { return }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 let sourceLines: [String] = content.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
-                let entries = sourceLines.compactMap { sourceLine -> String? in
+                let valueBlocks = sourceLines.compactMap { sourceLine -> String? in
                         let parts = sourceLine.split(separator: "\t")
                         guard parts.count == 8 else { return nil }
                         let word = parts[0]
@@ -241,23 +231,21 @@ private extension AppDataPreparer {
                         let interpretation = parts[7]
                         return "(\(code), '\(word)', '\(romanization)', '\(initial)', '\(final)', '\(yamyeung)', '\(tone)', '\(rhyme)', '\(interpretation)')"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insert: String = "INSERT INTO fanwan_table (code, word, romanization, initial, final, yamyeung, tone, rhyme, interpretation) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
-        static func createGwongWanTable() async {
-                let createTable: String = "CREATE TABLE gwongwan_table(code INTEGER NOT NULL, word TEXT NOT NULL, rhyme TEXT NOT NULL, subrhyme TEXT NOT NULL, subrhymeserial INTEGER NOT NULL, subrhymenumber INTEGER NOT NULL, upper TEXT NOT NULL, lower TEXT NOT NULL, initial TEXT NOT NULL, rounding TEXT NOT NULL, division TEXT NOT NULL, rhymeclass TEXT NOT NULL, repeating TEXT NOT NULL, tone TEXT NOT NULL, interpretation TEXT NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        static func prepareGwongWanTable() async {
+                let command: String = "CREATE TABLE gwongwan_table(code INTEGER NOT NULL, word TEXT NOT NULL, rhyme TEXT NOT NULL, subrhyme TEXT NOT NULL, subrhymeserial INTEGER NOT NULL, subrhymenumber INTEGER NOT NULL, upper TEXT NOT NULL, lower TEXT NOT NULL, initial TEXT NOT NULL, rounding TEXT NOT NULL, division TEXT NOT NULL, rhymeclass TEXT NOT NULL, repeating TEXT NOT NULL, tone TEXT NOT NULL, interpretation TEXT NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "gwongwan_table"
+                let columns: String = "(code, word, rhyme, subrhyme, subrhymeserial, subrhymenumber, upper, lower, initial, rounding, division, rhymeclass, repeating, tone, interpretation)"
                 guard let url = Bundle.module.url(forResource: "gwongwan", withExtension: "txt") else { return }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 let sourceLines: [String] = content.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
-                let entries = sourceLines.compactMap { sourceLine -> String? in
+                let valueBlocks = sourceLines.compactMap { sourceLine -> String? in
                         let parts = sourceLine.split(separator: ",")
                         guard parts.count == 14 else { return nil }
                         let word = parts[0]
@@ -277,30 +265,38 @@ private extension AppDataPreparer {
                         let interpretation = parts[13]
                         return "(\(code), '\(word)', '\(rhyme)', '\(subrhyme)', \(subrhymeserial), \(subrhymenumber), '\(upper)', '\(lower)', '\(initial)', '\(rounding)', '\(division)', '\(rhymeclass)', '\(repeating)', '\(tone)', '\(interpretation)')"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insert: String = "INSERT INTO gwongwan_table (code, word, rhyme, subrhyme, subrhymeserial, subrhymenumber, upper, lower, initial, rounding, division, rhymeclass, repeating, tone, interpretation) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
-        private static func createDefinitionTable() async {
-                let createTable: String = "CREATE TABLE definition_table (code INTEGER PRIMARY KEY, definition TEXT NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func prepareDefinitionTable() async {
+                let command: String = "CREATE TABLE definition_table (code INTEGER PRIMARY KEY, definition TEXT NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "definition_table"
+                let columns: String = "(code, definition)"
                 let tuples = UnihanDefinition.generate()
-                let entries = tuples.map { tuple -> String in
+                let valueBlocks = tuples.map { tuple -> String in
                         let code = tuple.0
                         let definition = tuple.1
                         return "(\(code), '\(definition)')"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insert: String = "INSERT INTO definition_table (code, definition) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
+        }
+}
+
+private extension AppDataPreparer {
+        static func insert(tableName: String, columns: String, values: String) {
+                let command: String = "INSERT INTO \(tableName) \(columns) VALUES \(values);"
+                var statement: OpaquePointer? = nil
+                defer { sqlite3_finalize(statement) }
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else {
+                        fatalError("Error occurred while preparing statement for table \(tableName)")
+                }
+                guard sqlite3_step(statement) == SQLITE_DONE else {
+                        fatalError("Error occurred while inserting values to table \(tableName)")
+                }
         }
 }

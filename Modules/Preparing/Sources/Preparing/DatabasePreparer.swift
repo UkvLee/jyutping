@@ -14,35 +14,35 @@ struct DatabasePreparer {
                 LexiconConverter.prepareJyutpingSourceLines()
                 Cangjie.prepareCangjieDatabase()
                 await withTaskGroup(of: Void.self) { group in
-                        group.addTask { await createCoreLexiconTable() }
-                        group.addTask { await createStructureTable() }
-                        group.addTask { await createPinyinTable() }
-                        group.addTask { await createCangjieTable() }
-                        group.addTask { await createQuickTable() }
+                        group.addTask { await prepareCoreLexiconTable() }
+                        group.addTask { await prepareStructureTable() }
+                        group.addTask { await preparePinyinTable() }
+                        group.addTask { await prepareCangjieTable() }
+                        group.addTask { await prepareQuickTable() }
                         group.addTask { await prepareStrokeTable() }
-                        group.addTask { await createSymbolTable() }
-                        group.addTask { await createEmojiSkinMapTable() }
+                        group.addTask { await prepareSymbolTable() }
+                        group.addTask { await prepareEmojiSkinMapTable() }
                         group.addTask { await preparePlainTextTable() }
-                        group.addTask { await createCoreSyllableTable() }
-                        group.addTask { await createNineKeySyllableTable() }
-                        group.addTask { await createPinyinSyllableTable() }
+                        group.addTask { await prepareCoreSyllableTable() }
+                        group.addTask { await prepareNineKeySyllableTable() }
+                        group.addTask { await preparePinyinSyllableTable() }
                         group.addTask {
-                                await createCharacterVariantTable(fileName: "CharacterVariant.AncientBooksPublishing", tableName: "variant_abp")
+                                await prepareCharacterVariantTable(fileName: "CharacterVariant.AncientBooksPublishing", tableName: "variant_abp")
                         }
                         group.addTask {
-                                await createCharacterVariantTable(fileName: "CharacterVariant.HongKong", tableName: "variant_hk")
+                                await prepareCharacterVariantTable(fileName: "CharacterVariant.HongKong", tableName: "variant_hk")
                         }
                         group.addTask {
-                                await createCharacterVariantTable(fileName: "CharacterVariant.Inherited", tableName: "variant_old")
+                                await prepareCharacterVariantTable(fileName: "CharacterVariant.Inherited", tableName: "variant_old")
                         }
                         group.addTask {
-                                await createCharacterVariantTable(fileName: "CharacterVariant.PRCGeneral", tableName: "variant_prc")
+                                await prepareCharacterVariantTable(fileName: "CharacterVariant.PRCGeneral", tableName: "variant_prc")
                         }
                         group.addTask {
-                                await createCharacterVariantTable(fileName: "CharacterVariant.Simplified", tableName: "variant_sim")
+                                await prepareCharacterVariantTable(fileName: "CharacterVariant.Simplified", tableName: "variant_sim")
                         }
                         group.addTask {
-                                await createCharacterVariantTable(fileName: "CharacterVariant.Taiwan", tableName: "variant_tw")
+                                await prepareCharacterVariantTable(fileName: "CharacterVariant.Taiwan", tableName: "variant_tw")
                         }
                         await group.waitForAll()
                 }
@@ -120,139 +120,119 @@ struct DatabasePreparer {
                 }
         }
 
-        private static func createCoreLexiconTable() async {
-                let createTable: String = "CREATE TABLE lexicon_core (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, char_count INTEGER NOT NULL, complexity INTEGER NOT NULL, anchors INTEGER NOT NULL, spell INTEGER NOT NULL, anchors_9key INTEGER NOT NULL, spell_9key INTEGER NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func prepareCoreLexiconTable() async {
+                let command: String = "CREATE TABLE lexicon_core (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, char_count INTEGER NOT NULL, complexity INTEGER NOT NULL, anchors INTEGER NOT NULL, spell INTEGER NOT NULL, anchors_9key INTEGER NOT NULL, spell_9key INTEGER NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "lexicon_core"
+                let columns: String = "(word, romanization, char_count, complexity, anchors, spell, anchors_9key, spell_9key)"
                 let sourceEntries: [LexiconEntry] = LexiconConverter.jyutping()
-                func insert(values: String) {
-                        let insert: String = "INSERT INTO lexicon_core (word, romanization, char_count, complexity, anchors, spell, anchors_9key, spell_9key) VALUES \(values);"
-                        var insertStatement: OpaquePointer? = nil
-                        defer { sqlite3_finalize(insertStatement) }
-                        guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                        guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
-                }
-                let range: Range<Int> = 0..<2000
-                let distance: Int = sourceEntries.count / 2000
-                for number in range {
-                        let bound: Int = (number == 1999) ? sourceEntries.count : ((number + 1) * distance)
-                        let part = sourceEntries[(number * distance)..<bound]
-                        let entries = part.map({ entry -> String in
+                let steps: Range<Int> = 0..<2000
+                let stepSize: Int = sourceEntries.count / 2000
+                for step in steps {
+                        let lower: Int = step * stepSize
+                        let upper: Int = (step == 1999) ? sourceEntries.count : ((step + 1) * stepSize)
+                        let part = sourceEntries[lower..<upper]
+                        let valueBlocks = part.map({ entry -> String in
                                 return "('\(entry.word)', '\(entry.romanization)', \(entry.charCount), \(entry.complexity), \(entry.anchors), \(entry.spell), \(entry.nineKeyAnchors), \(entry.nineKeySpell))"
                         })
-                        let values: String = entries.joined(separator: ", ")
-                        insert(values: values)
+                        let values: String = valueBlocks.joined(separator: ", ")
+                        insert(tableName: tableName, columns: columns, values: values)
                 }
         }
-        private static func createCharacterVariantTable(fileName: String, tableName: String) async {
-                let createTable: String = "CREATE TABLE \(tableName) (source INTEGER PRIMARY KEY, target INTEGER NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func prepareCharacterVariantTable(fileName: String, tableName: String) async {
+                let command: String = "CREATE TABLE \(tableName) (source INTEGER PRIMARY KEY, target INTEGER NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let columns: String = "(source, target)"
                 guard let sourceUrl: URL = Bundle.module.url(forResource: fileName, withExtension: "txt") else { fatalError("Can not load file \(fileName).txt") }
-                let values: String = CharacterVariant.generate(sourceUrl).map({ "(\($0.left), \($0.right))" }).joined(separator: ", ")
-                let insert: String = "INSERT INTO \(tableName) (source, target) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let valueBlocks = CharacterVariant.generate(sourceUrl).map({ "(\($0.left), \($0.right))" })
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
-        private static func createStructureTable() async {
-                let createTable: String = "CREATE TABLE structure_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, char_count INTEGER NOT NULL, complexity INTEGER NOT NULL, spell INTEGER NOT NULL, spell_9key INTEGER NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func prepareStructureTable() async {
+                let command: String = "CREATE TABLE structure_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, char_count INTEGER NOT NULL, complexity INTEGER NOT NULL, spell INTEGER NOT NULL, spell_9key INTEGER NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "structure_table"
+                let columns: String = "(word, romanization, char_count, complexity, spell, spell_9key)"
                 let sourceEntries: [LexiconEntry] = LexiconConverter.structure()
-                func insert(values: String) {
-                        let insert: String = "INSERT INTO structure_table (word, romanization, char_count, complexity, spell, spell_9key) VALUES \(values);"
-                        var insertStatement: OpaquePointer? = nil
-                        defer { sqlite3_finalize(insertStatement) }
-                        guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                        guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
-                }
-                let range: Range<Int> = 0..<200
-                let distance: Int = sourceEntries.count / 200
-                for number in range {
-                        let bound: Int = (number == 199) ? sourceEntries.count : ((number + 1) * distance)
-                        let part = sourceEntries[(number * distance)..<bound]
-                        let entries = part.map({ entry -> String in
+                let steps: Range<Int> = 0..<200
+                let stepSize: Int = sourceEntries.count / 200
+                for step in steps {
+                        let lower: Int = step * stepSize
+                        let upper: Int = (step == 199) ? sourceEntries.count : ((step + 1) * stepSize)
+                        let part = sourceEntries[lower..<upper]
+                        let valueBlocks = part.map({ entry -> String in
                                 return "('\(entry.word)', '\(entry.romanization)', \(entry.charCount), \(entry.complexity), \(entry.spell), \(entry.nineKeySpell))"
                         })
-                        let values: String = entries.joined(separator: ", ")
-                        insert(values: values)
+                        let values: String = valueBlocks.joined(separator: ", ")
+                        insert(tableName: tableName, columns: columns, values: values)
                 }
         }
-        private static func createPinyinTable() async {
-                let createTable: String = "CREATE TABLE pinyin_lexicon (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, char_count INTEGER NOT NULL, complexity INTEGER NOT NULL, anchors INTEGER NOT NULL, spell INTEGER NOT NULL, anchors_9key INTEGER NOT NULL, spell_9key INTEGER NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func preparePinyinTable() async {
+                let command: String = "CREATE TABLE pinyin_lexicon (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, romanization TEXT NOT NULL, char_count INTEGER NOT NULL, complexity INTEGER NOT NULL, anchors INTEGER NOT NULL, spell INTEGER NOT NULL, anchors_9key INTEGER NOT NULL, spell_9key INTEGER NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "pinyin_lexicon"
+                let columns: String = "(word, romanization, char_count, complexity, anchors, spell, anchors_9key, spell_9key)"
                 let sourceEntries: [LexiconEntry] = LexiconConverter.pinyin()
-                func insert(values: String) {
-                        let insert: String = "INSERT INTO pinyin_lexicon (word, romanization, char_count, complexity, anchors, spell, anchors_9key, spell_9key) VALUES \(values);"
-                        var insertStatement: OpaquePointer? = nil
-                        defer { sqlite3_finalize(insertStatement) }
-                        guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                        guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
-                }
-                let range: Range<Int> = 0..<2000
-                let distance: Int = sourceEntries.count / 2000
-                for number in range {
-                        let bound: Int = (number == 1999) ? sourceEntries.count : ((number + 1) * distance)
-                        let part = sourceEntries[(number * distance)..<bound]
-                        let entries = part.map({ entry -> String in
+                let steps: Range<Int> = 0..<2000
+                let stepSize: Int = sourceEntries.count / 2000
+                for step in steps {
+                        let lower: Int = step * stepSize
+                        let upper: Int = (step == 1999) ? sourceEntries.count : ((step + 1) * stepSize)
+                        let part = sourceEntries[lower..<upper]
+                        let valueBlocks = part.map({ entry -> String in
                                 return "('\(entry.word)', '\(entry.romanization)', \(entry.charCount), \(entry.complexity), \(entry.anchors), \(entry.spell), \(entry.nineKeyAnchors), \(entry.nineKeySpell))"
                         })
-                        let values: String = entries.joined(separator: ", ")
-                        insert(values: values)
+                        let values: String = valueBlocks.joined(separator: ", ")
+                        insert(tableName: tableName, columns: columns, values: values)
                 }
         }
-        private static func createCangjieTable() async {
-                let createTable: String = "CREATE TABLE cangjie_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, cangjie5 TEXT NOT NULL, c5complex INTEGER NOT NULL, c5code INTEGER NOT NULL, cangjie3 TEXT NOT NULL, c3complex INTEGER NOT NULL, c3code INTEGER NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func prepareCangjieTable() async {
+                let command: String = "CREATE TABLE cangjie_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, cangjie5 TEXT NOT NULL, c5complex INTEGER NOT NULL, c5code INTEGER NOT NULL, cangjie3 TEXT NOT NULL, c3complex INTEGER NOT NULL, c3code INTEGER NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "cangjie_table"
+                let columns: String = "(word, cangjie5, c5complex, c5code, cangjie3, c3complex, c3code)"
                 let sourceEntries = Cangjie.generate()
-                let entries = sourceEntries.map { entry -> String in
+                let valueBlocks = sourceEntries.map { entry -> String in
                         return "('\(entry.word)', '\(entry.cangjie5)', \(entry.c5complex), \(entry.c5code), '\(entry.cangjie3)', \(entry.c3complex), \(entry.c3code))"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insert: String = "INSERT INTO cangjie_table (word, cangjie5, c5complex, c5code, cangjie3, c3complex, c3code) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
-        private static func createQuickTable() async {
-                let createTable: String = "CREATE TABLE quick_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, quick5 TEXT NOT NULL, q5complex INTEGER NOT NULL, q5code INTEGER NOT NULL, quick3 TEXT NOT NULL, q3complex INTEGER NOT NULL, q3code INTEGER NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func prepareQuickTable() async {
+                let command: String = "CREATE TABLE quick_table (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL, quick5 TEXT NOT NULL, q5complex INTEGER NOT NULL, q5code INTEGER NOT NULL, quick3 TEXT NOT NULL, q3complex INTEGER NOT NULL, q3code INTEGER NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "quick_table"
+                let columns: String = "(word, quick5, q5complex, q5code, quick3, q3complex, q3code)"
                 let sourceEntries = Quick.generate()
-                func insert(values: String) {
-                        let insert: String = "INSERT INTO quick_table (word, quick5, q5complex, q5code, quick3, q3complex, q3code) VALUES \(values);"
-                        var insertStatement: OpaquePointer? = nil
-                        defer { sqlite3_finalize(insertStatement) }
-                        guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                        guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
-                }
-                let range: Range<Int> = 0..<2000
-                let distance: Int = sourceEntries.count / 2000
-                for number in range {
-                        let bound: Int = number == 1999 ? sourceEntries.count : ((number + 1) * distance)
-                        let part = sourceEntries[(number * distance)..<bound]
-                        let entries = part.map { entry -> String in
+                let steps: Range<Int> = 0..<2000
+                let stepSize: Int = sourceEntries.count / 2000
+                for step in steps {
+                        let lower: Int = step * stepSize
+                        let upper: Int = (step == 1999) ? sourceEntries.count : ((step + 1) * stepSize)
+                        let part = sourceEntries[lower..<upper]
+                        let valueBlocks = part.map({ entry -> String in
                                 return "('\(entry.word)', '\(entry.quick5)', \(entry.q5complex), \(entry.q5code), '\(entry.quick3)', \(entry.q3complex), \(entry.q3code))"
-                        }
-                        let values: String = entries.joined(separator: ", ")
-                        insert(values: values)
+                        })
+                        let values: String = valueBlocks.joined(separator: ", ")
+                        insert(tableName: tableName, columns: columns, values: values)
                 }
         }
         private static func prepareStrokeTable() async {
@@ -277,28 +257,24 @@ struct DatabasePreparer {
                         insert(tableName: tableName, columns: columns, values: values)
                 }
         }
-        private static func createSymbolTable() async {
-                let createTable: String = "CREATE TABLE symbol_table (id INTEGER PRIMARY KEY AUTOINCREMENT, category INTEGER NOT NULL, unicode_version INTEGER NOT NULL, code_point TEXT NOT NULL, cantonese TEXT NOT NULL, romanization TEXT NOT NULL, complexity INTEGER NOT NULL, spell INTEGER NOT NULL, spell_9key INTEGER NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func prepareSymbolTable() async {
+                let command: String = "CREATE TABLE symbol_table (id INTEGER PRIMARY KEY AUTOINCREMENT, category INTEGER NOT NULL, unicode_version INTEGER NOT NULL, code_point TEXT NOT NULL, cantonese TEXT NOT NULL, romanization TEXT NOT NULL, complexity INTEGER NOT NULL, spell INTEGER NOT NULL, spell_9key INTEGER NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "symbol_table"
+                let columns: String = "(category, unicode_version, code_point, cantonese, romanization, complexity, spell, spell_9key)"
                 guard let url = Bundle.module.url(forResource: "symbol", withExtension: "txt") else { return }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 let sourceLines: [String] = content.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
-                func insert(values: String) {
-                        let command: String = "INSERT INTO symbol_table (category, unicode_version, code_point, cantonese, romanization, complexity, spell, spell_9key) VALUES \(values);"
-                        var statement: OpaquePointer? = nil
-                        defer { sqlite3_finalize(statement) }
-                        guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { return }
-                        guard sqlite3_step(statement) == SQLITE_DONE else { return }
-                }
-                let range: Range<Int> = 0..<100
-                let distance: Int = sourceLines.count / 100
-                for number in range {
-                        let bound: Int = (number == 99) ? sourceLines.count : ((number + 1) * distance)
-                        let part = sourceLines[(number * distance)..<bound]
-                        let entries = part.compactMap({ line -> String? in
+                let steps: Range<Int> = 0..<100
+                let stepSize: Int = sourceLines.count / 100
+                for step in steps {
+                        let lower: Int = step * stepSize
+                        let upper: Int = (step == 99) ? sourceLines.count : ((step + 1) * stepSize)
+                        let part = sourceLines[lower..<upper]
+                        let valueBlocks = part.compactMap({ line -> String? in
                                 let parts = line.split(separator: "\t")
                                 guard parts.count == 5 else { return nil }
                                 let category = parts[0]
@@ -312,32 +288,30 @@ struct DatabasePreparer {
                                 let nineKeySpell = letters.keypadCode
                                 return "(\(category), \(version), '\(codePoint)', '\(cantonese)', '\(romanization)', \(complexity), \(spell), \(nineKeySpell))"
                         })
-                        let values: String = entries.joined(separator: ", ")
-                        insert(values: values)
+                        let values: String = valueBlocks.joined(separator: ", ")
+                        insert(tableName: tableName, columns: columns, values: values)
                 }
         }
-        private static func createEmojiSkinMapTable() async {
-                let createTable: String = "CREATE TABLE emoji_skin_map (id INTEGER PRIMARY KEY AUTOINCREMENT, source TEXT NOT NULL, target TEXT NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func prepareEmojiSkinMapTable() async {
+                let command: String = "CREATE TABLE emoji_skin_map (id INTEGER PRIMARY KEY AUTOINCREMENT, source TEXT NOT NULL, target TEXT NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "emoji_skin_map"
+                let columns: String = "(source, target)"
                 guard let url = Bundle.module.url(forResource: "skin-tone-map", withExtension: "txt") else { return }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 let sourceLines: [String] = content.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
-                let entries = sourceLines.compactMap { line -> String? in
+                let valueBlocks = sourceLines.compactMap { line -> String? in
                         let parts = line.split(separator: "\t")
                         guard parts.count == 2 else { return nil }
                         let source = parts[0]
                         let target = parts[1]
                         return "('\(source)', '\(target)')"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insert: String = "INSERT INTO emoji_skin_map (source, target) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insert, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
         private static func preparePlainTextTable() async {
                 let command: String = "CREATE TABLE plain_text_table (id INTEGER PRIMARY KEY AUTOINCREMENT, input TEXT NOT NULL, word TEXT NOT NULL, letter_count INTEGER NOT NULL, spell INTEGER NOT NULL, spell_9key INTEGER NOT NULL);"
@@ -362,12 +336,14 @@ struct DatabasePreparer {
                         insert(tableName: tableName, columns: columns, values: values)
                 }
         }
-        private static func createCoreSyllableTable() async {
-                let createTable: String = "CREATE TABLE syllable_core_table (alias_code INTEGER PRIMARY KEY, origin_code INTEGER NOT NULL, alias TEXT NOT NULL, origin TEXT NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func prepareCoreSyllableTable() async {
+                let command: String = "CREATE TABLE syllable_core_table (alias_code INTEGER PRIMARY KEY, origin_code INTEGER NOT NULL, alias TEXT NOT NULL, origin TEXT NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "syllable_core_table"
+                let columns: String = "(alias_code, origin_code, alias, origin)"
                 guard let url = Bundle.module.url(forResource: "syllable-core", withExtension: "txt") else { return }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 let sourceLines: [String] = content
@@ -375,7 +351,7 @@ struct DatabasePreparer {
                         .components(separatedBy: .newlines)
                         .map({ $0.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .controlCharacters) })
                         .filter(\.isNotEmpty)
-                let entries = sourceLines.compactMap { line -> String? in
+                let valueBlocks = sourceLines.compactMap { line -> String? in
                         lazy var errorMessage: String = "syllable.txt : bad format : \(line)"
                         let parts = line.split(separator: "\t")
                         guard parts.count == 2 else { fatalError(errorMessage) }
@@ -385,19 +361,17 @@ struct DatabasePreparer {
                         let originCode = origin.serialCode
                         return "(\(aliasCode), \(originCode), '\(alias)', '\(origin)')"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insertValues: String = "INSERT INTO syllable_core_table (alias_code, origin_code, alias, origin) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insertValues, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
-        private static func createNineKeySyllableTable() async {
-                let createTable: String = "CREATE TABLE syllable_9key_table (alias_code INTEGER PRIMARY KEY, origin_code INTEGER NOT NULL, alias_9key_code INTEGER NOT NULL, origin_9key_code INTEGER NOT NULL, alias TEXT NOT NULL, origin TEXT NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func prepareNineKeySyllableTable() async {
+                let command: String = "CREATE TABLE syllable_9key_table (alias_code INTEGER PRIMARY KEY, origin_code INTEGER NOT NULL, alias_9key_code INTEGER NOT NULL, origin_9key_code INTEGER NOT NULL, alias TEXT NOT NULL, origin TEXT NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "syllable_9key_table"
+                let columns: String = "(alias_code, origin_code, alias_9key_code, origin_9key_code, alias, origin)"
                 guard let url = Bundle.module.url(forResource: "syllable-9key", withExtension: "txt") else { fatalError("Failed to get URL of syllable-9key.txt") }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { fatalError("Failed to read syllable-9key.txt") }
                 let sourceLines: [String] = content
@@ -405,7 +379,7 @@ struct DatabasePreparer {
                         .components(separatedBy: .newlines)
                         .map({ $0.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .controlCharacters) })
                         .filter(\.isNotEmpty)
-                let entries = sourceLines.compactMap { line -> String? in
+                let valueBlocks = sourceLines.compactMap { line -> String? in
                         lazy var errorMessage: String = "syllable-9key.txt : bad format : \(line)"
                         let parts = line.split(separator: "\t")
                         guard parts.count == 2 else { fatalError(errorMessage) }
@@ -417,19 +391,17 @@ struct DatabasePreparer {
                         let nineKeyOrigin = origin.keypadCode
                         return "(\(aliasCode), \(originCode), \(nineKeyAlias), \(nineKeyOrigin), '\(alias)', '\(origin)')"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insertValues: String = "INSERT INTO syllable_9key_table (alias_code, origin_code, alias_9key_code, origin_9key_code, alias, origin) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insertValues, -1, &insertStatement, nil) == SQLITE_OK else { fatalError("Failed to prepare syllable-9key") }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { fatalError("Failed to step syllable-9key") }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
-        private static func createPinyinSyllableTable() async {
-                let createTable: String = "CREATE TABLE syllable_pinyin_table (code INTEGER PRIMARY KEY, code_9key INTEGER NOT NULL, syllable TEXT NOT NULL);"
-                var createStatement: OpaquePointer? = nil
-                guard sqlite3_prepare_v2(database, createTable, -1, &createStatement, nil) == SQLITE_OK else { sqlite3_finalize(createStatement); return }
-                guard sqlite3_step(createStatement) == SQLITE_DONE else { sqlite3_finalize(createStatement); return }
-                sqlite3_finalize(createStatement)
+        private static func preparePinyinSyllableTable() async {
+                let command: String = "CREATE TABLE syllable_pinyin_table (code INTEGER PRIMARY KEY, code_9key INTEGER NOT NULL, syllable TEXT NOT NULL);"
+                var statement: OpaquePointer? = nil
+                guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else { sqlite3_finalize(statement); return }
+                guard sqlite3_step(statement) == SQLITE_DONE else { sqlite3_finalize(statement); return }
+                sqlite3_finalize(statement)
+                let tableName: String = "syllable_pinyin_table"
+                let columns: String = "(code, code_9key, syllable)"
                 guard let url = Bundle.module.url(forResource: "syllable-pinyin", withExtension: "txt") else { return }
                 guard let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 let sourceLines: [String] = content
@@ -437,16 +409,12 @@ struct DatabasePreparer {
                         .components(separatedBy: .newlines)
                         .map({ $0.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .controlCharacters) })
                         .filter(\.isNotEmpty)
-                let entries = sourceLines.compactMap { syllable -> String? in
+                let valueBlocks = sourceLines.compactMap { syllable -> String? in
                         lazy var errorMessage: String = "syllable-pinyin.txt : bad format : \(syllable)"
                         return "(\(syllable.serialCode), \(syllable.keypadCode), '\(syllable)')"
                 }
-                let values: String = entries.joined(separator: ", ")
-                let insertValues: String = "INSERT INTO syllable_pinyin_table (code, code_9key, syllable) VALUES \(values);"
-                var insertStatement: OpaquePointer? = nil
-                defer { sqlite3_finalize(insertStatement) }
-                guard sqlite3_prepare_v2(database, insertValues, -1, &insertStatement, nil) == SQLITE_OK else { return }
-                guard sqlite3_step(insertStatement) == SQLITE_DONE else { return }
+                let values: String = valueBlocks.joined(separator: ", ")
+                insert(tableName: tableName, columns: columns, values: values)
         }
 }
 
@@ -456,10 +424,10 @@ private extension DatabasePreparer {
                 var statement: OpaquePointer? = nil
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(database, command, -1, &statement, nil) == SQLITE_OK else {
-                        fatalError("Error occurred while preparing statement")
+                        fatalError("Error occurred while preparing statement for table \(tableName)")
                 }
                 guard sqlite3_step(statement) == SQLITE_DONE else {
-                        fatalError("Error occurred while inserting values")
+                        fatalError("Error occurred while inserting values to table \(tableName)")
                 }
         }
 }
