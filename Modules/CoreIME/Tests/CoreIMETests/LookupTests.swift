@@ -4,6 +4,10 @@ import Testing
 @Suite("Romanization lookup")
 struct LookupTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("lookup returns exact and composed romanizations")
         func lookup() {
                 #expect(Engine.lookup("我") == ["ngo5"])

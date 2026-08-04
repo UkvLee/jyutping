@@ -4,9 +4,13 @@ import Testing
 @Suite("Jyutping engine")
 struct EngineTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("prepare initializes the packaged database and segmenters")
         func prepare() {
-                Engine.prepare()
+                prepareTestDatabase()
                 #expect(Segmenter.segment(inputKeys("ngo")).isNotEmpty)
                 #expect(NineKeySegmenter.segment(inputCombos([6, 4, 6])).isNotEmpty)
         }

@@ -47,32 +47,87 @@ struct DatabasePreparer {
                         await group.waitForAll()
                 }
                 createIndexes()
-                backupInMemoryDatabase()
+                backupMobileDatabase()
+                prepareDesktopDatabase()
                 sqlite3_close_v2(database)
                 Cangjie.closeCangjieDatabase()
         }
-        private static func backupInMemoryDatabase() {
-                let path = "../CoreIME/Sources/CoreIME/Resources/ime.sqlite3"
+        private static let coreIMEPackageURL: URL = URL(fileURLWithPath: #filePath)
+                .deletingLastPathComponent()
+                .deletingLastPathComponent()
+                .deletingLastPathComponent()
+                .deletingLastPathComponent()
+                .appending(path: "CoreIME")
+        private static let mobileDatabaseURL = coreIMEPackageURL.appending(path: "Sources/CoreIMEMobileData/Resources/mobile.sqlite3")
+        private static let desktopDatabaseURL = coreIMEPackageURL.appending(path: "Sources/CoreIMEDesktopData/Resources/desktop.sqlite3")
+
+        private static func backupMobileDatabase() {
+                let path = mobileDatabaseURL.path
                 if FileManager.default.fileExists(atPath: path) {
-                        try? FileManager.default.removeItem(atPath: path)
+                        try! FileManager.default.removeItem(atPath: path)
                 }
                 var destination: OpaquePointer? = nil
                 defer { sqlite3_close_v2(destination) }
-                guard sqlite3_open_v2(path, &destination, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE | SQLITE_OPEN_FULLMUTEX, nil) == SQLITE_OK else { return }
+                guard sqlite3_open_v2(path, &destination, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE | SQLITE_OPEN_FULLMUTEX, nil) == SQLITE_OK else {
+                        fatalError("Failed to create mobile.sqlite3")
+                }
                 let backup = sqlite3_backup_init(destination, "main", database, "main")
-                guard sqlite3_backup_step(backup, -1) == SQLITE_DONE else { return }
-                guard sqlite3_backup_finish(backup) == SQLITE_OK else { return }
+                guard sqlite3_backup_step(backup, -1) == SQLITE_DONE else {
+                        sqlite3_backup_finish(backup)
+                        fatalError("Failed to back up mobile.sqlite3")
+                }
+                guard sqlite3_backup_finish(backup) == SQLITE_OK else {
+                        fatalError("Failed to finish backing up mobile.sqlite3")
+                }
+                optimize(destination)
+        }
+        private static func prepareDesktopDatabase() {
+                let fileManager = FileManager.default
+                if fileManager.fileExists(atPath: desktopDatabaseURL.path) {
+                        try! fileManager.removeItem(at: desktopDatabaseURL)
+                }
+                try! fileManager.copyItem(at: mobileDatabaseURL, to: desktopDatabaseURL)
+                var desktopDatabase: OpaquePointer? = nil
+                defer { sqlite3_close_v2(desktopDatabase) }
+                guard sqlite3_open_v2(desktopDatabaseURL.path, &desktopDatabase, SQLITE_OPEN_READWRITE | SQLITE_OPEN_FULLMUTEX, nil) == SQLITE_OK else {
+                        fatalError("Failed to open desktop.sqlite3")
+                }
+                let commands: [String] = [
+                        "DROP TABLE syllable_9key_table;",
+                        "DROP INDEX ix_lexicon_core_anchors_9key;",
+                        "DROP INDEX ix_lexicon_core_spell_9key;",
+                        "DROP INDEX ix_structure_spell_9key;",
+                        "DROP INDEX ix_pinyin_anchors_9key;",
+                        "DROP INDEX ix_pinyin_spell_9key;",
+                        "DROP INDEX ix_symbol_spell_9key;",
+                        "DROP INDEX ix_plain_text_spell_9key;",
+                        "ALTER TABLE lexicon_core DROP COLUMN anchors_9key;",
+                        "ALTER TABLE lexicon_core DROP COLUMN spell_9key;",
+                        "ALTER TABLE structure_table DROP COLUMN spell_9key;",
+                        "ALTER TABLE pinyin_lexicon DROP COLUMN anchors_9key;",
+                        "ALTER TABLE pinyin_lexicon DROP COLUMN spell_9key;",
+                        "ALTER TABLE symbol_table DROP COLUMN spell_9key;",
+                        "ALTER TABLE plain_text_table DROP COLUMN spell_9key;",
+                        "ALTER TABLE syllable_pinyin_table DROP COLUMN code_9key;",
+                ]
+                commands.forEach({ execute($0, on: desktopDatabase) })
+                optimize(desktopDatabase)
+        }
+        private static func optimize(_ destination: OpaquePointer?) {
                 let commands: [String] = [
                         "PRAGMA page_size = 16384;",
                         "PRAGMA journal_mode = DELETE;",
                         "VACUUM;",
                         "ANALYZE;",
                 ]
-                for command in commands {
-                        var statement: OpaquePointer?
-                        sqlite3_prepare_v2(destination, command, -1, &statement, nil)
-                        sqlite3_step(statement)
-                        sqlite3_finalize(statement)
+                commands.forEach({ execute($0, on: destination) })
+        }
+        private static func execute(_ command: String, on destination: OpaquePointer?) {
+                var errorMessage: UnsafeMutablePointer<CChar>? = nil
+                guard sqlite3_exec(destination, command, nil, nil, &errorMessage) == SQLITE_OK else {
+                        let message = errorMessage.map({ String(cString: $0) }) ?? "Unknown SQLite error"
+                        sqlite3_free(errorMessage)
+                        fatalError("\(message): \(command)")
                 }
         }
 

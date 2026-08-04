@@ -4,6 +4,10 @@ import Testing
 @Suite("Nine-key Jyutping segmenter")
 struct NineKeySegmenterTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("nine-key syllables compare hash and classify aliases")
         func syllableSemantics() {
                 let regular = NineKeySyllable(aliasCode: 646, originCode: 646, serialAliasCode: inputKeys("ngo").conjoinedCode, serialOriginCode: inputKeys("ngo").conjoinedCode)

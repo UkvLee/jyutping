@@ -4,6 +4,10 @@ import Testing
 @Suite("Text marks")
 struct PlainTextTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("letter searches return all marks for the exact input")
         func letterSearch() {
                 let marks = Engine.searchPlainTexts(for: inputKeys("abc"))

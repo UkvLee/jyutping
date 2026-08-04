@@ -1,5 +1,22 @@
+import Foundation
 import Testing
 @testable import CoreIME
+
+func prepareTestDatabase() {
+        Engine.prepare(databaseURL: mobileDatabaseURL, includesNineKeyData: true)
+}
+
+let mobileDatabaseURL = URL(fileURLWithPath: #filePath)
+        .deletingLastPathComponent()
+        .deletingLastPathComponent()
+        .deletingLastPathComponent()
+        .appending(path: "Sources/CoreIMEMobileData/Resources/mobile.sqlite3")
+
+let desktopDatabaseURL = URL(fileURLWithPath: #filePath)
+        .deletingLastPathComponent()
+        .deletingLastPathComponent()
+        .deletingLastPathComponent()
+        .appending(path: "Sources/CoreIMEDesktopData/Resources/desktop.sqlite3")
 
 func inputKeys(_ text: String) -> [VirtualInputKey] {
         return text.compactMap({ character in

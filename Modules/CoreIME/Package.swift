@@ -22,8 +22,17 @@ let package = Package(
                 .target(
                         name: "CoreIME",
                         dependencies: [
-                                .product(name: "CommonExtensions", package: "CommonExtensions")
-                        ],
+                                .product(name: "CommonExtensions", package: "CommonExtensions"),
+                                .target(name: "CoreIMEMobileData", condition: .when(platforms: [.iOS])),
+                                .target(name: "CoreIMEDesktopData", condition: .when(platforms: [.macOS]))
+                        ]
+                ),
+                .target(
+                        name: "CoreIMEMobileData",
+                        resources: [.process("Resources")]
+                ),
+                .target(
+                        name: "CoreIMEDesktopData",
                         resources: [.process("Resources")]
                 ),
                 .testTarget(

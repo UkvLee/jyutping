@@ -4,6 +4,10 @@ import Testing
 @Suite("Pinyin segmenters")
 struct PinyinSegmenterTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("Pinyin syllables compare and hash by code")
         func syllableIdentity() {
                 let xi = PinyinSyllable(code: inputKeys("xi").conjoinedCode, text: "xi")

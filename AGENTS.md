@@ -79,8 +79,11 @@ swift run -c release
 
 This is not optional for a clean checkout. The executable entry point is `Modules/Preparing/Sources/Preparing/Preparing.swift`, which runs `AppDataPreparer.prepare()` and `DatabasePreparer.prepare()` concurrently. It generates these packaged SQLite databases:
 
-- `Modules/CoreIME/Sources/CoreIME/Resources/ime.sqlite3`
+- `Modules/CoreIME/Sources/CoreIMEMobileData/Resources/mobile.sqlite3`
+- `Modules/CoreIME/Sources/CoreIMEDesktopData/Resources/desktop.sqlite3`
 - `Modules/AppDataSource/Sources/AppDataSource/Resources/app.sqlite3`
+
+The mobile CoreIME database contains the complete schema. The desktop database is copied from it and then stripped of 9-key-specific tables, columns, and indexes.
 
 ## Runtime architecture
 

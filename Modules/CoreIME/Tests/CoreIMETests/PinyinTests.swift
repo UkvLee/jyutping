@@ -4,6 +4,10 @@ import Testing
 @Suite("Pinyin reverse lookup")
 struct PinyinTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("separators select exact Pinyin syllable boundaries")
         func separators() async {
                 let keys = inputKeys("xi'an'shi")

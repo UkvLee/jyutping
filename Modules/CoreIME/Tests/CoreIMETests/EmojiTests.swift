@@ -4,6 +4,10 @@ import Testing
 @Suite("Emoji and symbols")
 struct EmojiTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("categories and emoji identities use stable identifiers")
         func identity() {
                 #expect(Emoji.Category.allCases.map(\.id) == Array(0...8))

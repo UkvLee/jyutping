@@ -4,6 +4,10 @@ import Testing
 @Suite("Cangjie and Quick lookup")
 struct CangjieTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("all Cangjie variants return exact and prefix matches")
         func variants() {
                 let cases: [(CangjieVariant, String, String)] = [

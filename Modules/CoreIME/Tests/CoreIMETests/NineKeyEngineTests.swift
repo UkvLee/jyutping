@@ -4,6 +4,10 @@ import Testing
 @Suite("Nine-key engine")
 struct NineKeyEngineTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("nine-key suggestions resolve full syllables")
         func fullSyllables() async {
                 let combos = inputCombos([6, 4, 6])

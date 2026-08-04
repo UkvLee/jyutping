@@ -4,6 +4,10 @@ import Testing
 @Suite("Character structure lookup")
 struct StructureTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("component romanizations return the composed character")
         func basicLookup() {
                 let keys = inputKeys("mukmuk")

@@ -91,7 +91,7 @@ private struct CoreIMEBenchmarks {
                                 return
                         }
 
-                        Engine.prepare()
+                        Engine.prepare(databaseURL: mobileDatabaseURL, includesNineKeyData: true)
                         let benchmarks = makeBenchmarks()
                         let selected = benchmarks.filter({ benchmark in
                                 configuration.filter.map({ benchmark.name.localizedCaseInsensitiveContains($0) }) ?? true
@@ -229,6 +229,11 @@ private struct CoreIMEBenchmarks {
                 "suggestions/pinyin-reverse-lookup",
                 "suggestions/pinyin-nine-key-reverse"
         ]
+
+        private static let mobileDatabaseURL = URL(fileURLWithPath: #filePath)
+                .deletingLastPathComponent()
+                .deletingLastPathComponent()
+                .appending(path: "CoreIMEMobileData/Resources/mobile.sqlite3")
 
         private static func inputKeys(_ text: String) -> [VirtualInputKey] {
                 return text.compactMap({ character in

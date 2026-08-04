@@ -2,6 +2,11 @@ import Foundation
 import SQLite3
 import CommonExtensions
 import os.log
+#if os(macOS)
+import CoreIMEDesktopData
+#else
+import CoreIMEMobileData
+#endif
 
 // MARK: - Preparing Databases
 
@@ -10,11 +15,21 @@ public struct Engine {
         static let logger = Logger(subsystem: "org.jyutping.Jyutping.CoreIME", category: "Engine")
 
         public static func prepare() {
+                #if os(macOS)
+                prepare(databaseURL: CoreIMEDesktopDatabase.url, includesNineKeyData: false)
+                #else
+                prepare(databaseURL: CoreIMEMobileDatabase.url, includesNineKeyData: true)
+                #endif
+        }
+        public static func prepare(databaseURL: URL, includesNineKeyData: Bool) {
+                connectDatabase(at: databaseURL)
                 defer {
                         Segmenter.prepare()
-                        NineKeySegmenter.prepare()
                         PinyinSegmenter.prepare()
-                        PinyinNineKeySegmenter.prepare()
+                        if includesNineKeyData {
+                                NineKeySegmenter.prepare()
+                                PinyinNineKeySegmenter.prepare()
+                        }
                 }
                 let statement = prepareAnchorsStatement()
                 defer { sqlite3_finalize(statement) }
@@ -31,19 +46,27 @@ public struct Engine {
                         logger.warning("Primary database is not ready")
                 }
         }
-        nonisolated(unsafe) static let database: OpaquePointer? = {
-                guard let path: String = Bundle.module.path(forResource: "ime", ofType: "sqlite3") else { return nil }
+        nonisolated(unsafe) private(set) static var database: OpaquePointer? = nil
+        nonisolated(unsafe) private static var databaseURL: URL? = nil
+        private static let databaseLock = NSLock()
+        private static func connectDatabase(at url: URL) {
+                databaseLock.lock()
+                defer { databaseLock.unlock() }
+                guard databaseURL != url else { return }
+                sqlite3_close_v2(database)
                 var db: OpaquePointer? = nil
                 let flags = SQLITE_OPEN_READONLY | SQLITE_OPEN_FULLMUTEX
-                if sqlite3_open_v2(path, &db, flags, nil) == SQLITE_OK {
+                if sqlite3_open_v2(url.path, &db, flags, nil) == SQLITE_OK {
+                        database = db
+                        databaseURL = url
                         logger.debug("Primary database connected")
-                        return db
                 } else {
                         sqlite3_close_v2(db)
-                        logger.warning("Failed to connect primary database")
-                        return nil
+                        database = nil
+                        databaseURL = nil
+                        logger.warning("Failed to connect the primary database")
                 }
-        }()
+        }
 
         /// The missing SQLITE_TRANSIENT
         static let DEFINED_SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)

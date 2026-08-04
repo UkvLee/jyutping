@@ -4,6 +4,10 @@ import Testing
 @Suite("Jyutping segmenter")
 struct SegmenterTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("syllables expose aliases origins and ordering")
         func syllableProperties() {
                 let alias = Syllable(aliasCode: inputKeys("g").conjoinedCode, originCode: inputKeys("g").conjoinedCode)

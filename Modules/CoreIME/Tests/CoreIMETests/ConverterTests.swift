@@ -4,6 +4,10 @@ import Testing
 @Suite("Character conversion")
 struct ConverterTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("pass-through standards preserve source text")
         func passThroughStandards() {
                 let source = "香港ABC"

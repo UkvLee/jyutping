@@ -4,6 +4,10 @@ import Testing
 @Suite("Stroke input")
 struct StrokeTests {
 
+        init() {
+                prepareTestDatabase()
+        }
+
         @Test("stroke keys expose codes display text and virtual keys")
         func properties() {
                 let strokes: [StrokeVirtualKey] = [.horizontal, .vertical, .leftFalling, .rightFalling, .turning, .wildcard]
