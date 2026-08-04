@@ -34,7 +34,7 @@ extension Converter {
                 return chained.transformed(commentForm: commentForm, charset: charset).distinct()
         }
         public static func ambiguouslyDispatch(memory: [Lexicon], defined: [Lexicon], texts: [Lexicon], symbols: [Lexicon], queried: [Lexicon], commentForm: RomanizationForm, charset: CharacterStandard) -> [Candidate] {
-                var chained: [Lexicon] = Array(memory.prefix(3)) + defined + texts + memory + queried.sorted()
+                var chained: [Lexicon] = Array(memory.prefix(2)) + defined + memory + texts + queried.sorted()
                 for symbol in symbols.reversed() {
                         if let index = chained.firstIndex(where: { $0.isCantonese && $0.text == symbol.attached && $0.romanization == symbol.romanization }) {
                                 chained.insert(symbol, at: index + 1)

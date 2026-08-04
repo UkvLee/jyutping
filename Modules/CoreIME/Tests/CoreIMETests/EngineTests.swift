@@ -120,4 +120,16 @@ struct EngineTests {
 
                 #expect(suggestions.contains(where: { $0.text == "我木" && $0.isCompound }))
         }
+
+        @Test("cancelled suggestions stop before querying")
+        func cancelledSuggestions() async {
+                let keys = inputKeys(String(repeating: "ngaam", count: 5))
+                let segmentation = Segmenter.segment(keys)
+                let task = Task { () -> [Lexicon] in
+                        withUnsafeCurrentTask(body: { $0?.cancel() })
+                        return Engine.suggest(keys, segmentation: segmentation)
+                }
+
+                #expect(await task.value.isEmpty)
+        }
 }

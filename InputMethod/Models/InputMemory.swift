@@ -159,6 +159,7 @@ struct InputMemory {
                 "CREATE INDEX IF NOT EXISTS ix2608_frequency ON memory2608 (frequency);",
                 "CREATE INDEX IF NOT EXISTS ix2608_anchors ON memory2608 (anchors, char_count, frequency DESC);",
                 "CREATE INDEX IF NOT EXISTS ix2608_spell ON memory2608 (spell, letter_count, complexity, frequency DESC);",
+                "CREATE INDEX IF NOT EXISTS ix2608_word ON memory2608 (word, frequency DESC);",
         ]
 
 
@@ -239,6 +240,9 @@ struct InputMemory {
 
 
         // MARK: - Suggestions
+
+        /// Preferred maximum number of syllables in one lexicon entry
+        private static let MAX_CHAR_COUNT: Int = 9
 
         static func suggest<T: RandomAccessCollection<VirtualInputKey>>(_ keys: T, segmentation: Segmentation) async -> [Lexicon] {
                 guard isMigrating.negative else { return [] }
@@ -372,7 +376,9 @@ struct InputMemory {
                 guard shouldPartiallyMatch else { return notIdealQueried }
                 let text = keys.map(\.text).joined()
                 let prefixMatched: [InternalLexicon] = segmentation.flatMap({ scheme -> [InternalLexicon] in
-                        guard scheme.isNotEmpty else { return [] }
+                        guard Task.isCancelled.negative else { return [] }
+                        let leadingCharCount = scheme.count
+                        guard leadingCharCount > 0 && leadingCharCount <= MAX_CHAR_COUNT else { return [] }
                         let tail = keys.dropFirst(scheme.length)
                         guard tail.isNotEmpty else { return [] }
                         let schemeAnchors = scheme.aliasAnchors
@@ -400,6 +406,7 @@ struct InputMemory {
                 })
                 let gainedMatched: [InternalLexicon] = (1..<inputLength).reversed()
                         .flatMap({ number -> [InternalLexicon] in
+                                guard Task.isCancelled.negative && (number <= MAX_CHAR_COUNT) else { return [] }
                                 return anchorsMatch(keys: keys.prefix(number), statement: anchorsStatement)
                         })
                         .compactMap({ item -> InternalLexicon? in
@@ -432,6 +439,7 @@ struct InputMemory {
                 }
         }
         private static func perform<T: RandomAccessCollection<Syllable>>(scheme: T, limit: Int64 = 5, statement: OpaquePointer?) -> [InternalLexicon] {
+                guard Task.isCancelled.negative else { return [] }
                 return spellMatch(keys: scheme.originKeys, complexity: scheme.complexity, input: scheme.aliasText, mark: scheme.mark, limit: limit, statement: statement)
         }
 

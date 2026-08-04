@@ -228,7 +228,7 @@ Available workloads cover:
 - ambiguous Jyutping key-set segmentation
 - nine-key Jyutping segmentation
 - full-keyboard and nine-key Pinyin segmentation
-- full and partial Jyutping suggestions
+- full, partial, and repeated-syllable Jyutping suggestions
 - nine-key Jyutping suggestions
 - full-keyboard and nine-key Pinyin reverse lookup
 

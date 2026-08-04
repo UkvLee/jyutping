@@ -47,6 +47,9 @@ public struct Engine {
 
         /// The missing SQLITE_TRANSIENT
         static let DEFINED_SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
+
+        /// Maximum number of syllables in one lexicon entry
+        static let MAX_CHAR_COUNT: Int = 9
 }
 
 
@@ -290,6 +293,7 @@ extension Engine {
                 let adjustedLimit: Int64 = (limit == nil) ? 300 : 100
                 let inputLength: Int = keys.count
                 return (0..<inputLength).flatMap({ number -> [Lexicon] in
+                        guard Task.isCancelled.negative else { return [] }
                         let leadingKeys = keys.dropLast(number)
                         let leadingText = leadingKeys.map(\.text).joined()
                         let spellMatched = spellMatch(keys: leadingKeys, complexity: leadingKeys.count, input: leadingText, limit: limit, statement: spellStatement)
@@ -320,6 +324,7 @@ extension Engine {
         }
 
         private static func search<T: RandomAccessCollection<VirtualInputKey>>(_ keys: T, segmentation: Segmentation, limit: Int64? = nil, deepSearch: Bool, anchorsStatement: OpaquePointer?, spellStatement: OpaquePointer?) -> [Lexicon] {
+                guard Task.isCancelled.negative else { return [] }
                 let inputLength: Int = keys.count
                 let text: String = keys.map(\.text).joined()
                 let anchorsMatched = anchorsMatch(keys: keys, input: text, limit: limit, statement: anchorsStatement)
@@ -333,7 +338,9 @@ extension Engine {
                 }()
                 let prefixesLimit: Int64 = (limit == nil) ? 500 : 200
                 let prefixMatched: [Lexicon] = shouldMatchPrefixes.negative ? [] : segmentation.flatMap({ scheme -> [Lexicon] in
-                        guard scheme.isNotEmpty else { return [] }
+                        guard Task.isCancelled.negative else { return [] }
+                        let leadingCharCount = scheme.count
+                        guard leadingCharCount > 0 && leadingCharCount <= MAX_CHAR_COUNT else { return [] }
                         let tail = keys.dropFirst(scheme.length)
                         guard let lastAnchor = tail.first else { return [] }
                         let schemeAnchors = scheme.aliasAnchors
@@ -360,6 +367,7 @@ extension Engine {
                         return conjoinedMatched + anchorsMatched
                 })
                 let gainedMatched: [Lexicon] = shouldMatchPrefixes.negative ? [] : (1..<inputLength).reversed().flatMap({ number -> [Lexicon] in
+                        guard Task.isCancelled.negative && (number <= MAX_CHAR_COUNT) else { return [] }
                         let leadingKeys = keys.prefix(number)
                         let leadingText = leadingKeys.map(\.text).joined()
                         return anchorsMatch(keys: leadingKeys, input: leadingText, limit: 300, statement: anchorsStatement)
@@ -409,15 +417,23 @@ extension Engine {
         private static func query(inputLength: Int, segmentation: Segmentation, limit: Int64? = nil, statement: OpaquePointer?) -> [Lexicon] {
                 let idealSchemes = segmentation.filter({ $0.length == inputLength })
                 if idealSchemes.isEmpty {
-                        return segmentation.flatMap({ spellMatch(keys: $0.originKeys, complexity: $0.complexity, input: $0.aliasText, mark: $0.mark, limit: limit, statement: statement) })
+                        return segmentation.flatMap({ scheme -> [Lexicon] in
+                                guard Task.isCancelled.negative && (scheme.count <= MAX_CHAR_COUNT) else { return [] }
+                                return spellMatch(keys: scheme.originKeys, complexity: scheme.complexity, input: scheme.aliasText, mark: scheme.mark, limit: limit, statement: statement)
+                        })
                 } else {
                         return idealSchemes.flatMap({ scheme -> [Lexicon] in
+                                guard Task.isCancelled.negative else { return [] }
                                 switch scheme.count {
                                 case 0: return []
                                 case 1: return spellMatch(keys: scheme.originKeys, complexity: scheme.complexity, input: scheme.aliasText, mark: scheme.mark, limit: limit, statement: statement)
                                 default:
-                                        return (1...scheme.count).reversed().map({ scheme.prefix($0) })
-                                                .flatMap({ spellMatch(keys: $0.originKeys, complexity: $0.complexity, input: $0.aliasText, mark: $0.mark, limit: limit, statement: statement) })
+                                        return (1...scheme.count).reversed()
+                                                .flatMap({ number -> [Lexicon] in
+                                                        guard Task.isCancelled.negative && (number <= MAX_CHAR_COUNT) else { return [] }
+                                                        let slice = scheme.prefix(number)
+                                                        return spellMatch(keys: slice.originKeys, complexity: slice.complexity, input: slice.aliasText, mark: slice.mark, limit: limit, statement: statement)
+                                                })
                                 }
                         })
                 }
@@ -449,8 +465,9 @@ private extension Engine {
 private extension Engine {
         static func anchorsMatch<T: RandomAccessCollection<VirtualInputKey>>(keys: T, input: String? = nil, limit: Int64? = nil, statement: OpaquePointer?) -> [Lexicon] {
                 sqlite3_reset(statement)
-                let anchorsCode: Int64 = keys.anchorNormalized.conjoinedCode.toInt64()
                 let charCount: Int64 = keys.count.toInt64()
+                guard charCount <= MAX_CHAR_COUNT else { return [] }
+                let anchorsCode: Int64 = keys.anchorNormalized.conjoinedCode.toInt64()
                 let limit: Int64 = limit ?? 100
                 sqlite3_bind_int64(statement, 1, anchorsCode)
                 sqlite3_bind_int64(statement, 2, charCount)

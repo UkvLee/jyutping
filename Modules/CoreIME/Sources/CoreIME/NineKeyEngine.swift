@@ -43,12 +43,14 @@ public struct NineKeyEngine {
         private static func processSlices<T: RandomAccessCollection<Combo>>(combos: T, limit: Int64? = nil, anchorsStatement: OpaquePointer?, spellStatement: OpaquePointer?) -> [Lexicon] {
                 return (0..<combos.count)
                         .flatMap({ number -> [Lexicon] in
+                                guard Task.isCancelled.negative else { return [] }
                                 let leadingCombos = combos.dropLast(number)
                                 return spellMatch(combos: leadingCombos, complexity: leadingCombos.count, limit: limit, statement: spellStatement) + anchorsMatch(combos: leadingCombos, limit: limit, statement: anchorsStatement)
                         })
         }
 
         private static func search<T: RandomAccessCollection<Combo>>(combos: T, segmentation: NineKeySegmentation, limit: Int64? = nil, anchorsStatement: OpaquePointer?, spellStatement: OpaquePointer?) -> [Lexicon] {
+                guard Task.isCancelled.negative else { return [] }
                 let inputLength: Int = combos.count
                 guard inputLength > 1 else { return anchorsMatch(combos: combos, limit: limit, statement: anchorsStatement) }
                 let anchorsMatched = anchorsMatch(combos: combos, limit: limit, statement: anchorsStatement)
@@ -80,12 +82,13 @@ public struct NineKeyEngine {
                                 case 0: return []
                                 case 1: return perform(scheme: scheme, limit: limit, statement: statement)
                                 default:
-                                        return (1...scheme.count).reversed().map({ scheme.prefix($0) }).flatMap({ perform(scheme: $0, limit: limit, statement: statement) })
+                                        return (1...scheme.count).reversed().flatMap({ perform(scheme: scheme.prefix($0), limit: limit, statement: statement) })
                                 }
                         })
                 }
         }
         private static func perform<T: RandomAccessCollection<NineKeySyllable>>(scheme: T, limit: Int64? = nil, statement: OpaquePointer?) -> [Lexicon] {
+                guard Task.isCancelled.negative && (scheme.count <= Engine.MAX_CHAR_COUNT) else { return [] }
                 let containsIrregular: Bool = scheme.contains(where: \.isIrregular)
                 if containsIrregular {
                         let serialStatement = prepareSerialStatement()
@@ -100,8 +103,9 @@ public struct NineKeyEngine {
 private extension NineKeyEngine {
         static func anchorsMatch<T: RandomAccessCollection<Combo>>(combos: T, limit: Int64? = nil, statement: OpaquePointer?) -> [Lexicon] {
                 sqlite3_reset(statement)
-                let anchorsCode: Int64 = combos.decimalCombinedCode.toInt64()
                 let charCount: Int64 = combos.count.toInt64()
+                guard charCount <= Engine.MAX_CHAR_COUNT else { return [] }
+                let anchorsCode: Int64 = combos.decimalCombinedCode.toInt64()
                 let limit: Int64 = limit ?? 100
                 sqlite3_bind_int64(statement, 1, anchorsCode)
                 sqlite3_bind_int64(statement, 2, charCount)

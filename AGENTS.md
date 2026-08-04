@@ -21,6 +21,11 @@ Current editor settings are UTF-8, LF line endings, and for Swift files: spaces,
 
 Make narrow, surgical edits and follow the surrounding style instead of reformatting files wholesale.
 
+## Code review rules
+
+- Changes under `Modules/Preparing/Sources/Preparing/Resources/` should usually be excluded from code review unless the user specifically asks to review those resource files.
+- Code-signing settings in `Jyutping.xcodeproj/project.pbxproj` are temporarily configured for local development. Do not report those settings as a review finding by themselves unless the user specifically asks about them or they cause a concrete issue within the requested scope.
+
 ## What is in the project
 
 `xcodebuild -project Jyutping.xcodeproj -list` currently reports these Xcode targets:

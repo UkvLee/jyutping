@@ -172,6 +172,8 @@ private struct CoreIMEBenchmarks {
                 let suggestionSegmentation = Segmenter.segment(suggestionKeys)
                 let partialKeys = inputKeys("ngoz")
                 let partialSegmentation = Segmenter.segment(partialKeys)
+                let repeatedKeys = inputKeys(String(repeating: "ngaam", count: 5))
+                let repeatedSegmentation = Segmenter.segment(repeatedKeys)
                 let suggestionNineKeyCombos = inputCombos([6, 4, 6])
                 let suggestionNineKeySegmentation = NineKeySegmenter.segment(suggestionNineKeyCombos)
                 let pinyinSegmentation = PinyinSegmenter.segment(pinyinKeys)
@@ -199,6 +201,9 @@ private struct CoreIMEBenchmarks {
                         Benchmark(name: "suggestions/jyutping-partial", operation: {
                                 Engine.suggest(partialKeys, segmentation: partialSegmentation).count
                         }),
+                        Benchmark(name: "suggestions/jyutping-repeated-ngaam", operation: {
+                                Engine.suggest(repeatedKeys, segmentation: repeatedSegmentation).count
+                        }),
                         Benchmark(name: "suggestions/jyutping-nine-key", operation: {
                                 await NineKeyEngine.suggest(combos: suggestionNineKeyCombos, segmentation: suggestionNineKeySegmentation).count
                         }),
@@ -219,6 +224,7 @@ private struct CoreIMEBenchmarks {
                 "segmentation/pinyin-nine-key",
                 "suggestions/jyutping-full",
                 "suggestions/jyutping-partial",
+                "suggestions/jyutping-repeated-ngaam",
                 "suggestions/jyutping-nine-key",
                 "suggestions/pinyin-reverse-lookup",
                 "suggestions/pinyin-nine-key-reverse"

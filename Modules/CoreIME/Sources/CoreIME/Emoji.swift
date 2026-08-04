@@ -127,6 +127,7 @@ extension Engine {
                         .distinct()
         }
         private static func match<T: BinaryInteger> (spell: T, complexity: T, input: String, statement: OpaquePointer?) -> [Lexicon] {
+                guard Task.isCancelled.negative else { return [] }
                 sqlite3_reset(statement)
                 guard sqlite3_bind_int64(statement, 1, spell.toInt64()) == SQLITE_OK else { return [] }
                 guard sqlite3_bind_int64(statement, 2, complexity.toInt64()) == SQLITE_OK else { return [] }
@@ -176,6 +177,8 @@ extension Engine {
                         .distinct()
         }
         private static func nineKeyMatch<T: RandomAccessCollection<Combo>>(combos: T, complexity: Int, statement: OpaquePointer?) -> [Lexicon] {
+                guard Task.isCancelled.negative else { return [] }
+                sqlite3_reset(statement)
                 let code = combos.decimalCombinedCode.toInt64()
                 let complexity = complexity.toInt64()
                 guard sqlite3_bind_int64(statement, 1, code) == SQLITE_OK else { return [] }
