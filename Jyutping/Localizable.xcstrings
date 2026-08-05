@@ -21,6 +21,18 @@
             "value" : "Copied"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copied"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copied"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -110,6 +122,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copy"
@@ -209,6 +233,18 @@
             "value" : "Copy Text"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Text"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Text"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -298,6 +334,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Jyutping"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Jyutping"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copy Jyutping"
@@ -397,6 +445,18 @@
             "value" : "OK"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -486,6 +546,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search"
@@ -585,6 +657,18 @@
             "value" : "Copy App Store Link"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy App Store Link"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy App Store Link"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -674,6 +758,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Email Address"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Email Address"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copy Email Address"
@@ -773,6 +869,18 @@
             "value" : "Copy QQ Group ID"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy QQ Group ID"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy QQ Group ID"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -862,6 +970,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Username"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Username"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copy Username"
@@ -961,6 +1081,18 @@
             "value" : "Mail unavailable"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mail unavailable"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mail unavailable"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1050,6 +1182,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to compose mail"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to compose mail"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unable to compose mail"
@@ -1149,6 +1293,18 @@
             "value" : "Jyutping for macOS"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping for macOS"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping for macOS"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1238,6 +1394,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Review on the App Store"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Review on the App Store"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Review on the App Store"
@@ -1337,6 +1505,18 @@
             "value" : "Share this App"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share this App"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share this App"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1426,6 +1606,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantonese Expressions"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantonese Expressions"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cantonese Expressions"
@@ -1525,6 +1717,18 @@
             "value" : "Canton Metro"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canton Metro"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canton Metro"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1614,6 +1818,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese Zodiac"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese Zodiac"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chinese Zodiac"
@@ -1713,6 +1929,18 @@
             "value" : "Fatshan Metro"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fatshan Metro"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fatshan Metro"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1802,6 +2030,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong MTR"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong MTR"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hong Kong MTR"
@@ -1901,6 +2141,18 @@
             "value" : "Hundred Family Surnames"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hundred Family Surnames"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hundred Family Surnames"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1990,6 +2242,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro Ligeiro de Macau"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro Ligeiro de Macau"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Metro Ligeiro de Macau"
@@ -2089,6 +2353,18 @@
             "value" : "Numbers"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numbers"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numbers"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2178,6 +2454,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sham Chun Metro"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sham Chun Metro"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sham Chun Metro"
@@ -2277,6 +2565,18 @@
             "value" : "Simplified Character Confusion"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simplified Character Confusion"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simplified Character Confusion"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2366,6 +2666,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solar Terms"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solar Terms"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Solar Terms"
@@ -2465,6 +2777,18 @@
             "value" : "Stems & Branches"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stems & Branches"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stems & Branches"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2554,6 +2878,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thousand Character Classic"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thousand Character Classic"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Thousand Character Classic"
@@ -2653,6 +2989,18 @@
             "value" : "Tungkun Rail Transit"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tungkun Rail Transit"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tungkun Rail Transit"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2742,6 +3090,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expressions"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expressions"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Expressions"
@@ -2841,6 +3201,18 @@
             "value" : "Canton Metro"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canton Metro"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canton Metro"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2930,6 +3302,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese Zodiac"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese Zodiac"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chinese Zodiac"
@@ -3029,6 +3413,18 @@
             "value" : "Fatshan Metro"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fatshan Metro"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fatshan Metro"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3118,6 +3514,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong MTR"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong MTR"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hong Kong MTR"
@@ -3217,6 +3625,18 @@
             "value" : "Surnames"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surnames"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surnames"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3306,6 +3726,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro Ligeiro de Macau"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro Ligeiro de Macau"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Metro Ligeiro de Macau"
@@ -3405,6 +3837,18 @@
             "value" : "Numbers"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numbers"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numbers"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3494,6 +3938,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sham Chun Metro"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sham Chun Metro"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sham Chun Metro"
@@ -3593,6 +4049,18 @@
             "value" : "Confusion"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confusion"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confusion"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3682,6 +4150,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solar Terms"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solar Terms"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Solar Terms"
@@ -3781,6 +4261,18 @@
             "value" : "Stems & Branches"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stems & Branches"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stems & Branches"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3870,6 +4362,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characters"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characters"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Characters"
@@ -3969,6 +4473,18 @@
             "value" : "Tungkun Rail Transit"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tungkun Rail Transit"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tungkun Rail Transit"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4058,6 +4574,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap the gear button in the top of the keyboard to open settings panel, then select a language from the Keyboard Display Language section."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap the gear button in the top of the keyboard to open settings panel, then select a language from the Keyboard Display Language section."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tap the gear button in the top of the keyboard to open settings panel, then select a language from the Keyboard Display Language section."
@@ -4157,6 +4685,18 @@
             "value" : "Jump to Settings app, then toggle Full Access for the keyboard. This will restart the keyboard and complete the language switch."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jump to Settings app, then toggle Full Access for the keyboard. This will restart the keyboard and complete the language switch."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jump to Settings app, then toggle Full Access for the keyboard. This will restart the keyboard and complete the language switch."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4246,6 +4786,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Make sure you have multiple languages enabled on your device."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Make sure you have multiple languages enabled on your device."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Make sure you have multiple languages enabled on your device."
@@ -4345,6 +4897,18 @@
             "value" : "Jump to Settings app, then select the language you preferred for Jyutping app."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jump to Settings app, then select the language you preferred for Jyutping app."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jump to Settings app, then select the language you preferred for Jyutping app."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4434,6 +4998,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard Display Language"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard Display Language"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Keyboard Display Language"
@@ -4533,6 +5109,18 @@
             "value" : "Main App Display Language"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Main App Display Language"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Main App Display Language"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4622,6 +5210,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Due to system limitations, the **Paste** button on the keyboard will only function when the **Allow Full Access** permission is turned on."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Due to system limitations, the **Paste** button on the keyboard will only function when the **Allow Full Access** permission is turned on."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Due to system limitations, the **Paste** button on the keyboard will only function when the **Allow Full Access** permission is turned on."
@@ -4721,6 +5321,18 @@
             "value" : "When you press the **Paste** button on the keyboard, the system may prompt you to ask if you want to allow the paste."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When you press the **Paste** button on the keyboard, the system may prompt you to ask if you want to allow the paste."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When you press the **Paste** button on the keyboard, the system may prompt you to ask if you want to allow the paste."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4810,6 +5422,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you find it annoying to have these prompts, you can go to the **Jyutping** in the **Settings** app, and change the setting **Paste from Other Apps** from **Ask** to **Allow**."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you find it annoying to have these prompts, you can go to the **Jyutping** in the **Settings** app, and change the setting **Paste from Other Apps** from **Ask** to **Allow**."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "If you find it annoying to have these prompts, you can go to the **Jyutping** in the **Settings** app, and change the setting **Paste from Other Apps** from **Ask** to **Allow**."
@@ -4909,6 +5533,18 @@
             "value" : "Haptic Feedback requires Full Access"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptic Feedback requires Full Access"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptic Feedback requires Full Access"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4998,6 +5634,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jump to **Settings**"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jump to **Settings**"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jump to **Settings**"
@@ -5097,6 +5745,18 @@
             "value" : "Tap **Keyboards**"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap **Keyboards**"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap **Keyboards**"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5186,6 +5846,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn on **Jyutping**"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn on **Jyutping**"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Turn on **Jyutping**"
@@ -5285,6 +5957,18 @@
             "value" : "Turn on **Allow Full Access**"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn on **Allow Full Access**"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn on **Allow Full Access**"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5374,6 +6058,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You may need to close the Settings app, then try again."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You may need to close the Settings app, then try again."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "You may need to close the Settings app, then try again."
@@ -5473,6 +6169,18 @@
             "value" : "This is a system bug, you may need to restart this device."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a system bug, you may need to restart this device."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a system bug, you may need to restart this device."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5562,6 +6270,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to close an app?"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to close an app?"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "How to close an app?"
@@ -5661,6 +6381,18 @@
             "value" : "How to restart a device?"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to restart a device?"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to restart a device?"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5750,6 +6482,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping keyboard not showing up in the Settings app?"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping keyboard not showing up in the Settings app?"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jyutping keyboard not showing up in the Settings app?"
@@ -5849,6 +6593,18 @@
             "value" : "Jyutping keyboard not showing up in some other apps?"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping keyboard not showing up in some other apps?"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping keyboard not showing up in some other apps?"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5938,6 +6694,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unfortunately not. Third-party keyboard apps can't communicate with external keyboards due to system limitations."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unfortunately not. Third-party keyboard apps can't communicate with external keyboards due to system limitations."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unfortunately not. Third-party keyboard apps can't communicate with external keyboards due to system limitations."
@@ -6037,6 +6805,18 @@
             "value" : "Haptic Feedback"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptic Feedback"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptic Feedback"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6126,6 +6906,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paste texts from the system clipboard"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paste texts from the system clipboard"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Paste texts from the system clipboard"
@@ -6225,6 +7017,18 @@
             "value" : "Sometimes the keyboard may trigger some bugs and it needs to be completely restarted. You can go to the Settings app and toggle the keyboard's “Allow Full Access” setting twice. The system will then restart the keyboard."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sometimes the keyboard may trigger some bugs and it needs to be completely restarted. You can go to the Settings app and toggle the keyboard's “Allow Full Access” setting twice. The system will then restart the keyboard."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sometimes the keyboard may trigger some bugs and it needs to be completely restarted. You can go to the Settings app and toggle the keyboard's “Allow Full Access” setting twice. The system will then restart the keyboard."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6314,6 +7118,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can I use with external keyboards?"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can I use with external keyboards?"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Can I use with external keyboards?"
@@ -6413,6 +7229,18 @@
             "value" : "What does “Allow Full Access” do?"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What does “Allow Full Access” do?"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What does “Allow Full Access” do?"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6502,6 +7330,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to restart the keyboard?"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to restart the keyboard?"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "How to restart the keyboard?"
@@ -6601,6 +7441,18 @@
             "value" : "Why is the TTS on my device not working?"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Why is the TTS on my device not working?"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Why is the TTS on my device not working?"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6690,6 +7542,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to enable this keyboard"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to enable this keyboard"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "How to enable this keyboard"
@@ -6789,6 +7653,18 @@
             "value" : "Swipe right to left, or bottom to top on the Delete key to clear the pre-edit syllables."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe right to left, or bottom to top on the Delete key to clear the pre-edit syllables."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe right to left, or bottom to top on the Delete key to clear the pre-edit syllables."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6878,6 +7754,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long-press on a Candidate can delete it from Input Memory."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long-press on a Candidate can delete it from Input Memory."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Long-press on a Candidate can delete it from Input Memory."
@@ -6977,6 +7865,18 @@
             "value" : "Touch and hold the Space bar until the keyboard triggers sound and haptic feedbacks; then, slide your finger left or right."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touch and hold the Space bar until the keyboard triggers sound and haptic feedbacks; then, slide your finger left or right."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touch and hold the Space bar until the keyboard triggers sound and haptic feedbacks; then, slide your finger left or right."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7066,6 +7966,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double tapping the “gw” key will input “kw”."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double tapping the “gw” key will input “kw”."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Double tapping the “gw” key will input “kw”."
@@ -7165,6 +8077,18 @@
             "value" : "Because the nucleus sounds “oe” and “eo” are complementary in most cases, they share the same key and you don't need to tell them apart."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Because the nucleus sounds “oe” and “eo” are complementary in most cases, they share the same key and you don't need to tell them apart."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Because the nucleus sounds “oe” and “eo” are complementary in most cases, they share the same key and you don't need to tell them apart."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7254,6 +8178,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear current pre-edit text"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear current pre-edit text"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clear current pre-edit text"
@@ -7353,6 +8289,18 @@
             "value" : "Remove a Candidate from Input Memory"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove a Candidate from Input Memory"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove a Candidate from Input Memory"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7442,6 +8390,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moving the insertion point"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moving the insertion point"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Moving the insertion point"
@@ -7541,6 +8501,18 @@
             "value" : "Triple-stroke (三拼) keyboard"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Triple-stroke (三拼) keyboard"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Triple-stroke (三拼) keyboard"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7630,6 +8602,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change Display Language"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change Display Language"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Change Display Language"
@@ -7729,6 +8713,18 @@
             "value" : "Clipboard Features"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipboard Features"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipboard Features"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7818,6 +8814,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FAQ"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FAQ"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "FAQ"
@@ -7917,6 +8925,18 @@
             "value" : "Test Keyboard"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test Keyboard"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test Keyboard"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8006,6 +9026,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More Introductions"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More Introductions"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "More Introductions"
@@ -8105,6 +9137,18 @@
             "value" : "Problems with enabling keyboard?"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problems with enabling keyboard?"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problems with enabling keyboard?"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8194,6 +9238,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text to Speech"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text to Speech"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Text to Speech"
@@ -8293,6 +9349,18 @@
             "value" : "Display Language"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display Language"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display Language"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8382,6 +9450,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipboard Features"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipboard Features"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clipboard Features"
@@ -8481,6 +9561,18 @@
             "value" : "Enable Keyboard"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable Keyboard"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable Keyboard"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8570,6 +9662,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FAQ"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FAQ"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "FAQ"
@@ -8669,6 +9773,18 @@
             "value" : "Input Test"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Test"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Test"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8758,6 +9874,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introductions"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introductions"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Introductions"
@@ -8857,6 +9985,18 @@
             "value" : "Text to Speech"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text to Speech"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text to Speech"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8946,6 +10086,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If Text-to-Speech doesn't read Jyutping syllables correctly, please take a screenshot of this page and share it with the developer. You can reach the developer through the contact information on the “About” page."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If Text-to-Speech doesn't read Jyutping syllables correctly, please take a screenshot of this page and share it with the developer. You can reach the developer through the contact information on the “About” page."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "If Text-to-Speech doesn't read Jyutping syllables correctly, please take a screenshot of this page and share it with the developer. You can reach the developer through the contact information on the “About” page."
@@ -9045,6 +10197,18 @@
             "value" : "This app uses system built-in Text-to-Speech (TTS) service to speak texts."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This app uses system built-in Text-to-Speech (TTS) service to speak texts."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This app uses system built-in Text-to-Speech (TTS) service to speak texts."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9134,6 +10298,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text-to-Speech (TTS) may not work if this device is in silent mode."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text-to-Speech (TTS) may not work if this device is in silent mode."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Text-to-Speech (TTS) may not work if this device is in silent mode."
@@ -9233,6 +10409,18 @@
             "value" : "To ensure TTS functional, please go to **Settings** → **General** → **Language & Region**, then add **Chinese, Traditional (Hong Kong)** language."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To ensure TTS functional, please go to **Settings** → **General** → **Language & Region**, then add **Chinese, Traditional (Hong Kong)** language."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To ensure TTS functional, please go to **Settings** → **General** → **Language & Region**, then add **Chinese, Traditional (Hong Kong)** language."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9322,6 +10510,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To improve TTS quality, please go to **Settings** → **Accessibility** → **VioceOver** → **Speech**, then add **Chinese (Hong Kong)** language voice."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To improve TTS quality, please go to **Settings** → **Accessibility** → **VioceOver** → **Speech**, then add **Chinese (Hong Kong)** language voice."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "To improve TTS quality, please go to **Settings** → **Accessibility** → **VioceOver** → **Speech**, then add **Chinese (Hong Kong)** language voice."
@@ -9421,6 +10621,18 @@
             "value" : "Try closing this app completely once."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try closing this app completely once."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try closing this app completely once."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9510,6 +10722,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Or maybe try restarting this device."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Or maybe try restarting this device."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Or maybe try restarting this device."
@@ -9609,6 +10833,18 @@
             "value" : "Or maybe try setting system language to be **Chinese, Traditional (Hong Kong)**."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Or maybe try setting system language to be **Chinese, Traditional (Hong Kong)**."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Or maybe try setting system language to be **Chinese, Traditional (Hong Kong)**."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9698,6 +10934,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Or maybe try uninstalling and reinstalling this app."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Or maybe try uninstalling and reinstalling this app."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Or maybe try uninstalling and reinstalling this app."
@@ -9797,6 +11045,18 @@
             "value" : "If there is occasionally not working"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If there is occasionally not working"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If there is occasionally not working"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9886,6 +11146,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping Finals"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping Finals"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jyutping Finals"
@@ -9985,6 +11257,18 @@
             "value" : "Jyutping Initials"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping Initials"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping Initials"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10074,6 +11358,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping Tones"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping Tones"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jyutping Tones"
@@ -10173,6 +11469,18 @@
             "value" : "Finals"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finals"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finals"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10262,6 +11570,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initials"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initials"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Initials"
@@ -10361,6 +11681,18 @@
             "value" : "Tones"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tones"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tones"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10450,6 +11782,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go to **Settings**"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go to **Settings**"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Go to **Settings**"
@@ -10549,6 +11893,18 @@
             "value" : "Copy URL"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy URL"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy URL"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10638,6 +11994,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "About"
@@ -10737,6 +12105,18 @@
             "value" : "Cantonese"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantonese"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantonese"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10826,6 +12206,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Home"
@@ -10925,6 +12317,18 @@
             "value" : "Jyutping"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11014,6 +12418,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jyutping"
@@ -11113,6 +12529,18 @@
             "value" : "About Jyutping"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About Jyutping"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About Jyutping"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11202,6 +12630,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search"
@@ -11301,6 +12741,18 @@
             "value" : "About"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11390,6 +12842,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantonese Expressions"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantonese Expressions"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cantonese Expressions"
@@ -11489,6 +12953,18 @@
             "value" : "Canton Metro"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canton Metro"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canton Metro"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11578,6 +13054,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese Zodiac"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese Zodiac"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chinese Zodiac"
@@ -11677,6 +13165,18 @@
             "value" : "Fatshan Metro"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fatshan Metro"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fatshan Metro"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11766,6 +13266,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong MTR"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong MTR"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hong Kong MTR"
@@ -11865,6 +13377,18 @@
             "value" : "Hundred Family Surnames"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hundred Family Surnames"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hundred Family Surnames"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11954,6 +13478,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Method"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Method"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Input Method"
@@ -12053,6 +13589,18 @@
             "value" : "Introductions"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introductions"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introductions"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12142,6 +13690,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finals"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finals"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Finals"
@@ -12241,6 +13801,18 @@
             "value" : "Initials"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initials"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initials"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12330,6 +13902,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tones"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tones"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tones"
@@ -12429,6 +14013,18 @@
             "value" : "Metro Ligeiro de Macau"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro Ligeiro de Macau"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro Ligeiro de Macau"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12518,6 +14114,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numbers"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numbers"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Numbers"
@@ -12617,6 +14225,18 @@
             "value" : "Resources"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resources"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resources"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12706,6 +14326,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search"
@@ -12805,6 +14437,18 @@
             "value" : "Sham Chun Metro"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sham Chun Metro"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sham Chun Metro"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12894,6 +14538,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simplified Character Confusion"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simplified Character Confusion"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Simplified Character Confusion"
@@ -12993,6 +14649,18 @@
             "value" : "Solar Terms"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solar Terms"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solar Terms"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13082,6 +14750,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stems & Branches"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stems & Branches"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stems & Branches"
@@ -13181,6 +14861,18 @@
             "value" : "Thousand Character Classic"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thousand Character Classic"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thousand Character Classic"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13270,6 +14962,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tungkun Rail Transit"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tungkun Rail Transit"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tungkun Rail Transit"
@@ -13369,6 +15073,18 @@
             "value" : "About"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13458,6 +15174,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantonese"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantonese"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cantonese"
@@ -13557,6 +15285,18 @@
             "value" : "Input Method"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Method"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Method"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13646,6 +15386,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jyutping"
@@ -13745,6 +15497,18 @@
             "value" : "Metro"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13834,6 +15598,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email Feedback"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email Feedback"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Email Feedback"
@@ -13933,6 +15709,18 @@
             "value" : "FAQ"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FAQ"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FAQ"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14022,6 +15810,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google Forms Feedback"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google Forms Feedback"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Google Forms Feedback"
@@ -14121,6 +15921,18 @@
             "value" : "Follow us on Instagram"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Follow us on Instagram"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Follow us on Instagram"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14210,6 +16022,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy Policy"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy Policy"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Privacy Policy"
@@ -14309,6 +16133,18 @@
             "value" : "Join QQ Group"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Join QQ Group"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Join QQ Group"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14398,6 +16234,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Follow us on RedNote"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Follow us on RedNote"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Follow us on RedNote"
@@ -14497,6 +16345,18 @@
             "value" : "Source Code"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source Code"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source Code"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14586,6 +16446,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Join Telegram Group"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Join Telegram Group"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Join Telegram Group"
@@ -14685,6 +16557,18 @@
             "value" : "Tencent Survey Feedback"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tencent Survey Feedback"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tencent Survey Feedback"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14774,6 +16658,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Follow us on Threads"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Follow us on Threads"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Follow us on Threads"
@@ -14873,6 +16769,18 @@
             "value" : "Follow us on X (Twitter)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Follow us on X (Twitter)"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Follow us on X (Twitter)"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14962,6 +16870,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version"
@@ -15061,6 +16981,18 @@
             "value" : "Website"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Website"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Website"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15150,6 +17082,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type faster by entering only syllable initials (e.g., “nh” → “你好”)."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type faster by entering only syllable initials (e.g., “nh” → “你好”)."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Type faster by entering only syllable initials (e.g., “nh” → “你好”)."
@@ -15249,6 +17193,18 @@
             "value" : "Combine abbreviated and full input for flexibility (e.g., “nhou” / “neih” → “你好”)."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Combine abbreviated and full input for flexibility (e.g., “nhou” / “neih” → “你好”)."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Combine abbreviated and full input for flexibility (e.g., “nhou” / “neih” → “你好”)."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15338,6 +17294,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick Input with Initials"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick Input with Initials"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quick Input with Initials"
@@ -15437,6 +17405,18 @@
             "value" : "Start with “v”, then enter Cangjie or Quick code. For example, “vdd” → “林”."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “v”, then enter Cangjie or Quick code. For example, “vdd” → “林”."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “v”, then enter Cangjie or Quick code. For example, “vdd” → “林”."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15526,6 +17506,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with Cangjie or Quick(Sucheng)"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with Cangjie or Quick(Sucheng)"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lookup Jyutping with Cangjie or Quick(Sucheng)"
@@ -15625,6 +17617,18 @@
             "value" : "You can choose Cangjie / Quick version in input method / keyboard's settings page."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can choose Cangjie / Quick version in input method / keyboard's settings page."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can choose Cangjie / Quick version in input method / keyboard's settings page."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15714,6 +17718,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “r”, then enter Pinyin. For example, “rlin” → “林”."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “r”, then enter Pinyin. For example, “rlin” → “林”."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Start with “r”, then enter Pinyin. For example, “rlin” → “林”."
@@ -15813,6 +17829,18 @@
             "value" : "Lookup Jyutping with Mandarin Pinyin"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with Mandarin Pinyin"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with Mandarin Pinyin"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15902,6 +17930,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “x”, then enter Stroke code. For example, “xwsad” → “木”."
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “x”, then enter Stroke code. For example, “xwsad” → “木”."
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Start with “x”, then enter Stroke code. For example, “xwsad” → “木”."
@@ -16001,6 +18041,18 @@
             "value" : "w = 橫(waang), Horizontal\ns = 豎(syu), Vertical\na = 撇, Left-falling\nd = 點(dim), Right-falling\nz = 折(zit), Turning"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "w = 橫(waang), Horizontal\ns = 豎(syu), Vertical\na = 撇, Left-falling\nd = 點(dim), Right-falling\nz = 折(zit), Turning"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "w = 橫(waang), Horizontal\ns = 豎(syu), Vertical\na = 撇, Left-falling\nd = 點(dim), Right-falling\nz = 折(zit), Turning"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16090,6 +18142,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with Stroke"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with Stroke"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lookup Jyutping with Stroke"
@@ -16189,6 +18253,18 @@
             "value" : "Start with “q”, then enter the Jyutping of the components. For example, “qmukmuk” → “林”."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “q”, then enter the Jyutping of the components. For example, “qmukmuk” → “林”."
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “q”, then enter the Jyutping of the components. For example, “qmukmuk” → “林”."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16278,6 +18354,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with character components"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with character components"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lookup Jyutping with character components"
@@ -16377,6 +18465,18 @@
             "value" : "v = 1, High Level (陰平)\nx = 2, Medium Rising (陰上)\nq = 3, Medium Level (陰去)\nvv = 4, Low Falling (陽平)\nxx = 5, Low Rising (陽上)\nqq = 6, Low Level (陽去)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v = 1, High Level (陰平)\nx = 2, Medium Rising (陰上)\nq = 3, Medium Level (陰去)\nvv = 4, Low Falling (陽平)\nxx = 5, Low Rising (陽上)\nqq = 6, Low Level (陽去)"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v = 1, High Level (陰平)\nx = 2, Medium Rising (陰上)\nq = 3, Medium Level (陰去)\nvv = 4, Low Falling (陽平)\nxx = 5, Low Rising (陽上)\nqq = 6, Low Level (陽去)"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16466,6 +18566,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Examples: sinq = sin3(線), sinqq = sin6(羨)"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Examples: sinq = sin3(線), sinqq = sin6(羨)"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Examples: sinq = sin3(線), sinqq = sin6(羨)"
@@ -16565,6 +18677,18 @@
             "value" : "Tones Input"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tones Input"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tones Input"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16659,6 +18783,18 @@
             "value" : "Input"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16748,6 +18884,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search Pronunciation"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search Pronunciation"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search Pronunciation"

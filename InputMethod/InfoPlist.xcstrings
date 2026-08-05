@@ -23,6 +23,18 @@
             "value" : "Jyutping"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -114,6 +126,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jyutping"
@@ -215,6 +239,18 @@
             "value" : "YuetPing"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YuetPing"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YuetPing"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -306,6 +342,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CC0 1.0 Public Domain"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CC0 1.0 Public Domain"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CC0 1.0 Public Domain"
@@ -407,6 +455,18 @@
             "value" : "Jyutping"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -498,6 +558,18 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
+        "en-NZ" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jyutping"

@@ -487,6 +487,8 @@
 				"en-US",
 				"en-GB",
 				"en-CA",
+				"en-AU",
+				"en-NZ",
 				"zh-Hant",
 				"zh-HK",
 				"zh-Hans",

@@ -690,7 +690,6 @@
 1	110000	1F480	大鑊	daai6 wok6
 1	110000	1F480	衰	seoi1
 1	110000	1F480	死亡	sei2 mong4
-1	110000	1F480	死	sei2
 1	110000	1F480	死火	sei2 fo2
 1	110000	2620.FE0F	骷髏	fu1 lau4
 1	110000	2620.FE0F	有毒	jau5 duk6
@@ -698,7 +697,6 @@
 1	110000	2620.FE0F	致命	zi3 ming6
 1	110000	2620.FE0F	致死	zi3 sei2
 1	110000	2620.FE0F	死亡	sei2 mong4
-1	110000	2620.FE0F	死	sei2
 1	110000	1F47D	外星人	ngoi6 sing1 jan4
 1	110000	1F47D	火星人	fo2 sing1 jan4
 1	110000	1F47E	怪獸	gwaai3 sau3
@@ -996,7 +994,6 @@
 1	110000	1F476	蘇蝦	sou1 haa1
 1	110000	1F467	女童	neoi5 tung4
 1	110000	1F467	細𡀔女	sai3 lou6 neoi2
-1	110000	1F467	女孩	neoi5 hoi4
 1	110000	1F467	女孩	neoi5 haai4
 1	110000	1F467	兒童	ji4 tung4
 1	110000	1F467	細𡀔	sai3 lou6
@@ -1009,17 +1006,13 @@
 1	110000	1F467	叉燒包	caa1 siu1 baau1
 1	110000	1F467	化骨龍	faa3 gwat1 lung4
 1	110000	1F467	細儂	sai3 nung4
-1	110000	1F467	孩童	hoi4 tung4
 1	110000	1F467	孩童	haai4 tung4
-1	110000	1F467	小孩	siu2 hoi4
 1	110000	1F467	小孩	siu2 haai4
-1	110000	1F467	孩子	hoi4 zi2
 1	110000	1F467	孩子	haai4 zi2
 1	110000	1F9D2	中性兒童	zung1 sing3 ji4 tung4
 1	110000	1F466	男童	naam4 tung4
 1	110000	1F466	細𡀔仔	sai3 lou6 zai2
 1	110000	1F466	細𡀔哥	sai3 lou2 go1
-1	110000	1F466	男孩	naam4 hoi4
 1	110000	1F466	男孩	naam4 haai4
 1	110000	1F466	兒童	ji4 tung4
 1	110000	1F466	細𡀔	sai3 lou6
@@ -1030,11 +1023,8 @@
 1	110000	1F466	叉燒包	caa1 siu1 baau1
 1	110000	1F466	化骨龍	faa3 gwat1 lung4
 1	110000	1F466	細儂	sai3 nung4
-1	110000	1F466	孩童	hoi4 tung4
 1	110000	1F466	孩童	haai4 tung4
-1	110000	1F466	小孩	siu2 hoi4
 1	110000	1F466	小孩	siu2 haai4
-1	110000	1F466	孩子	hoi4 zi2
 1	110000	1F466	孩子	haai4 zi2
 1	110000	1F469	女人	neoi5 jan2
 1	110000	1F469	女人	neoi5 jan4
@@ -1988,6 +1978,8 @@
 2	110000	1F43C	熊貓	hung4 maau1
 2	110000	1F43C	貓熊	maau1 hung4
 2	110000	1F43C	大熊貓	daai6 hung4 maau1
+2	110000	1F43C	食鐵獸	sik6 tit3 sau3
+2	110000	1F43C	國寶	gwok3 bou2
 2	110000	1F43B.200D.2744.FE0F	北極熊	bak1 gik6 hung4
 2	110000	1F43B.200D.2744.FE0F	熊	hung4
 2	110000	1F428	無尾熊	mou4 mei5 hung4
@@ -2615,12 +2607,10 @@
 2	110000	1F33A	芙蓉花	fu4 jung4 faa1
 2	110000	1F33A	木芙蓉	muk6 fu4 jung4
 2	110000	1F33A	紅花	hung4 faa1
-2	110000	1F33A	花	faa1
 2	110000	1F33A	花朵	faa1 do2
 2	110000	1F33A	花朵	faa1 doe2
 2	110000	1F338	櫻花	jing1 faa1
 2	110000	1F338	櫻	jing1
-2	110000	1F338	花	faa1
 2	110000	1F338	花朵	faa1 do2
 2	110000	1F338	花朵	faa1 doe2
 2	110000	1F33C	黃花	wong4 faa1
@@ -5380,11 +5370,13 @@
 7	110000	1F441.200D.1F5E8	作證	zok3 zing3
 7	110000	1F51A	結束箭頭	git3 cuk1 zin3 tau4
 7	110000	1F519	返回箭頭	faan2 wui4 zin3 tau4
+7	110000	1F519	返回	faan2 wui4
 7	110000	1F51B	開啓箭頭	hoi1 kai2 zin3 tau4
 7	110000	1F51B	啓用箭頭	kai2 jung6 zin3 tau4
 7	110000	1F51D	置頂	zi3 deng2
 7	110000	1F51D	置頂	zi3 ding2
 7	110000	1F51C	即將箭頭	zik1 zoeng1 zin3 tau4
+7	110000	1F51C	即將	zik1 zoeng1
 7	110000	3030.FE0F	波浪線	bo1 long6 sin3
 7	110000	27B0	捲曲環	gyun2 kuk1 waan4
 7	110000	27BF	雙捲曲環	soeng1 gyun2 kuk1 waan4
