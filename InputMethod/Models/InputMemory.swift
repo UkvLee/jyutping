@@ -162,6 +162,12 @@ struct InputMemory {
                 "CREATE INDEX IF NOT EXISTS ix2608_word ON memory2608 (word, frequency DESC);",
         ]
 
+        private static func dropTable(tableName: String) {
+                let command: String = "DROP TABLE IF EXISTS \(tableName);"
+                guard sqlite3_exec(database, command, nil, nil, nil) == SQLITE_OK else { return }
+                sqlite3_exec(database, "VACUUM;", nil, nil, nil)
+        }
+
 
         // MARK: - Candidate Handling
 
