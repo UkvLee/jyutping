@@ -7,7 +7,7 @@ struct GlassIndicatorBar: View {
         var body: some View {
                 if let texts = context.indicatorTexts {
                         ZStack {
-                                Color.clear.glassEffect(.regular, in: RoundedRectangle(cornerRadius: 8))
+                                Color.clear.glassEffect(in: .rect(cornerRadius: 8))
                                 ZStack {
                                         Color.clear
                                         HStack(spacing: 2) {
@@ -60,7 +60,7 @@ struct IndicatorBar: View {
                         .frame(height: 26)
                         .padding(2)
                         .background(VisualEffectView())
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .clipShape(.rect(cornerRadius: 8))
                         .shadow(radius: 2)
                         .padding(PresetConstant.contentWindowGap)
                         .fixedSize()

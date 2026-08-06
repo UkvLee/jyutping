@@ -172,7 +172,7 @@ private struct CoreIMEBenchmarks {
                 let suggestionSegmentation = Segmenter.segment(suggestionKeys)
                 let partialKeys = inputKeys("ngoz")
                 let partialSegmentation = Segmenter.segment(partialKeys)
-                let repeatedKeys = inputKeys(String(repeating: "ngaam", count: 5))
+                let repeatedKeys = inputKeys(String(repeating: "ngaam", count: 3))
                 let repeatedSegmentation = Segmenter.segment(repeatedKeys)
                 let suggestionNineKeyCombos = inputCombos([6, 4, 6])
                 let suggestionNineKeySegmentation = NineKeySegmenter.segment(suggestionNineKeyCombos)

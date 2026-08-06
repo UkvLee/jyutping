@@ -5,12 +5,12 @@ extension View {
 
         /// Apply rounded rectangle background with content padding
         func block() -> some View {
-                padding(8).background(Color.textBackgroundColor.opacity(0.5), in: RoundedRectangle(cornerRadius: 12))
+                padding(8).background(Color.textBackgroundColor.opacity(0.5), in: .rect(cornerRadius: 12))
         }
 
         /// Apply rounded rectangle background
         func stack(cornerRadius: CGFloat = 12) -> some View {
-                background(Color.textBackgroundColor.opacity(0.5), in: RoundedRectangle(cornerRadius: cornerRadius))
+                background(Color.textBackgroundColor.opacity(0.5), in: .rect(cornerRadius: cornerRadius))
         }
 
         /// Disable animations when condition is true

@@ -5,7 +5,7 @@ struct MotherBoard: View {
         @EnvironmentObject private var context: InputContext
         private let pageCornerRadius: CGFloat = CGFloat(AppSettings.pageCornerRadius)
         private let contentInsets: CGFloat = CGFloat(AppSettings.contentInsets)
-        private let verticalSpacing: CGFloat = -((PresetConstant.contentWindowGap * 2) - 4)
+        private let verticalSpacing: CGFloat = 4 - (PresetConstant.contentWindowGap * 2)
         var body: some View {
                 ZStack(alignment: context.quadrant.alignment) {
                         Color.clear
@@ -24,19 +24,19 @@ struct MotherBoard: View {
                                         switch context.inputForm {
                                         case .options:
                                                 ZStack {
-                                                        Color.clear.glassEffect(.regular, in: RoundedRectangle(cornerRadius: pageCornerRadius))
+                                                        Color.clear.glassEffect(in: .rect(cornerRadius: pageCornerRadius))
                                                         OptionsView()
                                                                 .padding(contentInsets)
-                                                                .background(Color.clear, in: RoundedRectangle(cornerRadius: pageCornerRadius))
+                                                                .clipShape(.rect(cornerRadius: pageCornerRadius))
                                                 }
                                                 .padding(PresetConstant.contentWindowGap)
                                                 .fixedSize()
                                         case .cantonese where context.displayCandidates.isNotEmpty:
                                                 ZStack {
-                                                        Color.clear.glassEffect(.regular, in: RoundedRectangle(cornerRadius: pageCornerRadius))
+                                                        Color.clear.glassEffect(in: .rect(cornerRadius: pageCornerRadius))
                                                         CandidateStackView()
                                                                 .padding(contentInsets)
-                                                                .background(Color.clear, in: RoundedRectangle(cornerRadius: pageCornerRadius))
+                                                                .clipShape(.rect(cornerRadius: pageCornerRadius))
                                                 }
                                                 .padding(PresetConstant.contentWindowGap)
                                                 .fixedSize()
@@ -69,7 +69,7 @@ struct MotherBoard: View {
                                                 OptionsView()
                                                         .padding(contentInsets)
                                                         .background(VisualEffectView())
-                                                        .clipShape(RoundedRectangle(cornerRadius: pageCornerRadius))
+                                                        .clipShape(.rect(cornerRadius: pageCornerRadius))
                                                         .shadow(radius: 2)
                                                         .padding(PresetConstant.contentWindowGap)
                                                         .fixedSize()
@@ -77,7 +77,7 @@ struct MotherBoard: View {
                                                 CandidateStackView()
                                                         .padding(contentInsets)
                                                         .background(VisualEffectView())
-                                                        .clipShape(RoundedRectangle(cornerRadius: pageCornerRadius))
+                                                        .clipShape(.rect(cornerRadius: pageCornerRadius))
                                                         .shadow(radius: 2)
                                                         .padding(PresetConstant.contentWindowGap)
                                                         .fixedSize()
