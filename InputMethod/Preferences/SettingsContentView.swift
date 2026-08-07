@@ -18,6 +18,7 @@ struct SettingsContentView: View {
                         List(selection: $selection) {
                                 Section {
                                         Label("SettingsView.NavigationTitle.General", systemImage: "gear").tag(SettingsSidebarRow.general)
+                                        Label("SettingsView.NavigationTitle.Appearance", systemImage: "paintpalette").tag(SettingsSidebarRow.appearance)
                                         Label("SettingsView.NavigationTitle.ReverseLookup", systemImage: "doc.text.magnifyingglass").tag(SettingsSidebarRow.reverseLookup)
                                         Label("SettingsView.NavigationTitle.TonesInput", systemImage: "bell").tag(SettingsSidebarRow.tonesInput)
                                         Label("SettingsView.NavigationTitle.Fonts", systemImage: characterImageName).tag(SettingsSidebarRow.fonts)
@@ -41,6 +42,8 @@ struct SettingsContentView: View {
                         switch selection {
                         case .general:
                                 GeneralSettingsView()
+                        case .appearance:
+                                AppearanceSettingsView()
                         case .tonesInput:
                                 TonesInputView()
                         case .reverseLookup:
@@ -59,6 +62,7 @@ struct SettingsContentView: View {
 
 enum SettingsSidebarRow: Int, Identifiable {
         case general
+        case appearance
         case reverseLookup
         case tonesInput
         case fonts

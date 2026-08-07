@@ -5,13 +5,7 @@ import CommonExtensions
 struct GeneralSettingsView: View {
 
         @State private var pageSize: Int = AppSettings.displayCandidatePageSize
-        @State private var lineSpacing: Int = AppSettings.candidateLineSpacing
-        @State private var pageCornerRadius: Int = AppSettings.pageCornerRadius
-        @State private var contentInsets: Int = AppSettings.contentInsets
-        @State private var innerCornerRadius: Int = AppSettings.innerCornerRadius
         private let pageSizeRange: ClosedRange<Int> = AppSettings.candidatePageSizeRange
-        private let lineSpacingRange: ClosedRange<Int> = AppSettings.candidateLineSpacingRange
-        private let cornerRadiusRange: ClosedRange<Int> = AppSettings.cornerRadiusRange
 
         @State private var orientation: CandidatePageOrientation = AppSettings.candidatePageOrientation
         @State private var commentDisplayScene: CommentDisplayScene = AppSettings.commentDisplayScene
@@ -27,8 +21,8 @@ struct GeneralSettingsView: View {
         @State private var isEnglishSuggestionsOn: Bool = AppSettings.isEnglishSuggestionsOn
         @State private var isTextReplacementsOn: Bool = AppSettings.isTextReplacementsOn
         @State private var isCompatibleModeOn: Bool = AppSettings.isCompatibleModeOn
-        @State private var isInputMemoryOn: Bool = AppSettings.isInputMemoryOn
 
+        @State private var isInputMemoryOn: Bool = AppSettings.isInputMemoryOn
         @State private var isClearInputMemoryConfirmDialogPresented: Bool = false
         @State private var isPerformingClearInputMemory: Bool = false
         @State private var clearInputMemoryProgress: Double = 0
@@ -47,44 +41,6 @@ struct GeneralSettingsView: View {
                                                 .onChange(of: pageSize) { newPageSize in
                                                         AppSettings.updateDisplayCandidatePageSize(to: newPageSize)
                                                 }
-                                                Picker("GeneralSettingsView.CandidateLineSpacing", selection: $lineSpacing) {
-                                                        ForEach(lineSpacingRange, id: \.self) {
-                                                                Text(verbatim: "\($0) pt").tag($0)
-                                                        }
-                                                }
-                                                .pickerStyle(.menu)
-                                                .onChange(of: lineSpacing) { newLineSpacing in
-                                                        AppSettings.updateCandidateLineSpacing(to: newLineSpacing)
-                                                }
-                                                Picker("GeneralSettingsView.CandidatePageCornerRadius", selection: $pageCornerRadius) {
-                                                        ForEach(cornerRadiusRange, id: \.self) {
-                                                                Text(verbatim: "\($0) pt").tag($0)
-                                                        }
-                                                }
-                                                .pickerStyle(.menu)
-                                                .onChange(of: pageCornerRadius) { newValue in
-                                                        AppSettings.updatePageCornerRadius(to: newValue)
-                                                }
-                                                Picker("GeneralSettingsView.CandidatePageInsets", selection: $contentInsets) {
-                                                        ForEach(cornerRadiusRange, id: \.self) {
-                                                                Text(verbatim: "\($0) pt").tag($0)
-                                                        }
-                                                }
-                                                .pickerStyle(.menu)
-                                                .onChange(of: contentInsets) { newValue in
-                                                        AppSettings.updateContentInsets(to: newValue)
-                                                }
-                                                Picker("GeneralSettingsView.CandidateCornerRadius", selection: $innerCornerRadius) {
-                                                        ForEach(cornerRadiusRange, id: \.self) {
-                                                                Text(verbatim: "\($0) pt").tag($0)
-                                                        }
-                                                }
-                                                .pickerStyle(.menu)
-                                                .onChange(of: innerCornerRadius) { newValue in
-                                                        AppSettings.updateInnerCornerRadius(to: newValue)
-                                                }
-                                        }
-                                        Section {
                                                 Picker("GeneralSettingsView.CandidatePageOrientation", selection: $orientation) {
                                                         Text("GeneralSettingsView.CandidatePageOrientation.Horizontal").tag(CandidatePageOrientation.horizontal)
                                                         Text("GeneralSettingsView.CandidatePageOrientation.Vertical").tag(CandidatePageOrientation.vertical)

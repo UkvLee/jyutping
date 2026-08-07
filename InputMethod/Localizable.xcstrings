@@ -9,6 +9,12 @@
             "value" : "Email Feedback"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email Feedback"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16,12 +22,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Email Feedback"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Email Feedback"
@@ -115,6 +115,12 @@
             "value" : "FAQ"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FAQ"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -122,12 +128,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FAQ"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "FAQ"
@@ -221,6 +221,12 @@
             "value" : "Google Forms Feedback"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google Forms Feedback"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -228,12 +234,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Google Forms Feedback"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Google Forms Feedback"
@@ -327,6 +327,12 @@
             "value" : "Instagram"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instagram"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -334,12 +340,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instagram"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Instagram"
@@ -433,6 +433,12 @@
             "value" : "Privacy Policy"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy Policy"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -440,12 +446,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Privacy Policy"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Privacy Policy"
@@ -539,6 +539,12 @@
             "value" : "QQ Group"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QQ Group"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -546,12 +552,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "QQ Group"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "QQ Group"
@@ -645,6 +645,12 @@
             "value" : "RedNote"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RedNote"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -652,12 +658,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "RedNote"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "RedNote"
@@ -751,6 +751,12 @@
             "value" : "Source Code"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source Code"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -758,12 +764,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Source Code"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Source Code"
@@ -857,6 +857,12 @@
             "value" : "Telegram Group"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Telegram Group"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -864,12 +870,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Telegram Group"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Telegram Group"
@@ -963,6 +963,12 @@
             "value" : "Tencent Survey Feedback"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tencent Survey Feedback"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -970,12 +976,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tencent Survey Feedback"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tencent Survey Feedback"
@@ -1069,6 +1069,12 @@
             "value" : "Threads"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Threads"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1076,12 +1082,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Threads"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Threads"
@@ -1175,6 +1175,12 @@
             "value" : "X (Twitter)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "X (Twitter)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1182,12 +1188,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "X (Twitter)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "X (Twitter)"
@@ -1281,6 +1281,12 @@
             "value" : "Version"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1288,12 +1294,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version"
@@ -1387,6 +1387,12 @@
             "value" : "Website"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Website"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1394,12 +1400,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Website"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Website"
@@ -1485,9 +1485,121 @@
         }
       }
     },
+    "AppearanceSettingsView.NavigationTitle.TitleKey" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apparence"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外観"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        }
+      }
+    },
     "FontPicker.ButtonTitle.ChangeCurrentFont" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change…"
+          }
+        },
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Change…"
@@ -1500,12 +1612,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Change…"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Change…"
@@ -1599,6 +1705,12 @@
             "value" : "Custom"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1606,12 +1718,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Custom"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Custom"
@@ -1705,6 +1811,12 @@
             "value" : "Default"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1712,12 +1824,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Default"
@@ -1811,6 +1917,12 @@
             "value" : "System"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1818,12 +1930,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "System"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "System"
@@ -1917,6 +2023,12 @@
             "value" : "Candidate Font"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Font"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1924,12 +2036,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Font"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Font"
@@ -2023,6 +2129,12 @@
             "value" : "Comment (Jyutping) Font"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment (Jyutping) Font"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2030,12 +2142,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comment (Jyutping) Font"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment (Jyutping) Font"
@@ -2129,6 +2235,12 @@
             "value" : "Serial Number Font"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serial Number Font"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2136,12 +2248,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serial Number Font"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serial Number Font"
@@ -2235,6 +2341,12 @@
             "value" : "Candidate Font Size"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Font Size"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2242,12 +2354,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Font Size"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Font Size"
@@ -2341,6 +2447,12 @@
             "value" : "Comment (Jyutping) Font Size"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment (Jyutping) Font Size"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2348,12 +2460,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comment (Jyutping) Font Size"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment (Jyutping) Font Size"
@@ -2447,6 +2553,12 @@
             "value" : "Serial Number Font Size"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serial Number Font Size"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2454,12 +2566,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serial Number Font Size"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serial Number Font Size"
@@ -2545,9 +2651,15 @@
         }
       }
     },
-    "GeneralSettingsView.CandidateCornerRadius" : {
+    "AppearanceSettingsView.CandidateCornerRadius.PickerTitle" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Cell Corner Radius"
+          }
+        },
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Cell Corner Radius"
@@ -2560,12 +2672,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Cell Corner Radius"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Cell Corner Radius"
@@ -2659,6 +2765,12 @@
             "value" : "Candidate Count Per Page"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Count Per Page"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2666,12 +2778,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Count Per Page"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Count Per Page"
@@ -2757,9 +2863,15 @@
         }
       }
     },
-    "GeneralSettingsView.CandidateLineSpacing" : {
+    "AppearanceSettingsView.CandidateLineSpacing.PickerTitle" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Line Spacing"
+          }
+        },
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Line Spacing"
@@ -2772,12 +2884,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Line Spacing"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Line Spacing"
@@ -2863,9 +2969,15 @@
         }
       }
     },
-    "GeneralSettingsView.CandidatePageCornerRadius" : {
+    "AppearanceSettingsView.CandidatePageCornerRadius.PickerTitle" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Corner Radius"
+          }
+        },
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Page Corner Radius"
@@ -2878,12 +2990,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Corner Radius"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Page Corner Radius"
@@ -2969,9 +3075,15 @@
         }
       }
     },
-    "GeneralSettingsView.CandidatePageInsets" : {
+    "AppearanceSettingsView.CandidatePageInsets.PickerTitle" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Content Padding"
+          }
+        },
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Page Content Padding"
@@ -2984,12 +3096,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Content Padding"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Page Content Padding"
@@ -3083,6 +3189,12 @@
             "value" : "Candidate Page Orientation"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Orientation"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3090,12 +3202,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Orientation"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Page Orientation"
@@ -3189,6 +3295,12 @@
             "value" : "Horizontal"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horizontal"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3196,12 +3308,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Horizontal"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Horizontal"
@@ -3295,6 +3401,12 @@
             "value" : "Vertical"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertical"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3302,12 +3414,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vertical"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vertical"
@@ -3401,6 +3507,12 @@
             "value" : "Traditional, HK"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traditional, HK"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3408,12 +3520,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Traditional, HK"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Traditional, HK"
@@ -3507,6 +3613,12 @@
             "value" : "Candidate Character Set"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Character Set"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3514,12 +3626,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Character Set"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Character Set"
@@ -3613,6 +3719,12 @@
             "value" : "Simplified"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simplified"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3620,12 +3732,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Simplified"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Simplified"
@@ -3719,6 +3825,12 @@
             "value" : "Traditional, TW"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traditional, TW"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3726,12 +3838,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Traditional, TW"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Traditional, TW"
@@ -3825,6 +3931,12 @@
             "value" : "Traditional"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traditional"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3832,12 +3944,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Traditional"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Traditional"
@@ -3931,6 +4037,12 @@
             "value" : "Comment (Jyutping) Scenes"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment (Jyutping) Scenes"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3938,12 +4050,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comment (Jyutping) Scenes"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment (Jyutping) Scenes"
@@ -4037,6 +4143,12 @@
             "value" : "All"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4044,12 +4156,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "All"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "All"
@@ -4143,6 +4249,12 @@
             "value" : "Lookup"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4150,12 +4262,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lookup"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lookup"
@@ -4249,6 +4355,12 @@
             "value" : "None"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "None"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4256,12 +4368,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "None"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "None"
@@ -4355,6 +4461,12 @@
             "value" : "Comment (Jyutping) Position"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment (Jyutping) Position"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4362,12 +4474,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comment (Jyutping) Position"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment (Jyutping) Position"
@@ -4461,6 +4567,12 @@
             "value" : "Bottom"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottom"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4468,12 +4580,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bottom"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bottom"
@@ -4567,6 +4673,12 @@
             "value" : "Right"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Right"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4574,12 +4686,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Right"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Right"
@@ -4673,6 +4779,12 @@
             "value" : "Top"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Top"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4680,12 +4792,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Top"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Top"
@@ -4779,6 +4885,12 @@
             "value" : "Comment (Jyutping) Tone Color"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment (Jyutping) Tone Colour"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4786,12 +4898,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comment (Jyutping) Tone Colour"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment (Jyutping) Tone Colour"
@@ -4885,6 +4991,12 @@
             "value" : "Normal"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Normal"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4892,12 +5004,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Normal"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Normal"
@@ -4991,6 +5097,12 @@
             "value" : "Shallow"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shallow"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4998,12 +5110,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Shallow"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Shallow"
@@ -5097,6 +5203,12 @@
             "value" : "Comment (Jyutping) Tone Style"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment (Jyutping) Tone Style"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5104,12 +5216,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comment (Jyutping) Tone Style"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment (Jyutping) Tone Style"
@@ -5203,6 +5309,12 @@
             "value" : "Normal"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Normal"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5210,12 +5322,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Normal"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Normal"
@@ -5309,6 +5415,12 @@
             "value" : "No Tones"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Tones"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5316,12 +5428,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Tones"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "No Tones"
@@ -5415,6 +5521,12 @@
             "value" : "Subscript"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subscript"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5422,12 +5534,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Subscript"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Subscript"
@@ -5521,6 +5627,12 @@
             "value" : "Superscript"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Superscript"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5528,12 +5640,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Superscript"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Superscript"
@@ -5627,6 +5733,12 @@
             "value" : "Emoji Suggestions"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emoji Suggestions"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5634,12 +5746,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Emoji Suggestions"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Emoji Suggestions"
@@ -5733,6 +5839,12 @@
             "value" : "English Suggestions"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English Suggestions"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5740,12 +5852,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "English Suggestions"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "English Suggestions"
@@ -5831,9 +5937,121 @@
         }
       }
     },
+    "AppearanceSettingsView.EnhancedGlass.Thicker.ToggleTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Augmenter le contraste du panneau de candidats"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候補ウィンドウのコントラストを高める"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        }
+      }
+    },
     "GeneralSettingsView.InputMemory.Clear.ButtonTitle" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear Input Memory"
+          }
+        },
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clear Input Memory"
@@ -5846,12 +6064,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clear Input Memory"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clear Input Memory"
@@ -5945,6 +6157,12 @@
             "value" : "Cancel"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5952,12 +6170,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cancel"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancel"
@@ -6051,6 +6263,12 @@
             "value" : "Clear"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6058,12 +6276,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clear"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clear"
@@ -6157,6 +6369,12 @@
             "value" : "Clear Input Memory?"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear Input Memory?"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6164,12 +6382,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clear Input Memory?"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clear Input Memory?"
@@ -6263,6 +6475,12 @@
             "value" : "Input Memory"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Memory"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6270,12 +6488,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Input Memory"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Input Memory"
@@ -6369,6 +6581,12 @@
             "value" : "10th Serial Number as Zero"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10th Serial Number as Zero"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6376,12 +6594,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "10th Serial Number as Zero"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "10th Serial Number as Zero"
@@ -6475,6 +6687,12 @@
             "value" : "Serial Number Set"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serial Number Set"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6482,12 +6700,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serial Number Set"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serial Number Set"
@@ -6581,6 +6793,12 @@
             "value" : "Arabic"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arabic"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6588,12 +6806,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Arabic"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arabic"
@@ -6687,6 +6899,12 @@
             "value" : "Earthly Branches"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Earthly Branches"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6694,12 +6912,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Earthly Branches"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Earthly Branches"
@@ -6793,6 +7005,12 @@
             "value" : "Capitalized Chinese"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capitalized Chinese"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6800,12 +7018,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Capitalized Chinese"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Capitalized Chinese"
@@ -6899,6 +7111,12 @@
             "value" : "Chinese"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6906,12 +7124,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chinese"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chinese"
@@ -7005,6 +7217,12 @@
             "value" : "Full-width Arabic"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full-width Arabic"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7012,12 +7230,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Full-width Arabic"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Full-width Arabic"
@@ -7111,6 +7323,12 @@
             "value" : "Horizontal Counting Rods"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horizontal Counting Rods"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7118,12 +7336,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Horizontal Counting Rods"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Horizontal Counting Rods"
@@ -7217,6 +7429,12 @@
             "value" : "Mahjong"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mahjong"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7224,12 +7442,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mahjong"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mahjong"
@@ -7323,6 +7535,12 @@
             "value" : "Roman"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roman"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7330,12 +7548,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Roman"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Roman"
@@ -7429,6 +7641,12 @@
             "value" : "Small Roman"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Small Roman"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7436,12 +7654,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Small Roman"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Small Roman"
@@ -7535,6 +7747,12 @@
             "value" : "Soochow"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soochow"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7542,12 +7760,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Soochow"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Soochow"
@@ -7641,6 +7853,12 @@
             "value" : "Heavenly Stems"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heavenly Stems"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7648,12 +7866,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Heavenly Stems"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Heavenly Stems"
@@ -7747,6 +7959,12 @@
             "value" : "Vertical Counting Rods"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertical Counting Rods"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7754,12 +7972,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vertical Counting Rods"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vertical Counting Rods"
@@ -7853,6 +8065,12 @@
             "value" : "Jyutping Input Method"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping Input Method"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7860,12 +8078,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jyutping Input Method"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jyutping Input Method"
@@ -7959,6 +8171,12 @@
             "value" : "Do NOT enable this unless you understand what this setting does."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do NOT enable this unless you understand what this setting does."
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7966,12 +8184,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Do NOT enable this unless you understand what this setting does."
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Do NOT enable this unless you understand what this setting does."
@@ -8065,6 +8277,12 @@
             "value" : "Compatible with Common Spellings"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compatible with Common Spellings"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8072,12 +8290,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Compatible with Common Spellings"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compatible with Common Spellings"
@@ -8171,6 +8383,12 @@
             "value" : "System Text Replacements"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System Text Replacements"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8178,12 +8396,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "System Text Replacements"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "System Text Replacements"
@@ -8277,6 +8489,12 @@
             "value" : "Default"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8284,12 +8502,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Default"
@@ -8383,6 +8595,12 @@
             "value" : "Inherited"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inherited"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8390,12 +8608,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inherited"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Inherited"
@@ -8489,6 +8701,12 @@
             "value" : "Hong Kong"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8496,12 +8714,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hong Kong"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hong Kong"
@@ -8595,6 +8807,12 @@
             "value" : "Taiwan"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taiwan"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8602,12 +8820,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Taiwan"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Taiwan"
@@ -8701,6 +8913,12 @@
             "value" : "Mainland China"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mainland China"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8708,12 +8926,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mainland China"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mainland China"
@@ -8807,6 +9019,12 @@
             "value" : "Mainland China (Ancient Books Publishing)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mainland China (Ancient Books Publishing)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8814,12 +9032,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mainland China (Ancient Books Publishing)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mainland China (Ancient Books Publishing)"
@@ -8913,6 +9125,12 @@
             "value" : "Traditional Character Set"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traditional Character Set"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8920,12 +9138,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Traditional Character Set"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Traditional Character Set"
@@ -9019,6 +9231,12 @@
             "value" : "The Inherited option uses rare characters and may have limited compatibility. Use it with caution."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Inherited option uses rare characters and may have limited compatibility. Use it with caution."
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9026,12 +9244,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The Inherited option uses rare characters and may have limited compatibility. Use it with caution."
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The Inherited option uses rare characters and may have limited compatibility. Use it with caution."
@@ -9125,6 +9337,12 @@
             "value" : "Back to the first Candidate page"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back to the first Candidate page"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9132,12 +9350,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Back to the first Candidate page"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Back to the first Candidate page"
@@ -9231,6 +9443,12 @@
             "value" : "Backward to previous Candidate page"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backward to previous Candidate page"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9238,12 +9456,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Backward to previous Candidate page"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Backward to previous Candidate page"
@@ -9337,6 +9549,12 @@
             "value" : "Use bracket [ ] keys for"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use bracket [ ] keys for"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9344,12 +9562,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use bracket [ ] keys for"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Use bracket [ ] keys for"
@@ -9443,6 +9655,12 @@
             "value" : "Candidate Paging"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Paging"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9450,12 +9668,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Paging"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Paging"
@@ -9549,6 +9761,12 @@
             "value" : "Character Selection"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Character Selection"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9556,12 +9774,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Character Selection"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Character Selection"
@@ -9655,6 +9867,12 @@
             "value" : "None"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "None"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9662,12 +9880,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "None"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "None"
@@ -9761,6 +9973,12 @@
             "value" : "Clear current pre-edit text"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear current pre-edit text"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9768,12 +9986,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clear current pre-edit text"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clear current pre-edit text"
@@ -9867,6 +10079,12 @@
             "value" : "Use comma and period keys for"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use comma and period keys for"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9874,12 +10092,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use comma and period keys for"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Use comma and period keys for"
@@ -9973,6 +10185,12 @@
             "value" : "Candidate Paging"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Paging"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9980,12 +10198,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Paging"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidate Paging"
@@ -10079,6 +10291,12 @@
             "value" : "Character Selection"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Character Selection"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10086,12 +10304,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Character Selection"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Character Selection"
@@ -10185,6 +10397,12 @@
             "value" : "None"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "None"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10192,12 +10410,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "None"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "None"
@@ -10291,6 +10503,12 @@
             "value" : "Directly toggle a specific Option"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Directly toggle a specific Option"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10298,12 +10516,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Directly toggle a specific Option"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Directly toggle a specific Option"
@@ -10397,6 +10609,12 @@
             "value" : "Enter/Exit Options View"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter/Exit Options View"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10404,12 +10622,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enter/Exit Options View"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enter/Exit Options View"
@@ -10503,6 +10715,12 @@
             "value" : "is the grave key, located below the esc key."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "is the grave key, located below the esc key."
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10510,12 +10728,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "is the grave key, located below the esc key."
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "is the grave key, located below the esc key."
@@ -10609,6 +10821,12 @@
             "value" : "Remove current Candidate from Input Memory"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove current Candidate from Input Memory"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10616,12 +10834,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remove current Candidate from Input Memory"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Remove current Candidate from Input Memory"
@@ -10715,6 +10927,12 @@
             "value" : "Forward to next Candidate page"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forward to next Candidate page"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10722,12 +10940,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Forward to next Candidate page"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Forward to next Candidate page"
@@ -10821,6 +11033,12 @@
             "value" : "Horizontal Candidate Page Orientation"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horizontal Candidate Page Orientation"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10828,12 +11046,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Horizontal Candidate Page Orientation"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Horizontal Candidate Page Orientation"
@@ -10927,6 +11139,12 @@
             "value" : "Vertical Candidate Page Orientation"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertical Candidate Page Orientation"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10934,12 +11152,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vertical Candidate Page Orientation"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vertical Candidate Page Orientation"
@@ -11033,6 +11245,12 @@
             "value" : "Input current pre-edit text"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input current pre-edit text"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11040,12 +11258,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Input current pre-edit text"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Input current pre-edit text"
@@ -11139,6 +11351,12 @@
             "value" : "Input current Candidate's Jyutping"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input current Candidate's Jyutping"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11146,12 +11364,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Input current Candidate's Jyutping"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Input current Candidate's Jyutping"
@@ -11245,6 +11457,12 @@
             "value" : "Move to next Candidate"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Move to next Candidate"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11252,12 +11470,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move to next Candidate"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Move to next Candidate"
@@ -11351,6 +11563,12 @@
             "value" : "Move to previous Candidate"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Move to previous Candidate"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11358,12 +11576,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move to previous Candidate"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Move to previous Candidate"
@@ -11457,6 +11669,12 @@
             "value" : "Open Settings Window (This Window)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings Window (This Window)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11464,12 +11682,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Settings Window (This Window)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Open Settings Window (This Window)"
@@ -11563,6 +11775,12 @@
             "value" : "is the comma key."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "is the comma key."
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11570,12 +11788,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "is the comma key."
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "is the comma key."
@@ -11669,6 +11881,12 @@
             "value" : "or"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "or"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11676,12 +11894,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "or"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "or"
@@ -11775,6 +11987,12 @@
             "value" : "Press **Shift** ⇧ once to"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press **Shift** ⇧ once to"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11782,12 +12000,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Press **Shift** ⇧ once to"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Press **Shift** ⇧ once to"
@@ -11881,6 +12093,12 @@
             "value" : "Do Nothing"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do Nothing"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11888,12 +12106,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Do Nothing"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Do Nothing"
@@ -11987,6 +12199,12 @@
             "value" : "Press **Shift** ⇧ + **Space** to"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press **Shift** ⇧ + **Space** to"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11994,12 +12212,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Press **Shift** ⇧ + **Space** to"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Press **Shift** ⇧ + **Space** to"
@@ -12093,6 +12305,12 @@
             "value" : "Input a Full-width Space"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input a Full-width Space"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12100,12 +12318,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Input a Full-width Space"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Input a Full-width Space"
@@ -12199,6 +12411,12 @@
             "value" : "Input current Candidate"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input current Candidate"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12206,12 +12424,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Input current Candidate"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Input current Candidate"
@@ -12305,6 +12517,12 @@
             "value" : "Input current Candidate's first character"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input current Candidate's first character"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12312,12 +12530,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Input current Candidate's first character"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Input current Candidate's first character"
@@ -12411,6 +12623,12 @@
             "value" : "Input current Candidate's last character"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input current Candidate's last character"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12418,12 +12636,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Input current Candidate's last character"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Input current Candidate's last character"
@@ -12517,6 +12729,12 @@
             "value" : "Switch Input Mode"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch Input Mode"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12524,12 +12742,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Switch Input Mode"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Switch Input Mode"
@@ -12623,6 +12835,12 @@
             "value" : "Full-width Character Form"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full-width Character Form"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12630,12 +12848,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Full-width Character Form"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Full-width Character Form"
@@ -12729,6 +12941,12 @@
             "value" : "Half-width Character Form"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Half-width Character Form"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12736,12 +12954,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Half-width Character Form"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Half-width Character Form"
@@ -12835,6 +13047,12 @@
             "value" : "Traditional Characters, HK"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traditional Characters, HK"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12842,12 +13060,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Traditional Characters, HK"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Traditional Characters, HK"
@@ -12941,6 +13153,12 @@
             "value" : "Simplified Characters"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simplified Characters"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12948,12 +13166,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Simplified Characters"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Simplified Characters"
@@ -13047,6 +13259,12 @@
             "value" : "Traditional Characters, TW"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traditional Characters, TW"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13054,12 +13272,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Traditional Characters, TW"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Traditional Characters, TW"
@@ -13153,6 +13365,12 @@
             "value" : "Traditional Characters"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traditional Characters"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13160,12 +13378,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Traditional Characters"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Traditional Characters"
@@ -13259,6 +13471,12 @@
             "value" : "About"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13266,12 +13484,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "About"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "About"
@@ -13365,6 +13577,12 @@
             "value" : "Check for Updates…"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check for Updates…"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13372,12 +13590,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Check for Updates…"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Check for Updates…"
@@ -13471,6 +13683,12 @@
             "value" : "Help"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Help"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13478,12 +13696,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Help"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Help"
@@ -13577,6 +13789,12 @@
             "value" : "Settings…"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings…"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13584,12 +13802,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings…"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Settings…"
@@ -13683,6 +13895,12 @@
             "value" : "ABC Mode"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABC Mode"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13690,12 +13908,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ABC Mode"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ABC Mode"
@@ -13789,6 +14001,12 @@
             "value" : "Jyutping Mode"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping Mode"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13796,12 +14014,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jyutping Mode"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jyutping Mode"
@@ -13895,6 +14107,12 @@
             "value" : "Jyutping"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13902,12 +14120,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jyutping"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jyutping"
@@ -14001,6 +14213,12 @@
             "value" : "Cantonese Punctuation"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantonese Punctuation"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14008,12 +14226,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cantonese Punctuation"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cantonese Punctuation"
@@ -14107,6 +14319,12 @@
             "value" : "English Punctuation"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English Punctuation"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14114,12 +14332,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "English Punctuation"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "English Punctuation"
@@ -14213,6 +14425,12 @@
             "value" : "全寬數字、字母 (Full-width)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全寬數字、字母 (Full-width)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14220,12 +14438,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "全寬數字、字母 (Full-width)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "全寬數字、字母 (Full-width)"
@@ -14319,6 +14531,12 @@
             "value" : "半寬數字、字母 (Half-width)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "半寬數字、字母 (Half-width)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14326,12 +14544,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "半寬數字、字母 (Half-width)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "半寬數字、字母 (Half-width)"
@@ -14425,6 +14637,12 @@
             "value" : "傳統漢字・香港 (Traditional, HK)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "傳統漢字・香港 (Traditional, HK)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14432,12 +14650,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "傳統漢字・香港 (Traditional, HK)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "傳統漢字・香港 (Traditional, HK)"
@@ -14531,6 +14743,12 @@
             "value" : "简化字 (Simplified)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "简化字 (Simplified)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14538,12 +14756,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "简化字 (Simplified)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "简化字 (Simplified)"
@@ -14637,6 +14849,12 @@
             "value" : "傳統漢字・臺灣 (Traditional, TW)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "傳統漢字・臺灣 (Traditional, TW)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14644,12 +14862,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "傳統漢字・臺灣 (Traditional, TW)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "傳統漢字・臺灣 (Traditional, TW)"
@@ -14743,6 +14955,12 @@
             "value" : "傳統漢字 (Traditional)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "傳統漢字 (Traditional)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14750,12 +14968,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "傳統漢字 (Traditional)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "傳統漢字 (Traditional)"
@@ -14849,6 +15061,12 @@
             "value" : "ABC 模式 (ABC Mode)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABC 模式 (ABC Mode)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14856,12 +15074,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ABC 模式 (ABC Mode)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ABC 模式 (ABC Mode)"
@@ -14955,6 +15167,12 @@
             "value" : "粵拼模式 (Jyutping Mode)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粵拼模式 (Jyutping Mode)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14962,12 +15180,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "粵拼模式 (Jyutping Mode)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "粵拼模式 (Jyutping Mode)"
@@ -15061,6 +15273,12 @@
             "value" : "粵文句讀 (，、；。)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粵文句讀 (，、；。)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15068,12 +15286,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "粵文句讀 (，、；。)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "粵文句讀 (，、；。)"
@@ -15167,6 +15379,12 @@
             "value" : "英文標點 (, ' ; .)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文標點 (, ' ; .)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15174,12 +15392,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "英文標點 (, ' ; .)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "英文標點 (, ' ; .)"
@@ -15273,6 +15485,12 @@
             "value" : "Start with “v”, then enter Cangjie or Quick code. For example, “vdd” → “林”."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “v”, then enter Cangjie or Quick code. For example, “vdd” → “林”."
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15280,12 +15498,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start with “v”, then enter Cangjie or Quick code. For example, “vdd” → “林”."
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Start with “v”, then enter Cangjie or Quick code. For example, “vdd” → “林”."
@@ -15379,6 +15591,12 @@
             "value" : "Lookup Jyutping with Cangjie or Quick(Sucheng)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with Cangjie or Quick(Sucheng)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15386,12 +15604,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lookup Jyutping with Cangjie or Quick(Sucheng)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lookup Jyutping with Cangjie or Quick(Sucheng)"
@@ -15485,6 +15697,12 @@
             "value" : "Cangjie5"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cangjie5"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15492,12 +15710,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cangjie5"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cangjie5"
@@ -15591,6 +15803,12 @@
             "value" : "Cangjie3"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cangjie3"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15598,12 +15816,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cangjie3"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cangjie3"
@@ -15697,6 +15909,12 @@
             "value" : "Quick5"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick5"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15704,12 +15922,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quick5"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quick5"
@@ -15803,6 +16015,12 @@
             "value" : "Quick3"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick3"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15810,12 +16028,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quick3"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quick3"
@@ -15909,6 +16121,12 @@
             "value" : "Cangjie / Quick(Sucheng) Version"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cangjie / Quick(Sucheng) Version"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15916,12 +16134,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cangjie / Quick(Sucheng) Version"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cangjie / Quick(Sucheng) Version"
@@ -16015,6 +16227,12 @@
             "value" : "Start with “r”, then enter Pinyin. For example, “rlin” → “林”."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “r”, then enter Pinyin. For example, “rlin” → “林”."
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16022,12 +16240,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start with “r”, then enter Pinyin. For example, “rlin” → “林”."
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Start with “r”, then enter Pinyin. For example, “rlin” → “林”."
@@ -16121,6 +16333,12 @@
             "value" : "Lookup Jyutping with Mandarin Pinyin"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with Mandarin Pinyin"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16128,12 +16346,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lookup Jyutping with Mandarin Pinyin"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lookup Jyutping with Mandarin Pinyin"
@@ -16227,6 +16439,12 @@
             "value" : "Start with “x”, then enter Stroke code. For example, “xwsad” → “木”."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “x”, then enter Stroke code. For example, “xwsad” → “木”."
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16234,12 +16452,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start with “x”, then enter Stroke code. For example, “xwsad” → “木”."
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Start with “x”, then enter Stroke code. For example, “xwsad” → “木”."
@@ -16333,6 +16545,12 @@
             "value" : "w = 橫(waang), Horizontal\ns = 豎(syu), Vertical\na = 撇, Left-falling\nd = 點(dim), Right-falling\nz = 折(zit), Turning"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "w = 橫(waang), Horizontal\ns = 豎(syu), Vertical\na = 撇, Left-falling\nd = 點(dim), Right-falling\nz = 折(zit), Turning"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16340,12 +16558,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "w = 橫(waang), Horizontal\ns = 豎(syu), Vertical\na = 撇, Left-falling\nd = 點(dim), Right-falling\nz = 折(zit), Turning"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "w = 橫(waang), Horizontal\ns = 豎(syu), Vertical\na = 撇, Left-falling\nd = 點(dim), Right-falling\nz = 折(zit), Turning"
@@ -16439,6 +16651,12 @@
             "value" : "Lookup Jyutping with Stroke"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with Stroke"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16446,12 +16664,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lookup Jyutping with Stroke"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lookup Jyutping with Stroke"
@@ -16545,6 +16757,12 @@
             "value" : "Start with “q”, then enter the Jyutping of the components. For example, “qmukmuk” → “林”."
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start with “q”, then enter the Jyutping of the components. For example, “qmukmuk” → “林”."
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16552,12 +16770,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start with “q”, then enter the Jyutping of the components. For example, “qmukmuk” → “林”."
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Start with “q”, then enter the Jyutping of the components. For example, “qmukmuk” → “林”."
@@ -16651,6 +16863,12 @@
             "value" : "Lookup Jyutping with character components"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lookup Jyutping with character components"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16658,12 +16876,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lookup Jyutping with character components"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lookup Jyutping with character components"
@@ -16757,6 +16969,12 @@
             "value" : "About"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16764,12 +16982,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "About"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "About"
@@ -16855,9 +17067,121 @@
         }
       }
     },
+    "SettingsView.NavigationTitle.Appearance" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apparence"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外観"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
+          }
+        }
+      }
+    },
     "SettingsView.NavigationTitle.Fonts" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fonts"
+          }
+        },
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fonts"
@@ -16870,12 +17194,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fonts"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fonts"
@@ -16969,6 +17287,12 @@
             "value" : "General"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16976,12 +17300,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "General"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "General"
@@ -17075,6 +17393,12 @@
             "value" : "Hotkeys"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotkeys"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17082,12 +17406,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hotkeys"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hotkeys"
@@ -17181,6 +17499,12 @@
             "value" : "Reverse Lookup"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reverse Lookup"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17188,12 +17512,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reverse Lookup"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reverse Lookup"
@@ -17287,6 +17605,12 @@
             "value" : "Settings"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17294,12 +17618,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Settings"
@@ -17393,6 +17711,12 @@
             "value" : "Tones"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tones"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17400,12 +17724,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tones"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tones"
@@ -17499,6 +17817,12 @@
             "value" : "About"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17506,12 +17830,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "About"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "About"
@@ -17605,6 +17923,12 @@
             "value" : "Candidates"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidates"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17612,12 +17936,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidates"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Candidates"
@@ -17711,6 +18029,12 @@
             "value" : "Hotkeys"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotkeys"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17718,12 +18042,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hotkeys"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hotkeys"
@@ -17817,6 +18135,12 @@
             "value" : "Jyutping Input Method Settings"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jyutping Input Method Settings"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17824,12 +18148,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jyutping Input Method Settings"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jyutping Input Method Settings"
@@ -17923,6 +18241,12 @@
             "value" : "v = 1, High Level (陰平)\nx = 2, Medium Rising (陰上)\nq = 3, Medium Level (陰去)\nvv = 4, Low Falling (陽平)\nxx = 5, Low Rising (陽上)\nqq = 6, Low Level (陽去)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v = 1, High Level (陰平)\nx = 2, Medium Rising (陰上)\nq = 3, Medium Level (陰去)\nvv = 4, Low Falling (陽平)\nxx = 5, Low Rising (陽上)\nqq = 6, Low Level (陽去)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17930,12 +18254,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "v = 1, High Level (陰平)\nx = 2, Medium Rising (陰上)\nq = 3, Medium Level (陰去)\nvv = 4, Low Falling (陽平)\nxx = 5, Low Rising (陽上)\nqq = 6, Low Level (陽去)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "v = 1, High Level (陰平)\nx = 2, Medium Rising (陰上)\nq = 3, Medium Level (陰去)\nvv = 4, Low Falling (陽平)\nxx = 5, Low Rising (陽上)\nqq = 6, Low Level (陽去)"
@@ -18029,6 +18347,12 @@
             "value" : "Examples: sinq = sin3(線), sinqq = sin6(羨)"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Examples: sinq = sin3(線), sinqq = sin6(羨)"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18036,12 +18360,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Examples: sinq = sin3(線), sinqq = sin6(羨)"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Examples: sinq = sin3(線), sinqq = sin6(羨)"
@@ -18135,6 +18453,12 @@
             "value" : "Tones Input"
           }
         },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tones Input"
+          }
+        },
         "en-CA" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18142,12 +18466,6 @@
           }
         },
         "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tones Input"
-          }
-        },
-        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tones Input"

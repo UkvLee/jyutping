@@ -3,6 +3,8 @@ import CommonExtensions
 import CoreIME
 
 private struct SettingsKey {
+        static let EnhancedGlass: String = "EnhancedGlass"
+
         static let CandidatePageSize: String = "CandidatePageSize"
         static let CandidateLineSpacing: String = "CandidateLineSpacing"
         static let CandidatePageCornerRadius: String = "CandidatePageCornerRadius"
@@ -46,6 +48,15 @@ private struct SettingsKey {
         static let ShiftSpaceCombination: String = "ShiftSpaceCombination"
         static let BracketKeys: String = "BracketKeys"
         static let CommaPeriodKeys: String = "CommaPeriodKeys"
+}
+
+enum EnhancedGlass: Int, CaseIterable {
+        case normal = 1
+        case thicker = 2
+        var isThicker: Bool { self == .thicker }
+        static func glassEffect(of value: Int) -> EnhancedGlass {
+                return allCases.first(where: { $0.rawValue == value }) ?? .normal
+        }
 }
 
 enum CandidatePageOrientation: Int, CaseIterable {
@@ -238,6 +249,19 @@ struct AppSettings {
         private(set) static var selectedSettingsSidebarRow: SettingsSidebarRow = .general
         static func updateSelectedSettingsSidebarRow(to row: SettingsSidebarRow) {
                 selectedSettingsSidebarRow = row
+        }
+
+
+        // MARK: - Liquid Glass
+
+        private(set) static var isThickerGlassPreferred: Bool = {
+                let savedValue: Int = UserDefaults.standard.integer(forKey: SettingsKey.EnhancedGlass)
+                return EnhancedGlass.glassEffect(of: savedValue).isThicker
+        }()
+        static func updatePreferredThickerGlass(to isOn: Bool) {
+                isThickerGlassPreferred = isOn
+                let value: Int = isOn ? EnhancedGlass.thicker.rawValue : EnhancedGlass.normal.rawValue
+                UserDefaults.standard.set(value, forKey: SettingsKey.EnhancedGlass)
         }
 
 

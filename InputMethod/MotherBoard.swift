@@ -6,6 +6,7 @@ struct MotherBoard: View {
         private let pageCornerRadius: CGFloat = CGFloat(AppSettings.pageCornerRadius)
         private let contentInsets: CGFloat = CGFloat(AppSettings.contentInsets)
         private let verticalSpacing: CGFloat = 4 - (PresetConstant.contentWindowGap * 2)
+        private let isThickerGlassPreferred: Bool = AppSettings.isThickerGlassPreferred
         var body: some View {
                 ZStack(alignment: context.quadrant.alignment) {
                         Color.clear
@@ -34,9 +35,16 @@ struct MotherBoard: View {
                                         case .cantonese where context.displayCandidates.isNotEmpty:
                                                 ZStack {
                                                         Color.clear.glassEffect(in: .rect(cornerRadius: pageCornerRadius))
-                                                        CandidateStackView()
-                                                                .padding(contentInsets)
-                                                                .clipShape(.rect(cornerRadius: pageCornerRadius))
+                                                        if isThickerGlassPreferred {
+                                                                CandidateStackView()
+                                                                        .padding(contentInsets)
+                                                                        .background(VisualEffectView())
+                                                                        .clipShape(.rect(cornerRadius: pageCornerRadius))
+                                                        } else {
+                                                                CandidateStackView()
+                                                                        .padding(contentInsets)
+                                                                        .clipShape(.rect(cornerRadius: pageCornerRadius))
+                                                        }
                                                 }
                                                 .padding(PresetConstant.contentWindowGap)
                                                 .fixedSize()
