@@ -4,7 +4,9 @@ import CommonExtensions
 struct CandidateStackView: View {
 
         @EnvironmentObject private var context: InputContext
+        @Environment(\.colorScheme) private var colorScheme
 
+        private let preferredAccentColor: PreferredAccentColor = AppSettings.preferredAccentColor
         private let pageOrientation: CandidatePageOrientation = AppSettings.candidatePageOrientation
         private let commentScene: CommentDisplayScene = AppSettings.commentDisplayScene
         private let savedCommentStyle: CommentDisplayStyle = AppSettings.commentDisplayStyle
@@ -23,13 +25,24 @@ struct CandidateStackView: View {
                 case .noneOfAll: .noComments
                 }
                 let highlightedIndex: Int = context.highlightedIndex
+                let highlightedBackColor: Color = switch preferredAccentColor {
+                case .auto, .default: Color.accentColor
+                case .monochrome: Color.textBackgroundColor
+                case .reversedMonochrome : Color.textColor
+                default: preferredAccentColor.color(of: colorScheme)
+                }
+                let highlightedTextColor: Color = switch preferredAccentColor {
+                case .monochrome: Color.textColor
+                case .reversedMonochrome: Color.textBackgroundColor
+                default: Color.white
+                }
                 switch pageOrientation {
                 case .horizontal:
                         HStack(alignment: commentStyle.horizontalPageAlignment, spacing: 0) {
                                 ForEach(context.displayCandidates.indices, id: \.self) { index in
                                         ZStack {
                                                 RoundedRectangle(cornerRadius: innerCornerRadius)
-                                                        .fill(index == highlightedIndex ? Color.accentColor : Color.clear)
+                                                        .fill((index == highlightedIndex) ? highlightedBackColor : Color.clear)
                                                 HorizontalPageCandidateLabel(
                                                         isHighlighted: index == highlightedIndex,
                                                         index: index,
@@ -41,7 +54,7 @@ struct CandidateStackView: View {
                                                         isLabelLastZero: isLabelLastZero,
                                                         compatibleMode: isCompatibleModeOn
                                                 )
-                                                .foregroundStyle(index == highlightedIndex ? Color.white : Color.primary)
+                                                .foregroundStyle((index == highlightedIndex) ? highlightedTextColor : Color.primary)
                                                 .padding(.vertical, 2)
                                                 .padding(.trailing, 3)
                                                 .padding(.horizontal, lineSpacing / 2.0)
@@ -64,7 +77,7 @@ struct CandidateStackView: View {
                                 ForEach(context.displayCandidates.indices, id: \.self) { index in
                                         ZStack(alignment: .leading) {
                                                 RoundedRectangle(cornerRadius: innerCornerRadius)
-                                                        .fill(index == highlightedIndex ? Color.accentColor : Color.clear)
+                                                        .fill((index == highlightedIndex) ? highlightedBackColor : Color.clear)
                                                 VerticalPageCandidateLabel(
                                                         isHighlighted: index == highlightedIndex,
                                                         index: index,
@@ -76,7 +89,7 @@ struct CandidateStackView: View {
                                                         isLabelLastZero: isLabelLastZero,
                                                         compatibleMode: isCompatibleModeOn
                                                 )
-                                                .foregroundStyle(index == highlightedIndex ? Color.white : Color.primary)
+                                                .foregroundStyle((index == highlightedIndex) ? highlightedTextColor : Color.primary)
                                                 .padding(.horizontal, 3)
                                                 .padding(.vertical, lineSpacing / 2.0)
                                                 .fixedSize()

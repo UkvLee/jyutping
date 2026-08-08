@@ -1485,6 +1485,1808 @@
         }
       }
     },
+    "AccentColor.AppearanceSettingsView.SectionHeader" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accent Color"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accent Colour"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accent Color"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accent Colour"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accent Colour"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accent Color"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur d’accentuation"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクセントカラー"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主題強調色"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主题强调色"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主题强调色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主題強調色"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主題強調色"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主題強調色"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主題強調色"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主題強調色"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主題強調色"
+          }
+        }
+      }
+    },
+    "AccentColor.Option1.Auto" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Système"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "システム"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系统"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系统"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統"
+          }
+        }
+      }
+    },
+    "AccentColor.Option3.Monochrome" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monochrome"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monochrome"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monochrome"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monochrome"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monochrome"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monochrome"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monochrome"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "モノクロ"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
+          }
+        }
+      }
+    },
+    "AccentColor.Option4.ReversedMonochrome" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reversed"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reversed"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reversed"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reversed"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reversed"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reversed"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inversé"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反転"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反轉"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反转"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反转"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反轉"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反轉"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反轉"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反轉"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反轉"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反轉"
+          }
+        }
+      }
+    },
+    "AccentColor.Option11.Blue" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blue"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blue"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blue"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blue"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blue"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blue"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bleu"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブルー"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "藍色"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "蓝色"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "蓝色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "藍色"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "藍色"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "藍色"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "藍色"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "藍色"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "藍色"
+          }
+        }
+      }
+    },
+    "AccentColor.Option12.Purple" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purple"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purple"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purple"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purple"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purple"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purple"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Violet"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パープル"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紫色"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紫色"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紫色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紫色"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紫色"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紫色"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紫色"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紫色"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紫色"
+          }
+        }
+      }
+    },
+    "AccentColor.Option13.Pink" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pink"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pink"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pink"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pink"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pink"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pink"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rose"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ピンク"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粉紅色"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粉红色"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粉红色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粉紅色"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粉紅色"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粉紅色"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粉紅色"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粉紅色"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粉紅色"
+          }
+        }
+      }
+    },
+    "AccentColor.Option14.Red" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rouge"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "レッド"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紅色"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "红色"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "红色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紅色"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紅色"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紅色"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紅色"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紅色"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紅色"
+          }
+        }
+      }
+    },
+    "AccentColor.Option15.Orange" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オレンジ"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "橙色"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "橙色"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "橙色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "橙色"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "橙色"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "橙色"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "橙色"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "橙色"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "橙色"
+          }
+        }
+      }
+    },
+    "AccentColor.Option16.Yellow" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yellow"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yellow"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yellow"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yellow"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yellow"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yellow"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jaune"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イエロー"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黃色"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黄色"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黄色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黃色"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黃色"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黃色"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黃色"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黃色"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黃色"
+          }
+        }
+      }
+    },
+    "AccentColor.Option17.Green" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Green"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Green"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Green"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Green"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Green"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Green"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vert"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グリーン"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "綠色"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "绿色"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "绿色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "綠色"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "綠色"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "綠色"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "綠色"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "綠色"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "綠色"
+          }
+        }
+      }
+    },
+    "AccentColor.Option18.Graphite" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graphite"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graphite"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graphite"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graphite"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graphite"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graphite"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graphite"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グラファイト"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "石墨色"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "石墨色"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "石墨色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "石墨色"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "石墨色"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "石墨色"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "石墨色"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "石墨色"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "石墨色"
+          }
+        }
+      }
+    },
+    "AppearanceSettingsView.CandidateCornerRadius.PickerTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Cell Corner Radius"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Cell Corner Radius"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Cell Corner Radius"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Cell Corner Radius"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Cell Corner Radius"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Cell Corner Radius"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rayon des coins de la cellule candidate"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候補セルの角丸半径"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞圓角半徑"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞圓角半徑"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞圓角半徑"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞圓角半徑"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞圓角半徑"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞圓角半徑"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞圓角半徑"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞圓角半徑"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞圓角半徑"
+          }
+        }
+      }
+    },
+    "AppearanceSettingsView.CandidateLineSpacing.PickerTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Line Spacing"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Line Spacing"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Line Spacing"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Line Spacing"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Line Spacing"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Line Spacing"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espacement des lignes des candidats"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候補の行間"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞行間隔"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞行間隔"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞行間隔"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞行間隔"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞行間隔"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞行間隔"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞行間隔"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞行間隔"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞行間隔"
+          }
+        }
+      }
+    },
+    "AppearanceSettingsView.CandidatePageCornerRadius.PickerTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Corner Radius"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Corner Radius"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Corner Radius"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Corner Radius"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Corner Radius"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Corner Radius"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rayon des coins page des candidats"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候補ページ角丸半径"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面圓角半徑"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面圓角半徑"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面圓角半徑"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面圓角半徑"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面圓角半徑"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面圓角半徑"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面圓角半徑"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面圓角半徑"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面圓角半徑"
+          }
+        }
+      }
+    },
+    "AppearanceSettingsView.CandidatePageInsets.PickerTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Content Padding"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Content Padding"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Content Padding"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Content Padding"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Content Padding"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candidate Page Content Padding"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rembourrage du contenu de la page des candidats"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候補ページ内の余白"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面四邊內空隙"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面四邊內空隙"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面四邊內空隙"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面四邊內空隙"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面四邊內空隙"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面四邊內空隙"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面四邊內空隙"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面四邊內空隙"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候選詞䈎面四邊內空隙"
+          }
+        }
+      }
+    },
+    "AppearanceSettingsView.EnhancedGlass.Thicker.ToggleTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "en-NZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase Contrast for Candidate Board"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Augmenter le contraste du panneau de candidats"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "候補ウィンドウのコントラストを高める"
+          }
+        },
+        "yue" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hans-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hant-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hant-MO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加候選詞䈎面對比清晰效果"
+          }
+        }
+      }
+    },
     "AppearanceSettingsView.NavigationTitle.TitleKey" : {
       "localizations" : {
         "en" : {
@@ -2651,112 +4453,6 @@
         }
       }
     },
-    "AppearanceSettingsView.CandidateCornerRadius.PickerTitle" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Cell Corner Radius"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Cell Corner Radius"
-          }
-        },
-        "en-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Cell Corner Radius"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Cell Corner Radius"
-          }
-        },
-        "en-NZ" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Cell Corner Radius"
-          }
-        },
-        "en-US" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Cell Corner Radius"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rayon des coins de la cellule candidate"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候補セルの角丸半径"
-          }
-        },
-        "yue" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞圓角半徑"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞圓角半徑"
-          }
-        },
-        "zh-Hans-CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞圓角半徑"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞圓角半徑"
-          }
-        },
-        "zh-Hant-CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞圓角半徑"
-          }
-        },
-        "zh-Hant-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞圓角半徑"
-          }
-        },
-        "zh-Hant-MO" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞圓角半徑"
-          }
-        },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞圓角半徑"
-          }
-        },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞圓角半徑"
-          }
-        }
-      }
-    },
     "GeneralSettingsView.CandidateCountPerPage" : {
       "localizations" : {
         "en" : {
@@ -2859,324 +4555,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "每䈎候選詞數目"
-          }
-        }
-      }
-    },
-    "AppearanceSettingsView.CandidateLineSpacing.PickerTitle" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Line Spacing"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Line Spacing"
-          }
-        },
-        "en-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Line Spacing"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Line Spacing"
-          }
-        },
-        "en-NZ" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Line Spacing"
-          }
-        },
-        "en-US" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Line Spacing"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Espacement des lignes des candidats"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候補の行間"
-          }
-        },
-        "yue" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞行間隔"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞行間隔"
-          }
-        },
-        "zh-Hans-CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞行間隔"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞行間隔"
-          }
-        },
-        "zh-Hant-CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞行間隔"
-          }
-        },
-        "zh-Hant-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞行間隔"
-          }
-        },
-        "zh-Hant-MO" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞行間隔"
-          }
-        },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞行間隔"
-          }
-        },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞行間隔"
-          }
-        }
-      }
-    },
-    "AppearanceSettingsView.CandidatePageCornerRadius.PickerTitle" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Corner Radius"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Corner Radius"
-          }
-        },
-        "en-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Corner Radius"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Corner Radius"
-          }
-        },
-        "en-NZ" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Corner Radius"
-          }
-        },
-        "en-US" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Corner Radius"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rayon des coins page des candidats"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候補ページ角丸半径"
-          }
-        },
-        "yue" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面圓角半徑"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面圓角半徑"
-          }
-        },
-        "zh-Hans-CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面圓角半徑"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面圓角半徑"
-          }
-        },
-        "zh-Hant-CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面圓角半徑"
-          }
-        },
-        "zh-Hant-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面圓角半徑"
-          }
-        },
-        "zh-Hant-MO" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面圓角半徑"
-          }
-        },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面圓角半徑"
-          }
-        },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面圓角半徑"
-          }
-        }
-      }
-    },
-    "AppearanceSettingsView.CandidatePageInsets.PickerTitle" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Content Padding"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Content Padding"
-          }
-        },
-        "en-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Content Padding"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Content Padding"
-          }
-        },
-        "en-NZ" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Content Padding"
-          }
-        },
-        "en-US" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candidate Page Content Padding"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rembourrage du contenu de la page des candidats"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候補ページ内の余白"
-          }
-        },
-        "yue" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面四邊內空隙"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面四邊內空隙"
-          }
-        },
-        "zh-Hans-CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面四邊內空隙"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面四邊內空隙"
-          }
-        },
-        "zh-Hant-CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面四邊內空隙"
-          }
-        },
-        "zh-Hant-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面四邊內空隙"
-          }
-        },
-        "zh-Hant-MO" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面四邊內空隙"
-          }
-        },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面四邊內空隙"
-          }
-        },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候選詞䈎面四邊內空隙"
           }
         }
       }
@@ -5933,112 +7311,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "英語候選詞"
-          }
-        }
-      }
-    },
-    "AppearanceSettingsView.EnhancedGlass.Thicker.ToggleTitle" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Increase Contrast for Candidate Board"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Increase Contrast for Candidate Board"
-          }
-        },
-        "en-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Increase Contrast for Candidate Board"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Increase Contrast for Candidate Board"
-          }
-        },
-        "en-NZ" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Increase Contrast for Candidate Board"
-          }
-        },
-        "en-US" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Increase Contrast for Candidate Board"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Augmenter le contraste du panneau de candidats"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "候補ウィンドウのコントラストを高める"
-          }
-        },
-        "yue" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "增加候選詞䈎面對比清晰效果"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "增加候選詞䈎面對比清晰效果"
-          }
-        },
-        "zh-Hans-CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "增加候選詞䈎面對比清晰效果"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "增加候選詞䈎面對比清晰效果"
-          }
-        },
-        "zh-Hant-CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "增加候選詞䈎面對比清晰效果"
-          }
-        },
-        "zh-Hant-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "增加候選詞䈎面對比清晰效果"
-          }
-        },
-        "zh-Hant-MO" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "增加候選詞䈎面對比清晰效果"
-          }
-        },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "增加候選詞䈎面對比清晰效果"
-          }
-        },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "增加候選詞䈎面對比清晰效果"
           }
         }
       }

@@ -36,7 +36,3 @@ extension View {
                 opacity(0.75)
         }
 }
-
-extension Color {
-        static let textBackgroundColor: Color = Color(nsColor: NSColor.textBackgroundColor)
-}

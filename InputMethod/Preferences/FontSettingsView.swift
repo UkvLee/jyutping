@@ -202,7 +202,7 @@ struct FontSettingsView: View {
                                 .formStyle(.grouped)
                                 .scrollContentBackground(.hidden)
                                 .stack(cornerRadius: 16)
-                                .frame(maxWidth: 480)
+                                .frame(maxWidth: 500)
                         }
                         .padding(8)
                 }

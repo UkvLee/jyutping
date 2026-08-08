@@ -4,6 +4,7 @@ import CoreIME
 
 private struct SettingsKey {
         static let EnhancedGlass: String = "EnhancedGlass"
+        static let PreferredAccentColor: String = "PreferredAccentColor"
 
         static let CandidatePageSize: String = "CandidatePageSize"
         static let CandidateLineSpacing: String = "CandidateLineSpacing"
@@ -56,6 +57,41 @@ enum EnhancedGlass: Int, CaseIterable {
         var isThicker: Bool { self == .thicker }
         static func glassEffect(of value: Int) -> EnhancedGlass {
                 return allCases.first(where: { $0.rawValue == value }) ?? .normal
+        }
+}
+
+enum PreferredAccentColor: Int, CaseIterable {
+        case auto = 1
+        case `default` = 2
+        case monochrome = 3
+        case reversedMonochrome = 4
+        case blue     = 11
+        case purple   = 12
+        case pink     = 13
+        case red      = 14
+        case orange   = 15
+        case yellow   = 16
+        case green    = 17
+        case graphite = 18
+        var isAuto: Bool { self == .auto }
+        var isMonochrome: Bool { self == .monochrome }
+        func color(of scheme: ColorScheme) -> Color {
+                switch self {
+                case .auto, .default: Color.accentColor
+                case .monochrome: Color.textBackgroundColor
+                case .reversedMonochrome: Color.textColor
+                case .blue: scheme.blue
+                case .purple: scheme.purple
+                case .pink: scheme.pink
+                case .red: scheme.red
+                case .orange: scheme.orange
+                case .yellow: scheme.yellow
+                case .green: scheme.green
+                case .graphite: scheme.graphite
+                }
+        }
+        static func accent(of value: Int) -> PreferredAccentColor {
+                return allCases.first(where: { $0.rawValue == value }) ?? .auto
         }
 }
 
@@ -252,7 +288,7 @@ struct AppSettings {
         }
 
 
-        // MARK: - Liquid Glass
+        // MARK: - Liquid Glass & Accent Colors
 
         private(set) static var isThickerGlassPreferred: Bool = {
                 let savedValue: Int = UserDefaults.standard.integer(forKey: SettingsKey.EnhancedGlass)
@@ -262,6 +298,16 @@ struct AppSettings {
                 isThickerGlassPreferred = isOn
                 let value: Int = isOn ? EnhancedGlass.thicker.rawValue : EnhancedGlass.normal.rawValue
                 UserDefaults.standard.set(value, forKey: SettingsKey.EnhancedGlass)
+        }
+
+        private(set) static var preferredAccentColor: PreferredAccentColor = {
+                let savedValue: Int = UserDefaults.standard.integer(forKey: SettingsKey.PreferredAccentColor)
+                return PreferredAccentColor.accent(of: savedValue)
+        }()
+        static func updatePreferredAccentColor(to accent: PreferredAccentColor) {
+                preferredAccentColor = accent
+                let value: Int = accent.rawValue
+                UserDefaults.standard.set(value, forKey: SettingsKey.PreferredAccentColor)
         }
 
 
