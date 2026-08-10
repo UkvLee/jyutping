@@ -313,8 +313,9 @@ extension Engine {
         }
 
         private static func processSlices<T: RandomAccessCollection<VirtualInputKey>>(of keys: T, text: String, limit: Int64? = nil, anchorsStatement: OpaquePointer?, spellStatement: OpaquePointer?) -> [Lexicon] {
-                let adjustedLimit: Int64 = (limit == nil) ? 300 : 100
                 let inputLength: Int = keys.count
+                guard inputLength > 0 else { return [] }
+                let adjustedLimit: Int64 = (limit == nil) ? 300 : 100
                 return (1...inputLength).reversed().flatMap({ number -> ArraySlice<Lexicon> in
                         guard Task.isCancelled.negative else { return [] }
                         guard number <= MAX_CHAR_COUNT else { return [] }

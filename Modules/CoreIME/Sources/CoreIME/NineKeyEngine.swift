@@ -41,6 +41,7 @@ public struct NineKeyEngine {
         }
 
         private static func processSlices<T: RandomAccessCollection<Combo>>(combos: T, limit: Int64? = nil, anchorsStatement: OpaquePointer?, spellStatement: OpaquePointer?) -> [Lexicon] {
+                guard combos.isNotEmpty else { return [] }
                 return (1...combos.count).reversed()
                         .flatMap({ number -> [Lexicon] in
                                 guard Task.isCancelled.negative else { return [] }
