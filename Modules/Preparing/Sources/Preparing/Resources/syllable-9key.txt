@@ -6,6 +6,7 @@ ak	ak
 am	am
 ap	ap
 au	au
+be	be
 bo	bo
 ce	ce
 ci	ci
@@ -59,10 +60,12 @@ ang	ang
 baa	baa
 bai	bai
 bak	bak
+bam	bam
 ban	ban
 bat	bat
 bau	bau
 bei	bei
+bek	bek
 bik	bik
 bin	bin
 bit	bit
@@ -103,6 +106,7 @@ dat	dat
 dau	dau
 dei	dei
 dek	dek
+deu	deu
 dik	dik
 dim	dim
 din	din
@@ -120,6 +124,7 @@ fan	fan
 fat	fat
 fau	fau
 fei	fei
+fit	fit
 fok	fok
 fui	fui
 fuk	fuk
@@ -133,6 +138,7 @@ gap	gap
 gat	gat
 gau	gau
 gei	gei
+gep	gep
 gik	gik
 gim	gim
 gin	gin
@@ -216,6 +222,7 @@ lat	lat
 lau	lau
 lei	lei
 lek	lek
+lem	lem
 lik	lik
 lim	lim
 lin	lin
@@ -271,6 +278,7 @@ pat	pat
 pau	pau
 pei	pei
 pek	pek
+pet	pet
 pik	pik
 pin	pin
 pit	pit
@@ -350,6 +358,7 @@ zok	zok
 zou	zou
 zuk	zuk
 zyu	zyu
+aang	aang
 baai	baai
 baak	baak
 baan	baan
@@ -405,6 +414,8 @@ dyut	dyut
 faai	faai
 faan	faan
 faat	faat
+fang	fang
+fing	fing
 fong	fong
 fung	fung
 gaai	gaai
@@ -446,7 +457,11 @@ hong	hong
 hung	hung
 hyun	hyun
 hyut	hyut
+jaai	jaai
 jaak	jaak
+jaam	jaam
+jaap	jaap
+jaau	jaau
 jeng	jeng
 jeoi	jeoi
 jeok	joek
@@ -459,8 +474,10 @@ jung	jung
 jyun	jyun
 jyut	jyut
 kaai	kaai
+kaat	kaat
 kaau	kaau
 kang	kang
+keng	keng
 keoi	keoi
 keok	koek
 king	king
@@ -482,6 +499,7 @@ laan	laan
 laap	laap
 laat	laat
 laau	laau
+lang	lang
 leng	leng
 leoi	leoi
 leok	loek
@@ -523,6 +541,7 @@ ngan	ngan
 ngap	ngap
 ngat	ngat
 ngau	ngau
+ngit	ngit
 ngoi	ngoi
 ngok	ngok
 ngon	ngon

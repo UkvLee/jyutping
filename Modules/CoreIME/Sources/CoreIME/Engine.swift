@@ -124,9 +124,9 @@ extension Engine {
                 let syllableKeys = keys.filter(\.isSyllableLetter)
                 let lexicons: [Lexicon] = switch (segmentation.first?.first?.alias.count ?? 0) {
                 case 0 where deepSearch:
-                        processSlices(of: syllableKeys, text: syllableKeys.map(\.text).joined(), anchorsStatement: anchorsStatement, spellStatement: spellStatement)
+                        ExtraEntry.search(keys: keys) + processSlices(of: syllableKeys, text: syllableKeys.map(\.text).joined(), anchorsStatement: anchorsStatement, spellStatement: spellStatement)
                 case 0:
-                        anchorsMatch(keys: syllableKeys, input: syllableKeys.map(\.text).joined(), statement: anchorsStatement)
+                        ExtraEntry.search(keys: keys) + anchorsMatch(keys: syllableKeys, input: syllableKeys.map(\.text).joined(), statement: anchorsStatement)
                 case 1 where syllableKeys.count > 1,
                         _ where syllableKeys.count != keys.count :
                         search(syllableKeys, segmentation: segmentation, deepSearch: deepSearch, anchorsStatement: anchorsStatement, spellStatement: spellStatement) + processSlices(of: syllableKeys, text: syllableKeys.map(\.text).joined(), anchorsStatement: anchorsStatement, spellStatement: spellStatement)
@@ -315,17 +315,13 @@ extension Engine {
         private static func processSlices<T: RandomAccessCollection<VirtualInputKey>>(of keys: T, text: String, limit: Int64? = nil, anchorsStatement: OpaquePointer?, spellStatement: OpaquePointer?) -> [Lexicon] {
                 let adjustedLimit: Int64 = (limit == nil) ? 300 : 100
                 let inputLength: Int = keys.count
-                return (0..<inputLength).flatMap({ number -> [Lexicon] in
+                return (1...inputLength).reversed().flatMap({ number -> ArraySlice<Lexicon> in
                         guard Task.isCancelled.negative else { return [] }
-                        let leadingKeys = keys.dropLast(number)
-                        let leadingText = leadingKeys.map(\.text).joined()
-                        let spellMatched = spellMatch(keys: leadingKeys, complexity: leadingKeys.count, input: leadingText, limit: limit, statement: spellStatement)
-                                .map({ modify($0, keys: keys, text: text, inputLength: inputLength) })
-                        let anchorsMatched = anchorsMatch(keys: leadingKeys, input: leadingText, limit: adjustedLimit, statement: anchorsStatement)
+                        guard number <= MAX_CHAR_COUNT else { return [] }
+                        return anchorsMatch(keys: keys.prefix(number), limit: adjustedLimit, statement: anchorsStatement)
                                 .map({ modify($0, keys: keys, text: text, inputLength: inputLength) })
                                 .sorted()
-                                .prefix(72)
-                        return spellMatched + anchorsMatched
+                                .prefix(50)
                 })
                 .distinct()
                 .sorted()
@@ -411,7 +407,8 @@ extension Engine {
                 let fetched: [Lexicon] = {
                         let idealQueried = queried.filter({ $0.inputCount == inputLength }).sorted(by: { $0.number < $1.number }).distinct()
                         let notIdealQueried = queried.filter({ $0.inputCount < inputLength }).sorted().distinct()
-                        let fullInput = (idealQueried + anchorsMatched + prefixMatched + gainedMatched).distinct()
+                        let extra = idealQueried.isNotEmpty ? [] : ExtraEntry.search(keys: keys)
+                        let fullInput = (idealQueried + extra + anchorsMatched + prefixMatched + gainedMatched).distinct()
                         let primary = fullInput.prefix(10)
                         let secondary = fullInput.sorted().prefix(10)
                         let tertiary = notIdealQueried.prefix(10)

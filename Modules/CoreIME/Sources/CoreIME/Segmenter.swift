@@ -109,7 +109,7 @@ public struct Segmenter {
                 defer { sqlite3_finalize(statement) }
                 guard sqlite3_prepare_v2(Engine.database, command, -1, &statement, nil) == SQLITE_OK else { return [:] }
                 var dict: [Int: Syllable] = [:]
-                dict.reserveCapacity(1200)
+                dict.reserveCapacity(1300)
                 while sqlite3_step(statement) == SQLITE_ROW {
                         let aliasCode = Int(sqlite3_column_int64(statement, 0))
                         let originCode = Int(sqlite3_column_int64(statement, 1))

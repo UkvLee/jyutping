@@ -41,11 +41,11 @@ public struct NineKeyEngine {
         }
 
         private static func processSlices<T: RandomAccessCollection<Combo>>(combos: T, limit: Int64? = nil, anchorsStatement: OpaquePointer?, spellStatement: OpaquePointer?) -> [Lexicon] {
-                return (0..<combos.count)
+                return (1...combos.count).reversed()
                         .flatMap({ number -> [Lexicon] in
                                 guard Task.isCancelled.negative else { return [] }
-                                let leadingCombos = combos.dropLast(number)
-                                return spellMatch(combos: leadingCombos, complexity: leadingCombos.count, limit: limit, statement: spellStatement) + anchorsMatch(combos: leadingCombos, limit: limit, statement: anchorsStatement)
+                                guard number <= Engine.MAX_CHAR_COUNT else { return [] }
+                                return anchorsMatch(combos: combos.prefix(number), limit: limit, statement: anchorsStatement)
                         })
         }
 
@@ -58,7 +58,8 @@ public struct NineKeyEngine {
                 let fetched: [Lexicon] = {
                         let idealQueried = queried.filter({ $0.inputCount == inputLength }).sorted(by: { $0.number < $1.number }).distinct()
                         let notIdealQueried = queried.filter({ $0.inputCount < inputLength }).sorted().distinct()
-                        return (idealQueried + anchorsMatched.prefix(4) + notIdealQueried).distinct()
+                        let extra = idealQueried.isNotEmpty ? [] : ExtraEntry.nineKeySearch(combos: combos)
+                        return (idealQueried + extra + anchorsMatched.prefix(4) + notIdealQueried).distinct()
                 }()
                 guard let firstInputCount = fetched.first?.inputCount else {
                         return processSlices(combos: combos, limit: limit, anchorsStatement: anchorsStatement, spellStatement: spellStatement)
