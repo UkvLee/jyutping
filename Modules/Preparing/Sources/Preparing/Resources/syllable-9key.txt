@@ -499,7 +499,6 @@ laan	laan
 laap	laap
 laat	laat
 laau	laau
-lang	lang
 leng	leng
 leoi	leoi
 leok	loek

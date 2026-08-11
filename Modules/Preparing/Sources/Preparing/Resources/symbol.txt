@@ -542,9 +542,6 @@
 1	170000	1FAEA	咩話	me1 waa2
 1	170000	1FAEA	不知所措	bat1 zi1 so2 cou3
 1	170000	1FAEA	慌張	fong1 zoeng1
-1	170000	1FAEA	驚	geng1
-1	170000	1FAEA	驚怕	ging1 paa3
-1	170000	1FAEA	害怕	hoi6 paa3
 1	170000	1FAEA	尷尬	gaam1 gaai3
 1	170000	1FAEA	彷徨	pong4 wong4
 1	170000	1FAEA	無所適從	mou4 so2 sik1 cung4
@@ -552,11 +549,8 @@
 1	170000	1FAEA	懵	mung2
 1	170000	1FAEA	好懵	hou2 mung2
 1	170000	1FAEA	震驚	zan3 ging1
-1	170000	1FAEA	奇怪	kei4 gwaai3
-1	170000	1FAEA	難以置信	naan4 ji5 zi3 seon3
 1	170000	1FAEA	困惑	kwan3 waak6
 1	170000	1FAEA	大鑊	daai6 wok6
-1	170000	1FAEA	乖巧	gwaai1 haau2
 1	110000	1F634	睏覺	kwan3 gaau3
 1	110000	1F634	睏覺	fan3 gaau3
 1	110000	1F634	睏覺	han3 gaau3
@@ -804,7 +798,6 @@
 1	110000	1F44C	可	ho2
 1	110000	1F44C	得	dak1
 1	110000	1F90C	捏	nip6
-1	110000	1F90C	意大利手勢	ji3 daai6 lei6 sau2 sai3
 1	110000	1F90F	捏	nip6
 1	140000	1FAF3	覆手	fuk1 sau2
 1	140000	1FAF3	𢫏	kam2
@@ -5661,6 +5654,7 @@
 8	110000	1F1EA.1F1F7	厄立特里亞	ak1 laap6 dak6 lei5 aa3
 8	110000	1F1EA.1F1EA	愛沙尼亞	oi3 saa1 nei4 aa3
 8	110000	1F1F8.1F1FF	斯威士蘭	si1 wai1 si6 laan4
+8	110000	1F1F8.1F1FF	史瓦帝尼	si2 ngaa5 dai3 nei4
 8	110000	1F1EA.1F1F9	埃塞俄比亞	oi1 coi3 ngo4 bei2 aa3
 8	110000	1F1EA.1F1FA	歐盟	au1 mang4
 8	110000	1F1EA.1F1FA	歐洲聯盟	au1 zau1 lyun4 mang4
@@ -5709,6 +5703,7 @@
 8	110000	1F1EE.1F1F2	馬恩島	maa5 jan1 dou2
 8	110000	1F1EE.1F1F1	以色列	ji5 sik1 lit6
 8	110000	1F1EE.1F1F9	意大利	ji3 daai6 lei6
+8	110000	1F1EE.1F1F9	義大利	ji6 daai6 lei6
 8	110000	1F1EF.1F1F2	牙買加	ngaa4 maai5 gaa1
 8	110000	1F1EF.1F1F5	日本	jat6 bun2
 8	110000	1F1EF.1F1F5	日本國	jat6 bun2 gwok3
