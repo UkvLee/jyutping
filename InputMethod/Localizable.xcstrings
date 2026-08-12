@@ -1544,13 +1544,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "主题强调色"
+            "value" : "主題強調色"
           }
         },
         "zh-Hans-CN" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "主题强调色"
+            "value" : "主題強調色"
           }
         },
         "zh-Hant" : {
@@ -1650,13 +1650,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "系统"
+            "value" : "系統"
           }
         },
         "zh-Hans-CN" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "系统"
+            "value" : "系統"
           }
         },
         "zh-Hant" : {
@@ -1862,13 +1862,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "反转"
+            "value" : "反轉"
           }
         },
         "zh-Hans-CN" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "反转"
+            "value" : "反轉"
           }
         },
         "zh-Hant" : {
@@ -1968,13 +1968,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "蓝色"
+            "value" : "藍色"
           }
         },
         "zh-Hans-CN" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "蓝色"
+            "value" : "藍色"
           }
         },
         "zh-Hant" : {
@@ -2180,13 +2180,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "粉红色"
+            "value" : "粉紅色"
           }
         },
         "zh-Hans-CN" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "粉红色"
+            "value" : "粉紅色"
           }
         },
         "zh-Hant" : {
@@ -2286,13 +2286,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "红色"
+            "value" : "紅色"
           }
         },
         "zh-Hans-CN" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "红色"
+            "value" : "紅色"
           }
         },
         "zh-Hant" : {
@@ -2498,13 +2498,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "黄色"
+            "value" : "黃色"
           }
         },
         "zh-Hans-CN" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "黄色"
+            "value" : "黃色"
           }
         },
         "zh-Hant" : {
@@ -2604,13 +2604,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "绿色"
+            "value" : "綠色"
           }
         },
         "zh-Hans-CN" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "绿色"
+            "value" : "綠色"
           }
         },
         "zh-Hant" : {

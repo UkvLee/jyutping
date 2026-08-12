@@ -21,6 +21,11 @@ Current editor settings are UTF-8, LF line endings, and for Swift files: spaces,
 
 Make narrow, surgical edits and follow the surrounding style instead of reformatting files wholesale.
 
+## Localization and translation rules
+
+1. Use Traditional Chinese characters for the `zh-Hans` and `zh-Hans-CN` locales.
+2. All `zh-*` locales should generally align their values with the base locale, `yue`.
+
 ## Code review rules
 
 - Changes under `Modules/Preparing/Sources/Preparing/Resources/` should usually be excluded from code review unless the user specifically asks to review those resource files.
