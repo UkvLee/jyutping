@@ -14,7 +14,9 @@ struct CangjieTests {
                         (.cangjie5, "hqi", "我"),
                         (.cangjie3, "hqi", "我"),
                         (.quick5, "hi", "我"),
-                        (.quick3, "hi", "我")
+                        (.quick3, "hi", "我"),
+                        (.quick5, "ofvd", "你好"),
+                        (.quick3, "ofvd", "你好"),
                 ]
 
                 for (variant, input, expectedText) in cases {

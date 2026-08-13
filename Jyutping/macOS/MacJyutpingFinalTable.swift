@@ -38,7 +38,7 @@ struct MacJyutpingFinalTable: View {
                                         .block()
                                 }
                                 VStack {
-                                        MacFinalLabel(word: "㗎", syllable: "ga3", pronunciation: "kɐ˧", jyutping: "a", ipa: "[ ɐ ]")
+                                        // MacFinalLabel(word: "㗎", syllable: "ga3", pronunciation: "kɐ˧", jyutping: "a", ipa: "[ ɐ ]")
                                         MacFinalLabel(word: "計", syllable: "gai3", jyutping: "ai", ipa: "[ ɐi ]")
                                         MacFinalLabel(word: "救", syllable: "gau3", jyutping: "au", ipa: "[ ɐu ]")
                                         MacFinalLabel(word: "禁", syllable: "gam3", jyutping: "am", ipa: "[ ɐm ]")
@@ -106,14 +106,14 @@ struct MacJyutpingFinalTable: View {
                                         VStack {
                                                 MacFinalLabel(word: "鋸", syllable: "goe3", jyutping: "oe", ipa: "[ œː ]")
                                                 MacFinalLabel(word: "姜", syllable: "goeng1", jyutping: "oeng", ipa: "[ œːŋ ]")
-                                                MacFinalLabel(word: "*", syllable: "goet4", pronunciation: "kœːt̚˨˩", jyutping: "oet", ipa: "[ œːt̚ ]")
+                                                // MacFinalLabel(word: "*", syllable: "goet4", pronunciation: "kœːt̚˨˩", jyutping: "oet", ipa: "[ œːt̚ ]")
                                                 MacFinalLabel(word: "腳", syllable: "goek3", jyutping: "oek", ipa: "[ œːk̚ ]")
                                         }
                                         .block()
-                                        Text(verbatim: "韻母 -oet 通常只見於口語擬聲詞。")
-                                                .font(.copilot)
-                                                .foregroundStyle(Color.secondary)
-                                                .padding(.horizontal, 8)
+                                        // Text(verbatim: "韻母 -oet 通常只見於口語擬聲詞。")
+                                        //         .font(.copilot)
+                                        //         .foregroundStyle(Color.secondary)
+                                        //         .padding(.horizontal, 8)
                                 }
                                 VStack(alignment: .leading, spacing: 2) {
                                         VStack {
@@ -122,7 +122,7 @@ struct MacJyutpingFinalTable: View {
                                                 MacFinalLabel(word: "術", syllable: "seot6", jyutping: "eot", ipa: "[ ɵt̚ ]")
                                         }
                                         .block()
-                                        Text(verbatim: "韻腹 -oe-, -eo- 通常係音節互補關係，打字時可以混用。")
+                                        Text(verbatim: "韻腹 -oe- 與 -eo- 通常係音節互補關係，打字時可以混用。")
                                                 .font(.copilot)
                                                 .foregroundStyle(Color.secondary)
                                                 .padding(.horizontal, 8)

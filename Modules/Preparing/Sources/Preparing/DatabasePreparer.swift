@@ -12,7 +12,6 @@ struct DatabasePreparer {
 
         static func prepare() async {
                 LexiconConverter.prepareJyutpingSourceLines()
-                Cangjie.prepareCangjieDatabase()
                 await withTaskGroup(of: Void.self) { group in
                         group.addTask { await prepareCoreLexiconTable() }
                         group.addTask { await prepareStructureTable() }
@@ -50,7 +49,6 @@ struct DatabasePreparer {
                 backupMobileDatabase()
                 prepareDesktopDatabase()
                 sqlite3_close_v2(database)
-                Cangjie.closeCangjieDatabase()
         }
         private static let coreIMEPackageURL: URL = URL(fileURLWithPath: #filePath)
                 .deletingLastPathComponent()

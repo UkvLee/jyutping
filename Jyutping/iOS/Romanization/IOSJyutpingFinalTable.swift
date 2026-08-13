@@ -34,7 +34,7 @@ struct IOSJyutpingFinalTable: View {
                                 .textCase(nil)
                         }
                         Section {
-                                IOSFinalLabel(word: "㗎", syllable: "ga3", pronunciation: "kɐ˧", jyutping: "a", ipa: "[ ɐ ]")
+                                // IOSFinalLabel(word: "㗎", syllable: "ga3", pronunciation: "kɐ˧", jyutping: "a", ipa: "[ ɐ ]")
                                 IOSFinalLabel(word: "計", syllable: "gai3", jyutping: "ai", ipa: "[ ɐi ]")
                                 IOSFinalLabel(word: "救", syllable: "gau3", jyutping: "au", ipa: "[ ɐu ]")
                                 IOSFinalLabel(word: "禁", syllable: "gam3", jyutping: "am", ipa: "[ ɐm ]")
@@ -90,17 +90,18 @@ struct IOSJyutpingFinalTable: View {
                         Section {
                                 IOSFinalLabel(word: "鋸", syllable: "goe3", jyutping: "oe", ipa: "[ œː ]")
                                 IOSFinalLabel(word: "姜", syllable: "goeng1", jyutping: "oeng", ipa: "[ œːŋ ]")
-                                IOSFinalLabel(word: "*", syllable: "goet4", pronunciation: "kœːt̚˨˩", jyutping: "oet", ipa: "[ œːt̚ ]")
+                                // IOSFinalLabel(word: "*", syllable: "goet4", pronunciation: "kœːt̚˨˩", jyutping: "oet", ipa: "[ œːt̚ ]")
                                 IOSFinalLabel(word: "腳", syllable: "goek3", jyutping: "oek", ipa: "[ œːk̚ ]")
-                        } footer: {
-                                Text(verbatim: "韻母 -oet 通常只見於口語擬聲詞。").textCase(nil)
                         }
+                        // footer: {
+                        //         Text(verbatim: "韻母 -oet 通常只見於口語擬聲詞。").textCase(nil)
+                        // }
                         Section {
                                 IOSFinalLabel(word: "歲", syllable: "seoi3", jyutping: "eoi", ipa: "[ ɵy ]")
                                 IOSFinalLabel(word: "信", syllable: "seon3", jyutping: "eon", ipa: "[ ɵn ]")
                                 IOSFinalLabel(word: "術", syllable: "seot6", jyutping: "eot", ipa: "[ ɵt̚ ]")
                         } footer: {
-                                Text(verbatim: "韻腹 -oe-、-eo- 通常係音節互補關係，打字時可以混用。").textCase(nil)
+                                Text(verbatim: "韻腹 -oe- 與 -eo- 通常係音節互補關係，打字時可以混用。").textCase(nil)
                         }
                         Section {
                                 IOSFinalLabel(word: "恕", syllable: "syu3", jyutping: "yu", ipa: "[ yː ]")

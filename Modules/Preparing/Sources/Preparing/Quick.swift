@@ -21,14 +21,14 @@ struct Quick {
                 return words.flatMap({ word -> [QuickEntry] in
                         switch word.count {
                         case 1:
-                                let cangjie5Matches = Cangjie.match(cangjie5: word)
-                                let cangjie3Matches = Cangjie.match(cangjie3: word)
-                                guard !(cangjie5Matches.isEmpty && cangjie3Matches.isEmpty) else { return [] }
+                                let cangjie5Values = Cangjie.match(cangjie5: word)
+                                let cangjie3Values = Cangjie.match(cangjie3: word)
+                                guard !(cangjie5Values.isEmpty && cangjie3Values.isEmpty) else { return [] }
                                 var instances: [QuickEntry] = []
-                                let upperBound: Int = max(cangjie5Matches.count, cangjie3Matches.count)
+                                let upperBound: Int = max(cangjie5Values.count, cangjie3Values.count)
                                 for index in 0..<upperBound {
-                                        let cangjie5: String = cangjie5Matches.fetch(index) ?? "X"
-                                        let cangjie3: String = cangjie3Matches.fetch(index) ?? "X"
+                                        let cangjie5: String = cangjie5Values.fetch(index) ?? "X"
+                                        let cangjie3: String = cangjie3Values.fetch(index) ?? "X"
                                         let quick5: String = (cangjie5.count > 2) ? "\(cangjie5.first!)\(cangjie5.last!)" : cangjie5
                                         let quick3: String = (cangjie3.count > 2) ? "\(cangjie3.first!)\(cangjie3.last!)" : cangjie3
                                         let q5complex: Int = quick5.count
