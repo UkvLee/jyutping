@@ -408,6 +408,11 @@ final class KeyboardViewController: UIInputViewController, ObservableObject {
                         let syllables = item.lexicon.romanization.strippedTones().split(separator: Character.space).map({ String($0) })
                         return (syllables.count < selectedCount) ? selected.starts(with: syllables) : syllables.starts(with: selected)
                 })
+                if let firstLexicon = candidates.first?.lexicon,
+                   firstLexicon.inputCount == bufferCombos.count,
+                   firstLexicon.mark != text2mark {
+                        text2mark = firstLexicon.mark
+                }
                 let selectedLength = selected.reduce(0, { $0 + $1.count })
                 guard selectedLength < bufferCombos.count else {
                         sidebarSyllables = selectedSyllables
