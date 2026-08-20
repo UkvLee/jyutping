@@ -6,7 +6,9 @@ struct CandidateBar: View {
 
         var body: some View {
                 HStack(spacing: 0) {
-                        if #available(iOSApplicationExtension 18.0, *) {
+                        if #available(iOSApplicationExtension 26.0, *) {
+                                CandidateBarScrollView().scrollEdgeEffectHidden()
+                        } else if #available(iOSApplicationExtension 18.0, *) {
                                 CandidateBarScrollView()
                         } else if #available(iOSApplicationExtension 17.0, *) {
                                 CandidateBarScrollViewIOS17()

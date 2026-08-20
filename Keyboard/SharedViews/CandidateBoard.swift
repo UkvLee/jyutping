@@ -68,7 +68,9 @@ struct CandidateBoard: View {
         private let buttonLength = PresetConstant.buttonLength - 1
         var body: some View {
                 ZStack(alignment: .topTrailing) {
-                        if #available(iOSApplicationExtension 18.0, *) {
+                        if #available(iOSApplicationExtension 26.0, *) {
+                                CandidateBoardScrollView().scrollEdgeEffectHidden()
+                        } else if #available(iOSApplicationExtension 18.0, *) {
                                 CandidateBoardScrollView()
                         } else if #available(iOSApplicationExtension 17.0, *) {
                                 CandidateBoardScrollViewIOS17()
