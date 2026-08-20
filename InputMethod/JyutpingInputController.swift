@@ -5,7 +5,7 @@ import CommonExtensions
 import CoreIME
 
 @MainActor
-final class JyutpingInputController: IMKInputController, Sendable {
+final class JyutpingInputController: IMKInputController, @unchecked Sendable {
 
         // MARK: - Window, InputClient
 
@@ -14,7 +14,9 @@ final class JyutpingInputController: IMKInputController, Sendable {
         /// NSPanel for CandidateBoard and OptionsView
         private lazy var window = CandidateWindow.shared
 
+        private lazy var isWindowPrepared: Bool = false
         private func prepareWindow() {
+                guard isWindowPrepared.negative else { return }
                 let idealValue: Int = Int(max(
                         CGShieldingWindowLevel(),
                         CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)
@@ -29,6 +31,7 @@ final class JyutpingInputController: IMKInputController, Sendable {
                 window.level = NSWindow.Level(levelValue)
                 window.contentViewController = NSHostingController(rootView: MotherBoard().environmentObject(context))
                 window.orderFrontRegardless()
+                isWindowPrepared = true
         }
         @objc private func handleContentSizeChanged(_ notification: Notification) {
                 guard let useInfo = notification.userInfo else { return }
@@ -39,6 +42,7 @@ final class JyutpingInputController: IMKInputController, Sendable {
                 }
         }
         private func updateWindowFrame(_ frame: CGRect? = nil) {
+                prepareWindow()
                 let frame: CGRect = frame ?? computeWindowFrame()
                 guard frame != window.frame else { return }
                 window.setFrame(frame, display: true)
@@ -89,12 +93,12 @@ final class JyutpingInputController: IMKInputController, Sendable {
                 return CGRect(x: x, y: y, width: width, height: height)
         }
 
-        nonisolated(unsafe) private var caretFrame: CGRect? = nil
+        private lazy var caretFrame: CGRect? = nil
 
         private typealias InputClient = (IMKTextInput & NSObjectProtocol)
         private lazy var currentClient: InputClient? = nil {
                 didSet {
-                        guard let position: CGPoint = currentClient?.caretRect.origin else { return }
+                        guard let position: CGPoint = caretFrame?.origin else { return }
                         let screenFrame: CGRect? = {
                                 if let screen = NSScreen.screens.first(where: { $0.frame.contains(position) }) {
                                         return screen.frame
@@ -128,6 +132,7 @@ final class JyutpingInputController: IMKInputController, Sendable {
 
         // MARK: - Input Server lifecycle
 
+        /*
         override init() {
                 super.init()
                 activateServer(client())
@@ -137,15 +142,16 @@ final class JyutpingInputController: IMKInputController, Sendable {
                 let currentInputClient = (inputClient as? InputClient) ?? client()
                 activateServer(currentInputClient)
         }
+        */
+
         override func activateServer(_ sender: Any!) {
                 super.activateServer(sender)
                 NotificationCenter.default.removeObserver(self)
                 nonisolated(unsafe) let client: InputClient? = (sender as? InputClient) ?? client()
-                caretFrame = client?.caretRect
                 Task { @MainActor in
                         suggestionTask?.cancel()
-                        InputMemory.prepare()
-                        Engine.prepare()
+                        // InputMemory.prepare()
+                        // Engine.prepare()
                         if inputStage.isBuffering {
                                 clearBuffer()
                         }
@@ -154,9 +160,10 @@ final class JyutpingInputController: IMKInputController, Sendable {
                         if inputForm.isOptions {
                                 updateInputForm()
                         }
+                        caretFrame = nil
                         currentClient = client
-                        prepareWindow()
-                        client?.overrideKeyboard(withKeyboardNamed: PresetConstant.systemABCKeyboardLayout)
+                        isWindowPrepared = false
+                        // client?.overrideKeyboard(withKeyboardNamed: PresetConstant.systemABCKeyboardLayout)
                 }
                 Task {
                         await obtainSupplementaryLexicon()
@@ -177,10 +184,9 @@ final class JyutpingInputController: IMKInputController, Sendable {
                                 let text: String = joinedBufferTexts()
                                 clearBuffer()
                                 client?.insertText(text as NSString, replacementRange: replacementRange())
-                        } else {
-                                clearMarkedText()
                         }
                         if inputForm.isOptions {
+                                clearMarkedText()
                                 updateInputForm()
                         }
                         let activatingWindowCount = NSApp.windows.count(where: { $0.windowNumber > 0 })
@@ -276,7 +282,7 @@ final class JyutpingInputController: IMKInputController, Sendable {
                                 inputStage = .standby
                         case (true, false):
                                 inputStage = .starting
-                                // InputMemory.prepare()
+                                InputMemory.prepare()
                                 Engine.prepare()
                                 prepareWindow()
                         case (false, false):
@@ -712,10 +718,12 @@ final class JyutpingInputController: IMKInputController, Sendable {
                 case .buffer:
                         return true
                 case .handle:
-                        if inputStage.isBuffering.negative {
-                                caretFrame = (sender as? InputClient)?.caretRect
-                        }
+                        nonisolated(unsafe) let client: InputClient? = (sender as? InputClient)
                         Task { @MainActor in
+                                if inputStage.isBuffering.negative {
+                                        caretFrame = client?.caretRect
+                                        currentClient = client
+                                }
                                 switch inputForm {
                                 case .cantonese:
                                         passBuffer()
@@ -909,7 +917,6 @@ final class JyutpingInputController: IMKInputController, Sendable {
                 }
                 nonisolated(unsafe) let client: InputClient? = (sender as? InputClient)
                 if isBuffering.negative && isEventHandled && inputForm.isOptions.negative {
-                        caretFrame = client?.caretRect
                         let text: String = (VirtualInputKey.matchInputKey(for: code) ?? VirtualInputKey.letterA).text
                         let attributes: [NSAttributedString.Key: Any] = [.underlineStyle: 0]
                         let attributedText = NSAttributedString(string: text, attributes: attributes)
@@ -918,6 +925,7 @@ final class JyutpingInputController: IMKInputController, Sendable {
                 }
                 Task { @MainActor in
                         if isBuffering.negative || client?.bundleIdentifier() != currentClient?.bundleIdentifier() {
+                                caretFrame = client?.caretRect
                                 currentClient = client
                         }
                         process(keyCode: code, hasControlShiftModifiers: hasControlShiftModifiers, isShifting: isShifting)
