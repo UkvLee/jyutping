@@ -28,16 +28,16 @@ struct FifteenKeyKeyboard: View {
                                 SecondEnhancedLetterRow()
                         }
                         HStack(spacing: 0) {
-                                ShiftKey(widthUnitTimes: 1.5)
-                                Spacer()
+                                ShiftKey(widthUnitTimes: 1.66)
+                                Spacer().frame(minWidth: 0, maxWidth: .infinity)
                                 switch Options.inputKeyStyle {
                                 case .clear, .numbers:
                                         ThirdLetterRow()
                                 case .numbersAndSymbols:
                                         ThirdEnhancedLetterRow()
                                 }
-                                Spacer()
-                                BackspaceKey(widthUnitTimes: 1.5)
+                                Spacer().frame(minWidth: 0, maxWidth: .infinity)
+                                BackspaceKey(widthUnitTimes: 1.66)
                         }
                         switch (context.keyboardInterface.isPadFloating, context.needsInputModeSwitchKey) {
                         case (true, true):
