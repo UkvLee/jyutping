@@ -54,20 +54,20 @@ private extension AppDataPreparer {
                         "CREATE INDEX ix_jyutping_word ON jyutping_table (word);",
                         "CREATE INDEX ix_jyutping_romanization ON jyutping_table (romanization);",
 
-                        "CREATE INDEX ix_collocation_word_romanization ON collocation_table (word, romanization);",
+                        "CREATE INDEX ix_collocation_unified ON collocation_table (word, romanization);",
 
-                        "CREATE INDEX ix_dictionary_word_romanization ON dictionary_table (word, romanization);",
+                        "CREATE INDEX ix_dictionary_unified ON dictionary_table (word, romanization);",
 
-                        "CREATE INDEX ix_yingwaa_code ON yingwaa_table(code);",
-                        "CREATE INDEX ix_yingwaa_romanization ON yingwaa_table(romanization);",
+                        "CREATE INDEX ix_yingwaa_code ON yingwaa_table (code);",
+                        "CREATE INDEX ix_yingwaa_romanization ON yingwaa_table (romanization);",
 
-                        "CREATE INDEX ix_chohok_code ON chohok_table(code);",
-                        "CREATE INDEX ix_chohok_romanization ON chohok_table(romanization);",
+                        "CREATE INDEX ix_chohok_code ON chohok_table (code);",
+                        "CREATE INDEX ix_chohok_romanization ON chohok_table (romanization);",
 
-                        "CREATE INDEX ix_fanwan_code ON fanwan_table(code);",
-                        "CREATE INDEX ix_fanwan_romanization ON fanwan_table(romanization);",
+                        "CREATE INDEX ix_fanwan_code ON fanwan_table (code);",
+                        "CREATE INDEX ix_fanwan_romanization ON fanwan_table (romanization);",
 
-                        "CREATE INDEX ix_gwongwan_code ON gwongwan_table(code);",
+                        "CREATE INDEX ix_gwongwan_code ON gwongwan_table (code);",
                 ]
                 for command in commands {
                         var statement: OpaquePointer? = nil

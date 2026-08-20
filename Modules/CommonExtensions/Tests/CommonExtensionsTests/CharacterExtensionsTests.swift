@@ -11,7 +11,7 @@ struct CharacterExtensionsTests {
                 #expect(Character("A").codePoints == ["U+0041"])
                 #expect(Character("👋").codePoints == ["U+1F44B"])
                 #expect(decomposed.codePoints == ["U+0065", "U+0301"])
-                #expect(decomposed.codePointsText == "U+0065 U+0301")
+                #expect(decomposed.codePointNotation == "U+0065 U+0301")
         }
 
         @Test("code point initializer accepts valid values and rejects invalid scalars")

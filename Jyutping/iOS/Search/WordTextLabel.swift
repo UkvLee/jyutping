@@ -12,7 +12,7 @@ struct WordTextLabel: View {
                                 Text.separator
                                 Text(verbatim: word)
                         }
-                        if let unicode = word.first?.codePointsText {
+                        if let unicode = word.first?.codePointNotation {
                                 Text(verbatim: unicode)
                                         .font(.footnote)
                                         .monospaced()

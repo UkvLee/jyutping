@@ -108,7 +108,7 @@ private struct CandidateDetailSummaryView: View {
                                 Spacer()
                                 Speaker(candidate.lexicon.romanization)
                         }
-                        if isSingleCharacter, let unicode = candidate.lexicon.text.first?.codePointsText {
+                        if isSingleCharacter, let unicode = candidate.lexicon.text.first?.codePointNotation {
                                 HStack(spacing: 2) {
                                         Text(verbatim: "Unicode")
                                         Text.separator
@@ -211,7 +211,7 @@ private struct SymbolCandidateDetailView: View {
                                 HStack(spacing: 2) {
                                         Text(verbatim: "Unicode")
                                         Text.separator
-                                        Text(verbatim: candidate.text.map(\.codePointsText).joined(separator: ", ")).monospaced().textSelection(.enabled)
+                                        Text(verbatim: candidate.text.map(\.codePointNotation).joined(separator: ", ")).monospaced().textSelection(.enabled)
                                 }
                                 .font(.footnote)
                         }

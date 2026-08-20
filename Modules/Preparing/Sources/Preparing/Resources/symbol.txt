@@ -1640,7 +1640,6 @@
 1	110000	1F6B6.200D.2640.FE0F	行路	haang4 lou6
 1	110000	1F6B6.200D.2640.FE0F	步行	bou6 hang4
 1	110000	1F6B6.200D.2640.FE0F	向左行	hoeng3 zo2 haang4
-1	110000	1F6B6.200D.2640.FE0F	行	haang4
 1	110000	1F6B6	中性行人	zung1 sing3 hang4 jan4
 1	110000	1F6B6.200D.2642.FE0F	男行人	naam4 hang4 jan4
 1	110000	1F6B6.200D.2642.FE0F	男路人	naam4 lou6 jan4
@@ -1651,7 +1650,6 @@
 1	110000	1F6B6.200D.2642.FE0F	行路	haang4 lou6
 1	110000	1F6B6.200D.2642.FE0F	步行	bou6 hang4
 1	110000	1F6B6.200D.2642.FE0F	向左行	hoeng3 zo2 haang4
-1	110000	1F6B6.200D.2642.FE0F	行	haang4
 1	150100	1F6B6.200D.2640.FE0F.200D.27A1.FE0F	女行人	neoi5 hang4 jan4
 1	150100	1F6B6.200D.2640.FE0F.200D.27A1.FE0F	女路人	neoi5 lou6 jan4
 1	150100	1F6B6.200D.2640.FE0F.200D.27A1.FE0F	行人女	hang4 jan4 neoi5
@@ -1661,7 +1659,6 @@
 1	150100	1F6B6.200D.2640.FE0F.200D.27A1.FE0F	行路	haang4 lou6
 1	150100	1F6B6.200D.2640.FE0F.200D.27A1.FE0F	步行	bou6 hang4
 1	150100	1F6B6.200D.2640.FE0F.200D.27A1.FE0F	向右行	hoeng3 jau6 haang4
-1	150100	1F6B6.200D.2640.FE0F.200D.27A1.FE0F	行	haang4
 1	150100	1F6B6.200D.27A1.FE0F	中性行人	zung1 sing3 hang4 jan4
 1	150100	1F6B6.200D.2642.FE0F.200D.27A1.FE0F	男行人	naam4 hang4 jan4
 1	150100	1F6B6.200D.2642.FE0F.200D.27A1.FE0F	男路人	naam4 lou6 jan4
@@ -1672,7 +1669,6 @@
 1	150100	1F6B6.200D.2642.FE0F.200D.27A1.FE0F	行路	haang4 lou6
 1	150100	1F6B6.200D.2642.FE0F.200D.27A1.FE0F	步行	bou6 hang4
 1	150100	1F6B6.200D.2642.FE0F.200D.27A1.FE0F	向右行	hoeng3 jau6 haang4
-1	150100	1F6B6.200D.2642.FE0F.200D.27A1.FE0F	行	haang4
 1	110000	1F469.200D.1F9AF	女盲人	neoi5 maang4 jan4
 1	110000	1F469.200D.1F9AF	盲人女	maang4 jan4 neoi5
 1	110000	1F469.200D.1F9AF	盲女	maang4 neoi5
@@ -3681,7 +3677,6 @@
 4	110000	1F3AF	一語中的	jat1 jyu5 zung3 dik1
 4	110000	1F3AF	正中紅心	zing3 zung3 hung4 sam1
 4	110000	1F3AF	正中	zing3 zung3
-4	110000	1F3AF	中	zung3
 4	110000	1F3AF	中肯	zung3 hang2
 4	110000	1F3AF	正正係	zing3 zing3 hai6
 4	110000	1F3AF	目標	muk6 biu1
@@ -5497,11 +5492,7 @@
 7	110000	1F0CF	打牌	daa2 paai4
 7	110000	1F3B4	花紙牌	faa1 zi2 paai4
 7	110000	1F3B4	遊戲牌	jau4 hei3 paai4
-7	110000	1F004	麻雀	maa4 zoek2
-7	110000	1F004	麻雀	maa4 zoek3
-7	110000	1F004	麻將	maa4 zoeng3
 7	110000	1F004	紅中	hung4 zung1
-7	110000	1F004	中	zung1
 7	110000	1F550	一點正	jat1 dim2 zing3
 7	110000	1F550	一點鐘	jat1 dim2 zung1
 7	110000	1F550	一點	jat1 dim2
@@ -6103,24 +6094,18 @@
 10	110000	5382	廠字邊	cong2 zi6 bin1
 10	110000	5382	廠字旁	cong2 zi6 pong4
 10	110000	5382	廠字頭	cong2 zi6 tau4
-10	110000	393	大寫伽瑪	daai6 se2 gaa1 maa5
-10	110000	393	伽瑪	gaa1 maa5
-10	110000	3B3	小寫伽瑪	siu2 se2 gaa1 maa5
-10	110000	3B3	伽瑪	gaa1 maa5
-10	110000	3A0	大寫派	daai6 se2 paai3
-10	110000	3A0	派	paai3
 10	110000	3A0	連乘符號	lin4 sing4 fu4 hou6
 10	110000	3A0	連乘	lin4 sing4
 10	110000	3A0	求積符號	kau4 zik1 fu4 hou6
 10	110000	3A0	求積	kau4 zik1
-10	110000	3C0	小寫派	siu2 se2 paai3
-10	110000	3C0	派	paai3
-10	110000	3C0	圓周率	jyun4 zau1 leot6
-10	110000	3C0	圓周率	jyun4 zau1 leot2
 10	110000	3A3	累加符號	leoi5 gaa1 fu4 hou6
 10	110000	3A3	累加	leoi5 gaa1
 10	110000	3A3	求和符號	kau4 wo4 fu4 hou6
 10	110000	3A3	求和	kau4 wo4
+10	110000	3B3	伽瑪	gaa1 maa5
+10	110000	3C0	派	paai3
+10	110000	3C0	圓周率	jyun4 zau1 leot6
+10	110000	3C0	圓周率	jyun4 zau1 leot2
 10	110000	2318	命令	ming6 ling6
 10	110000	2325	選項	syun2 hong6
 10	110000	2387	轉換鍵	zyun2 wun6 gin6
@@ -6166,6 +6151,7 @@
 10	110000	2326	刪除鍵	saan1 ceoi4 gin6
 10	110000	2327	清空	cing1 hung1
 10	110000	2327	清除	cing1 ceoi4
+10	110000	23FB	電源鍵	din6 jyun4 gin6
 10	110000	1F000	東	dung1
 10	110000	1F001	南	naam4
 10	110000	1F002	西	sai1
@@ -6215,15 +6201,15 @@
 10	110000	1F029	冬	dung1
 10	110000	1F02A	百搭	baak3 daap3
 10	110000	1F02B	麻雀背面	maa4 zoek3 bui3 min6
-10	110000	1F02B	麻雀	maa4 zoek2
-10	110000	1F02B	麻雀	maa4 zoek3
+10	110000	2756	微軟	mei4 jyun5
+10	110000	2756	視窗	si6 coeng1
 10	110000	F8FF	蘋果	ping4 gwo2
-10	110000	262E	和平	wo4 ping4
-10	110000	262E	和平標誌	wo4 ping4 biu1 zi3
-10	110000	262F	陰陽	jam1 joeng4
-10	110000	262F	太極	taai3 gik6
-10	110000	262F	兩儀	loeng5 ji4
-10	110000	262F	道教	dou6 gaau3
+10	110000	262E.FE0E	和平	wo4 ping4
+10	110000	262E.FE0E	和平標誌	wo4 ping4 biu1 zi3
+10	110000	262F.FE0E	陰陽	jam1 joeng4
+10	110000	262F.FE0E	太極	taai3 gik6
+10	110000	262F.FE0E	兩儀	loeng5 ji4
+10	110000	262F.FE0E	道教	dou6 gaau3
 10	110000	2742	青天白日	cing1 tin1 baak6 jat6
 10	110000	2122	商標	soeng1 biu1
 10	110000	2120	服務商標	fuk6 mou6 soeng1 biu1
@@ -6249,6 +6235,8 @@
 10	110000	A3	英鎊	jing1 bong6
 10	110000	A3	鎊	bong6
 10	110000	20AC	歐元	au1 jyun4
+10	110000	20AC	歐幣	au1 bai6
+10	110000	20BF	比特幣	bei2 dak6 bai6
 10	110000	2642	男	naam4
 10	110000	2642	男性	naam4 sing3
 10	110000	2642	男士	naam4 si6
@@ -6290,15 +6278,29 @@
 10	110000	2198	下降	haa6 gong3
 10	110000	2198	降調	gong3 diu6
 10	110000	2198	降	gong3
+10	110000	21C6	轉換	zyun2 wun6
+10	110000	21C6	左右箭頭	zo2 jau6 zin3 tau4
+10	110000	21CC	化學平衡	faa3 hok6 ping4 hang4
+10	110000	21CC	平衡	ping4 hang4
 10	110000	21D2	箭頭	zin3 tau4
+10	110000	21D2	箭嘴	zin3 zeoi2
 10	110000	21D4	互等	wu6 dang2
 10	110000	21D4	等價	dang2 gaa3
 10	110000	21D4	等價於	dang2 gaa3 jyu1
 10	110000	21D4	等同	dang2 tung4
 10	110000	21D4	等同於	dang2 tung4 jyu1
 10	110000	21D4	左右箭頭	zo2 jau6 zin3 tau4
-10	110000	21C6	轉換	zyun2 wun6
-10	110000	21C6	左右箭頭	zo2 jau6 zin3 tau4
+10	110000	21E4	最左	zeoi3 zo2
+10	110000	21E4	行首	hong4 sau2
+10	110000	21E4	句首	geoi3 sau2
+10	110000	21E5	最右	zeoi3 jau1
+10	110000	21E5	行末	hong4 mut6
+10	110000	21E5	行尾	hong4 mei5
+10	110000	21E5	句末	geoi3 mut6
+10	110000	21E5	句尾	geoi3 mei5
+10	110000	21E5	末尾	mut6 mei5
+10	110000	21E5	最尾	zeoi3 mei5
+10	110000	21E5	最屘	zeoi3 mei1
 10	110000	27F2	逆時針	jik6 si4 zam1
 10	110000	27F2	逆時針方向	jik6 si4 zam1 fong1 hoeng3
 10	110000	27F3	順時針	seon6 si4 zam1
@@ -6318,9 +6320,9 @@
 10	110000	2715	錯	co3
 10	110000	2715	誤	ng6
 10	110000	2715	唔啱	m4 ngaam1
-10	110000	2611	勾選	ngau1 syun2
-10	110000	2611	剔選	tik1 syun2
-10	110000	2611	選擇	syun2 zaak6
+10	110000	2611.FE0E	勾選	ngau1 syun2
+10	110000	2611.FE0E	剔選	tik1 syun2
+10	110000	2611.FE0E	選擇	syun2 zaak6
 10	110000	2612	叉選	caa1 syun2
 10	110000	2612	交叉	gaau1 caa1
 10	110000	2612	交叉	kaau1 caa1
@@ -7003,7 +7005,8 @@
 10	110000	4E.61.2082.53	硫化鈉	lau4 faa3 hing1
 10	110000	43.75.53	硫化銅	lau4 faa3 tung4
 10	110000	4B.43.6C.4F.2083	氯酸鉀	luk6 syun1 gaap3
-10	110000	4B.2082.4D.6E.4F.2084	高錳酸鉀	gou1 maang5 syun1 gaap3
+10	110000	4B.2082.4D.6E.4F.2084	錳酸鉀	maang5 syun1 gaap3
+10	110000	4B.4D.6E.4F.2084	高錳酸鉀	gou1 maang5 syun1 gaap3
 10	110000	43.2083.48.2086.4E.2086	三聚氰胺	saam1 zeoi6 cing4 on3
 10	110000	43.48.2083.4E.48.2082	甲胺	gaap3 on3
 10	110000	43.2089.48.2081.2080.4F	苯基丙酮	bun2 gei1 bing2 tung4

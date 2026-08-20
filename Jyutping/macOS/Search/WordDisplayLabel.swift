@@ -12,7 +12,7 @@ struct WordDisplayLabel: View {
                                 Text.separator
                                 Text(verbatim: word).font(.display)
                         }
-                        if let unicode = word.first?.codePointsText {
+                        if let unicode = word.first?.codePointNotation {
                                 Text(verbatim: unicode).font(.fixedWidth).airy()
                         }
                 }

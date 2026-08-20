@@ -15,7 +15,7 @@ struct CantoneseLexiconView: View {
                                         Text.separator
                                         Text(verbatim: lexicon.text).font(.display)
                                 }
-                                if lexicon.text.count == 1, let unicode = lexicon.text.first?.codePointsText {
+                                if lexicon.text.count == 1, let unicode = lexicon.text.first?.codePointNotation {
                                         Text(verbatim: unicode).font(.fixedWidth).airy()
                                 }
                                 Spacer()
