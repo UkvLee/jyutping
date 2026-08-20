@@ -34,16 +34,14 @@ struct EighteenKeyKeyboard: View {
                                 HiddenKey(key: .letterL)
                         }
                         HStack(spacing: 0) {
-                                ShiftKey()
-                                HiddenKey(key: .letterZ)
+                                ShiftKey(widthUnitTimes: 1.42)
                                 switch Options.inputKeyStyle {
                                 case .clear, .numbers:
                                         T18T19ThirdLetterRow()
                                 case .numbersAndSymbols:
                                         T18T19ThirdEnhancedLetterRow()
                                 }
-                                HiddenKey(key: .backspace)
-                                BackspaceKey()
+                                BackspaceKey(widthUnitTimes: 1.42)
                         }
                         switch (context.keyboardInterface.isPadFloating, context.needsInputModeSwitchKey) {
                         case (true, true):
