@@ -160,6 +160,7 @@ struct InputMemory {
                 "CREATE INDEX IF NOT EXISTS ix2608_anchors ON memory2608 (anchors, char_count, frequency DESC);",
                 "CREATE INDEX IF NOT EXISTS ix2608_spell ON memory2608 (spell, letter_count, complexity, frequency DESC);",
                 "CREATE INDEX IF NOT EXISTS ix2608_word ON memory2608 (word, frequency DESC);",
+                "CREATE INDEX IF NOT EXISTS ix2608_lexicon ON memory2608 (word, romanization);",
         ]
 
         private static func dropTable(tableName: String) {
