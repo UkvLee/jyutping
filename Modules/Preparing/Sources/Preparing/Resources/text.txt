@@ -225,6 +225,7 @@ instagram	Instagram
 intel	Intel
 inter	Inter
 ios	iOS
+ipa	IPA
 ipad	iPad
 ipadair	iPad Air
 ipadmini	iPad mini
@@ -628,6 +629,7 @@ ptsd	PTSD
 qwerty	qwerty
 refactor	refactor
 saul	Saul
+seadog	seadog
 skyler	Skyler
 tint	tint
 tv	TV
@@ -15281,4 +15283,6 @@ dysfunction	dysfunction
 padding	padding
 cameraman	cameraman
 trillionaire	trillionaire
+yosemite	yosemite
+mavericks	mavericks
 ecosystems	ecosystems
